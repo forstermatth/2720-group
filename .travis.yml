@@ -1,0 +1,15 @@
+language: cpp
+compiler:
+	- gcc
+install:
+	- sudo apt-get update
+	- sudo apt-get install libcppunit-dev
+	- make
+script: 
+	- ./test
+notifications:
+	recipients:
+		- forster.matth@gmail.com
+	email:
+		on_success: change
+		on_failure: always
