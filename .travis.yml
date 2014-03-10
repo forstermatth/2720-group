@@ -7,7 +7,7 @@ install:
     - mkdir bin
     - make
 script: 
-    - ./test
+    - ./tests
 notifications:
     recipients:
         - forster.matth@gmail.com
