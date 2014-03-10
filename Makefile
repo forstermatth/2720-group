@@ -1,27 +1,27 @@
 CFLAGS = -I include -std=c++0x
-LIBDIR = 
+LIBDIR =
 LNFLAGS = -lcppunit -ldl
-OBJECTS = 
+OBJECTS = Course.o CourseCont.o CourseSched.o Exceptions.o InputWrap.o main.o Options.o Output.o Rater.o Scheduler.o
 OBJECTLIST = $(addprefix bin/,${OBJECTS})
 VPATH = src test
 
 TESTOBJECTS = $(filter-out bin/main.o,$(OBJECTLIST))
-TESTOBJECTS += 
+TESTOBJECTS += bin/tests.o bin/course_testfixture.o bin/coursecont_testfixture.o bin/coursesched_testfixture.o bin/inputwrap_testfixture.o bin/options_testfixture.o bin/output_testfixture.o bin/rater_testfixture.o bin/scheduler_testfixture.o
 
 GXX = g++
 
 
-all: test sched
+all: tests sched
 
-test: $(TESTOBJECTS)
-	${GXX} -L $(LIBDIR) -o $@ $^ $(LNFLAGS)
+tests: $(TESTOBJECTS)
+	${GXX} -o $@ $^ $(LNFLAGS)
 
 sched: $(OBJECTLIST)
-	${GXX} -L $(LIBDIR) -o $@ $^ $(LNFLAGS) 
+	${GXX} -o $@ $^ $(LNFLAGS) 
 
 
 bin/%.o : %.cc
-	${GXX} $(CFLAGS) -c $^ ${LIBDIR} -o $@
+	${GXX} $(CFLAGS) -c $^ -o $@
 
 clean:
-	rm -Rf $(OBJECTLIST) $(TESTOBJECTS) *~ sched test
+	rm -Rf $(OBJECTLIST) $(TESTOBJECTS) *~ sched tests
