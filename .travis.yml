@@ -11,6 +11,7 @@ script:
 notifications:
     recipients:
         - forster.matth@gmail.com
+        - werrejustin@gmail.com
     email:
         on_success: change
         on_failure: always
