@@ -4,6 +4,7 @@ compiler:
 install:
     - sudo apt-get update
     - sudo apt-get install libcppunit-dev
+    - mkdir bin
     - make
 script: 
     - ./test
