@@ -28,5 +28,5 @@ string const Course::getName(){
 }
 
 string const Course::getLoc(){
-	return "";
+	return courseLoc;
 }
