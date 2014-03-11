@@ -3,7 +3,7 @@
 #include "Exceptions.h"
 
 void CourseFixture::setUp(){
-	c = new Course();
+	c = new Course(1115, 1500, "TR", "course", "location", 894372);
 }
 
 void CourseFixture::tearDown(){
@@ -21,5 +21,5 @@ void CourseFixture::testGetStartTime(){
 void CourseFixture::testConstructor(){
 	Course co(945, 1215, "MWF", "coursename", "courseloc", 788934);
 	CPPUNIT_ASSERT(co.getStartTime() == 945);
-	CPPUNIT_ASSERT(co.getEndTime() == 1500);
+	CPPUNIT_ASSERT(co.getEndTime() == 1215);
 }

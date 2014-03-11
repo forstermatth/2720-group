@@ -12,9 +12,9 @@ Course::Course(unsigned int _startTime, unsigned int _endTime, string _days, str
 }
 
 int const Course::getEndTime(){
-	return 1500;
+	return endTime;
 }
 
 int const Course::getStartTime(){
-	return 1115;
+	return startTime;
 }
