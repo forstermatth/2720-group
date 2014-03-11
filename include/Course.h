@@ -2,6 +2,9 @@
 #define __COURSE_H
 
 class Course {
+public:
+	int getEndTime();
+private:
 
 };
 

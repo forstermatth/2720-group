@@ -8,12 +8,15 @@
 class CourseFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(CourseFixture);
+	CPPUNIT_TEST(testGetEndTime);
 	CPPUNIT_TEST_SUITE_END();
 private:
 
 public:
 	void setUp();
 	void tearDown();
+
+	void testGetEndTime();
 };
 
 #endif
