@@ -24,5 +24,5 @@ string const Course::getDays(){
 }
 
 string const Course::getName(){
-	return "";
+	return courseName;
 }
