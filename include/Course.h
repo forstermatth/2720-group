@@ -4,6 +4,7 @@
 class Course {
 public:
 	int getEndTime();
+	int getStartTime();
 private:
 
 };
