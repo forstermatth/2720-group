@@ -20,5 +20,5 @@ int const Course::getStartTime(){
 }
 
 string const Course::getDays(){
-	return "";
+	return days;
 }
