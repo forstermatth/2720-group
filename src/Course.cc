@@ -30,3 +30,7 @@ string const Course::getName(){
 string const Course::getLoc(){
 	return courseLoc;
 }
+
+int const Course::getId(){
+	return 0;
+}

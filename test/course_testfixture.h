@@ -14,6 +14,7 @@ public:
 	CPPUNIT_TEST(testGetDays);
 	CPPUNIT_TEST(testGetName);
 	CPPUNIT_TEST(testGetLoc);
+	CPPUNIT_TEST(testGetId);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Course * c;
@@ -27,6 +28,7 @@ public:
 	void testGetDays();
 	void testGetName();
 	void testGetLoc();
+	void testGetId();
 };
 
 #endif

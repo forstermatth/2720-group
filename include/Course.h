@@ -14,6 +14,7 @@ public:
 	string const getDays();
 	string const getName();
 	string const getLoc();
+	int const getId();
 
 private:
 	unsigned int startTime;
