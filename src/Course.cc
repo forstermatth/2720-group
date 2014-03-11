@@ -5,5 +5,5 @@ int Course::getEndTime(){
 }
 
 int Course::getStartTime(){
-	
+	return 1115;
 }
