@@ -34,3 +34,11 @@ string const Course::getLoc(){
 int const Course::getId(){
 	return courseId;
 }
+
+void Course::setRating(unsigned int _rating){
+
+}
+
+int const Course::getRating(){
+	return 0;
+}

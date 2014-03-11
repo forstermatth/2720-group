@@ -43,3 +43,8 @@ void CourseFixture::testGetLoc(){
 void CourseFixture::testGetId(){
 	CPPUNIT_ASSERT(c->getId() == 894372);
 }
+
+void CourseFixture::testRating(){
+	c->setRating(5);
+	CPPUNIT_ASSERT(c->getRating() == 5);
+}

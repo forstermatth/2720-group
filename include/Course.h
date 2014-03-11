@@ -15,6 +15,9 @@ public:
 	string const getName();
 	string const getLoc();
 	int const getId();
+	int const getRating();
+
+	void setRating(unsigned int _rating);
 
 private:
 	unsigned int startTime;
@@ -23,6 +26,7 @@ private:
 	string courseName;
 	string courseLoc;
 	unsigned int courseId;
+	unsigned int rating;
 
 };
 
