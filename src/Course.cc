@@ -32,5 +32,5 @@ string const Course::getLoc(){
 }
 
 int const Course::getId(){
-	return 0;
+	return courseId;
 }
