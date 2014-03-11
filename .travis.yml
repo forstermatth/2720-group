@@ -15,8 +15,8 @@ notifications:
     email:
         on_success: change
         on_failure: always
-  webhooks:
-    urls:
-      - https://hall-hooks.herokuapp.com/travis-ci/buildnotification/00fe361de6de93df19230ad8ce7bb45e 
-    on_start: true
+    webhooks:
+        urls:
+            - https://hall-hooks.herokuapp.com/travis-ci/buildnotification/00fe361de6de93df19230ad8ce7bb45e 
+        on_start: true
 
