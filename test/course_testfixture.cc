@@ -3,7 +3,7 @@
 #include "Exceptions.h"
 
 void CourseFixture::setUp(){
-	c = new Course;
+	c = new Course();
 }
 
 void CourseFixture::tearDown(){
