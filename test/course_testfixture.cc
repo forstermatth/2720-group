@@ -23,3 +23,7 @@ void CourseFixture::testConstructor(){
 	CPPUNIT_ASSERT(co.getStartTime() == 945);
 	CPPUNIT_ASSERT(co.getEndTime() == 1215);
 }
+
+void CourseFixture::testGetDays(){
+	CPPUNIT_ASSERT(c->getDays() == "TR");
+}

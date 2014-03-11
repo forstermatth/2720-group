@@ -18,3 +18,7 @@ int const Course::getEndTime(){
 int const Course::getStartTime(){
 	return startTime;
 }
+
+string const Course::getDays(){
+	return "";
+}

@@ -11,6 +11,7 @@ public:
 
 	int const getEndTime();
 	int const getStartTime();
+	string const getDays();
 
 private:
 	unsigned int startTime;
