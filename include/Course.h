@@ -3,6 +3,8 @@
 
 class Course {
 public:
+	Course();
+
 	int getEndTime();
 	int getStartTime();
 private:

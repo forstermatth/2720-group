@@ -239,5 +239,5 @@ pip-log.txt
 *.sublime-project
 *.sublime-workspace
 
-./sched
-./tests
+sched
+tests
