@@ -3,19 +3,17 @@
 #include "Exceptions.h"
 
 void CourseFixture::setUp(){
-
+	c = new Course;
 }
 
 void CourseFixture::tearDown(){
-
+	delete c;
 }
 
 void CourseFixture::testGetEndTime(){
-	Course c;
-	CPPUNIT_ASSERT(c.getEndTime() == 1500);
+	CPPUNIT_ASSERT(c->getEndTime() == 1500);
 }
 
 void CourseFixture::testGetStartTime(){
-	Course c;
-	CPPUNIT_ASSERT(c.getStartTime() == 1115);
+	CPPUNIT_ASSERT(c->getStartTime() == 1115);
 }

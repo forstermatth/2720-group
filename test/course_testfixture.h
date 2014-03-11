@@ -12,7 +12,7 @@ public:
 	CPPUNIT_TEST(testGetStartTime);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	Course * c;
 public:
 	void setUp();
 	void tearDown();
