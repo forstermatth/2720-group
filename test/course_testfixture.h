@@ -12,6 +12,7 @@ public:
 	CPPUNIT_TEST(testGetStartTime);
 	CPPUNIT_TEST(testConstructor);
 	CPPUNIT_TEST(testGetDays);
+	CPPUNIT_TEST(testGetName);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Course * c;
@@ -23,6 +24,7 @@ public:
 	void testGetStartTime();
 	void testConstructor();
 	void testGetDays();
+	void testGetName();
 };
 
 #endif

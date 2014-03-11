@@ -12,6 +12,7 @@ public:
 	int const getEndTime();
 	int const getStartTime();
 	string const getDays();
+	string const getName();
 
 private:
 	unsigned int startTime;

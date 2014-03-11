@@ -22,3 +22,7 @@ int const Course::getStartTime(){
 string const Course::getDays(){
 	return days;
 }
+
+string const Course::getName(){
+	return "";
+}
