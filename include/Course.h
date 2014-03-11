@@ -13,6 +13,7 @@ public:
 	int const getStartTime();
 	string const getDays();
 	string const getName();
+	string const getLoc();
 
 private:
 	unsigned int startTime;

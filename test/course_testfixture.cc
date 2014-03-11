@@ -24,6 +24,7 @@ void CourseFixture::testConstructor(){
 	CPPUNIT_ASSERT(co.getEndTime() == 1215);
 	CPPUNIT_ASSERT(co.getDays() == "MWF");
 	CPPUNIT_ASSERT(co.getName() == "coursename");
+	CPPUNIT_ASSERT(co.getLoc() == "courseloc");
 }
 
 void CourseFixture::testGetDays(){
@@ -32,4 +33,8 @@ void CourseFixture::testGetDays(){
 
 void CourseFixture::testGetName(){
 	CPPUNIT_ASSERT(c->getName() == "course");
+}
+
+void CourseFixture::testGetLoc(){
+	CPPUNIT_ASSERT(c->getLoc() == "location");
 }

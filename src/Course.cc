@@ -26,3 +26,7 @@ string const Course::getDays(){
 string const Course::getName(){
 	return courseName;
 }
+
+string const Course::getLoc(){
+	return "";
+}
