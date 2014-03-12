@@ -8,12 +8,16 @@
 class CourseContFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(CourseContFixture);
+	CPPUNIT_TEST(testAddCourse);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	CourseCont* cc;
 public:
 	void setUp();
 	void tearDown();
+
+	void testAddCourse();
+
 };
 
 #endif
