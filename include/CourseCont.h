@@ -9,6 +9,7 @@ class CourseCont {
 public:
 	void addCourse(Course _course);
 	Course first();
+	Course last();
 private:
 	list<Course> courses;
 	list<Course>::iterator it;
