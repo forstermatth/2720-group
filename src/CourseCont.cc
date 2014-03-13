@@ -22,3 +22,7 @@ void CourseCont::next(){
 Course CourseCont::getCourse(){
 	return *it;
 }
+
+void CourseCont::prev(){
+	
+}

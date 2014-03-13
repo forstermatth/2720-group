@@ -38,7 +38,7 @@ void CourseContFixture::testReturnLast(){
 	CPPUNIT_ASSERT(cc->last().getId() == c2.getId());
 }
 
-void CourseContFixture::testReturnNext(){
+void CourseContFixture::testNext(){
 	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
 	Course c3(1300, 1400, "TR", "name3", "loc 642", 43588934);
@@ -48,4 +48,17 @@ void CourseContFixture::testReturnNext(){
 	cc->first();
 	cc->next();
 	CPPUNIT_ASSERT(cc->getCourse().getName() == c2.getName());
+}
+
+void CourseContFixture::testPrev(){
+	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
+	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
+	Course c3(1300, 1400, "TR", "name3", "loc 642", 43588934);
+	cc->addCourse(c1);
+	cc->addCourse(c2);
+	cc->addCourse(c3);
+	cc->first();
+	cc->next();
+	cc->prev();
+	CPPUNIT_ASSERT(cc->getCourse().getName() == c1.getName());
 }

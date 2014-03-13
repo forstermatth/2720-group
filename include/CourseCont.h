@@ -11,6 +11,7 @@ public:
 	Course first();
 	Course last();
 	void next();
+	void prev();
 	Course getCourse();
 private:
 	list<Course> courses;
