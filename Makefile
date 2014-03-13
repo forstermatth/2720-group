@@ -10,6 +10,7 @@ TESTOBJECTS += bin/tests.o bin/course_testfixture.o bin/coursecont_testfixture.o
 
 GXX = g++
 
+$(shell mkdir -p bin)
 
 all: tests sched
 
@@ -24,4 +25,4 @@ bin/%.o : %.cc
 	${GXX} $(CFLAGS) -c $^ -o $@
 
 clean:
-	rm -Rf $(OBJECTLIST) $(TESTOBJECTS) *~ sched tests
+	rm -Rf bin *~ sched tests
