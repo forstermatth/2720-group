@@ -10,5 +10,7 @@ Course CourseCont::first(){
 }
 
 Course CourseCont::last(){
-
+	it = courses.end();
+	it--;
+	return *it;
 }
