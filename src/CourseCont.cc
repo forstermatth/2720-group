@@ -16,9 +16,9 @@ Course CourseCont::last(){
 }
 
 void CourseCont::next(){
-
+	++it;
 }
 
 Course CourseCont::getCourse(){
-
+	return *it;
 }
