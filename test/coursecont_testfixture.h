@@ -10,6 +10,7 @@ public:
 	CPPUNIT_TEST_SUITE(CourseContFixture);
 	CPPUNIT_TEST(testAddCourse);
 	CPPUNIT_TEST(testReturnLast);
+	CPPUNIT_TEST(testReturnNext);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	CourseCont* cc;
@@ -19,6 +20,7 @@ public:
 
 	void testAddCourse();
 	void testReturnLast();
+	void testReturnNext();
 
 };
 

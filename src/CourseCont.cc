@@ -14,3 +14,11 @@ Course CourseCont::last(){
 	it--;
 	return *it;
 }
+
+void CourseCont::next(){
+
+}
+
+Course CourseCont::getCourse(){
+
+}

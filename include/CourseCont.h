@@ -10,6 +10,8 @@ public:
 	void addCourse(Course _course);
 	Course first();
 	Course last();
+	void next();
+	Course getCourse();
 private:
 	list<Course> courses;
 	list<Course>::iterator it;
