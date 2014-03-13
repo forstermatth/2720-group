@@ -24,5 +24,5 @@ Course CourseCont::getCourse(){
 }
 
 void CourseCont::prev(){
-	
+	--it;
 }
