@@ -36,10 +36,10 @@ public:
 	}
 };
 
-class UnknownOption : public ScheduleException{
+class UnknownNode : public ScheduleException{
 public:
 	virtual const char* what() const noexcept {
-		return "Unknown Option Node";
+		return "Unknown Node";
 	}
 };
 

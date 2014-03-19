@@ -59,16 +59,16 @@ Options InputWrap::setOptions(){
 
 	//iterate through all options
 	do{
-
-		if(optnode->name() == (std::string) "NumberOfCourses"){
+		std::string name = optnode->name();
+		if(name == (std::string) "NumberOfCourses"){
 			numcourse = atoi(optnode->value());
-		}else if(optnode->name() == (std::string) "RequiredCourses"){
+		}else if(name == (std::string) "RequiredCourses"){
 			rapidxml::xml_node<> * idnode = optnode->first_node();
 			do{
 				reqcourses.push_back(atoi(idnode->value()));
 				idnode = idnode->next_sibling();
 			}while(idnode != 0);
-		}else if(optnode->name() == (std::string) "TimePreferences"){
+		}else if(name == (std::string) "TimePreferences"){
 			std::string val = optnode->value();
 			if(val == "Am"){
 				timepref = Times::Am;
@@ -79,14 +79,14 @@ Options InputWrap::setOptions(){
 			}else{
 				throw BadTime();
 			}
-		}else if(optnode->name() == (std::string) "BreakPadding"){
+		}else if(name == (std::string) "BreakPadding"){
 			breakpad = atoi(optnode->value());
-		}else if(optnode->name() == (std::string) "BreakStart"){
+		}else if(name == (std::string) "BreakStart"){
 			breakstart = atoi(optnode->value());
-		}else if(optnode->name() == (std::string) "BreakEnd"){
+		}else if(name == (std::string) "BreakEnd"){
 			breakend =  atoi(optnode->value());
 		}else{
-			throw UnknownOption();
+			throw UnknownNode();
 		}
 
 		optnode = optnode->next_sibling();
@@ -101,5 +101,68 @@ Options InputWrap::setOptions(){
 
 CourseCont InputWrap::setCourses(){
 	CourseCont cc;
+
+	//start at courses header
+	try{
+		root_node = doc.first_node("Courses");
+	}catch(rapidxml::parse_error &e){
+		std::cout << "Parse error: " << e.what() << std::endl;
+		throw XmlParseExcept();
+	}
+	if(root_node == 0){
+		throw XmlParseExcept();
+	}
+
+	rapidxml::xml_node<> * coursenode;
+
+	//try to find first course child
+	try{
+		coursenode = root_node->first_node();
+	}catch(rapidxml::parse_error &e){
+		std::cout << "Parse error: " << e.what() << std::endl;
+		throw XmlParseExcept();
+	}
+	if(coursenode == 0){
+		throw XmlParseExcept();
+	}
+
+	rapidxml::xml_node<> * datanode;
+	
+
+	do{
+		std::string cname;
+		unsigned int cstart;
+		unsigned int cend;
+		std::string cdays;
+		std::string cloc;
+		unsigned int cid;
+		
+		datanode = coursenode->first_node();
+		do{
+			std::string name = datanode->name();
+			if(name == (std::string) "Name"){
+				cname = datanode->value();
+			}else if(name == "StartTime"){
+				cstart = atoi(datanode->value());
+			}else if(name == "EndTime"){
+				cend = atoi(datanode->value());
+			}else if(name == "Days"){
+				cdays = datanode->value();
+			}else if(name == "Location"){
+				cloc = datanode->value();
+			}else if(name == "id"){
+				cid = atoi(datanode->value());
+			}else{
+				throw UnknownNode();
+			}
+			datanode = datanode->next_sibling();
+		}while(datanode != 0);
+
+		cc.addCourse(Course(cstart, cend, cdays, cname, cloc, cid));
+		coursenode = coursenode->next_sibling();
+	}while(coursenode != 0);
+
+
+
 	return cc;
 }

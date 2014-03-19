@@ -2,29 +2,29 @@
 #define __COURSE_H
 
 #include <string>
-using namespace std;
+
 
 class Course {
 public:
-	Course(unsigned int _startTime, unsigned int _endTime, string _days, string _courseName, string _courseLoc, unsigned int _courseId);
+	Course(unsigned int _startTime, unsigned int _endTime, std::string _days, std::string _courseName, std::string _courseLoc, unsigned int _courseId);
 	Course(){};
 
-	int const getEndTime();
-	int const getStartTime();
-	string const getDays();
-	string const getName();
-	string const getLoc();
-	int const getId();
-	int const getRating();
+	unsigned int const getEndTime();
+	unsigned int const getStartTime();
+	std::string const getDays();
+	std::string const getName();
+	std::string const getLoc();
+	unsigned int const getId();
+	unsigned int const getRating();
 
 	void setRating(unsigned int _rating);
 
 private:
 	unsigned int startTime;
 	unsigned int endTime;
-	string days;
-	string courseName;
-	string courseLoc;
+	std::string days;
+	std::string courseName;
+	std::string courseLoc;
 	unsigned int courseId;
 	unsigned int rating;
 

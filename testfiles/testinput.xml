@@ -10,5 +10,13 @@
 	<BreakEnd>1300</BreakEnd>
 </Options>
 
-<Course>
-</Course>
+<Courses>
+	<Course>
+		<Name>course1</Name>
+		<StartTime>925</StartTime>
+		<EndTime>1030</EndTime>
+		<Days>TR</Days>
+		<Location>AH250</Location>
+		<id>1920932</id>
+	</Course>
+</Courses>
