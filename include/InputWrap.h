@@ -6,10 +6,13 @@
 #include <string>
 #include <iostream>
 #include "rapidxml/rapidxml.hpp"
+#include "Options.h"
 
 class InputWrap{
 public:
 		void parse(std::string _input);
+		void setOptions(Options &ops);
+
 private:
 		std::vector<char> buffer;
 		rapidxml::xml_document<> doc;

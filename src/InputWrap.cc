@@ -7,10 +7,14 @@ void InputWrap::parse(std::string _input){
 	std::string input = _input+".xml";
 
 	try{
-		inputfile.open(input);
-	}catch(FileExcept e){
+		inputfile.open(input, std::ifstream::in);
+	}catch(FileExcept &e){
 		std::cout << "Error: Bad input file.";
 		return;
+	}
+
+	if(!inputfile.is_open()){
+		throw FileExcept();
 	}
 	
 	buffer.assign(std::istreambuf_iterator<char>(inputfile), std::istreambuf_iterator<char>());
@@ -18,4 +22,5 @@ void InputWrap::parse(std::string _input){
 
 	doc.parse<0>(&buffer[0]);
 
+	inputfile.close();
 }

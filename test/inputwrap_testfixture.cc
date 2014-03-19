@@ -1,6 +1,7 @@
 #include "InputWrap.h"
 #include "inputwrap_testfixture.h"
 #include "Exceptions.h"
+
 #include <string>
 
 void InputWrapFixture::setUp(){
@@ -14,4 +15,8 @@ void InputWrapFixture::tearDown(){
 void InputWrapFixture::testAddFile(){
 	std::string str = "testinput";
 	CPPUNIT_ASSERT_NO_THROW(input->parse(str));
+}
+
+void InputWrapFixture::testPopulateOptions(){
+
 }
