@@ -24,3 +24,7 @@ void InputWrap::parse(std::string _input){
 
 	inputfile.close();
 }
+
+void InputWrap::setOptions(Options &ops){
+
+}

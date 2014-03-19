@@ -1,6 +1,7 @@
 #include "InputWrap.h"
 #include "inputwrap_testfixture.h"
 #include "Exceptions.h"
+#include "Options.h"
 
 #include <string>
 
@@ -18,5 +19,9 @@ void InputWrapFixture::testAddFile(){
 }
 
 void InputWrapFixture::testPopulateOptions(){
-
+	std::string str = "testinput";
+	Options ops;
+	input->parse(str);
+	CPPUNIT_ASSERT_NO_THROW(input->setOptions(ops));
+	CPPUNIT_ASSERT(ops.getNumCourses() != 0);
 }
