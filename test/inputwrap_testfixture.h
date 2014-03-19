@@ -10,10 +10,13 @@ public:
 	CPPUNIT_TEST_SUITE(InputWrapFixture);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	InputWrap* input;
 public:
 	void setUp();
 	void tearDown();
+
+	void testAddFile();
+
 };
 
 #endif
