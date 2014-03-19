@@ -1,0 +1,14 @@
+<Options>
+	<NumberOfCourses>4</NumberOfClasses>
+	<RequiredCourses>
+		<id>100102</id>
+		<id>122102</id>
+	</RequiredCourses>
+	<TimePreferences>None</TimePreferences>
+	<BreakPadding>0</BreakPadding>
+	<BreakStart>1200</BreakStart>
+	<BreakEnd>1300</BreakEnd>
+</Options>
+
+<Course>
+</Course>

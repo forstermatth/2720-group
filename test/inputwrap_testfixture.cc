@@ -14,12 +14,12 @@ void InputWrapFixture::tearDown(){
 }
 
 void InputWrapFixture::testAddFile(){
-	std::string str = "testinput.xml";
+	std::string str = "testfiles/testinput.xml";
 	CPPUNIT_ASSERT_NO_THROW(input->parse(str));
 }
 
 void InputWrapFixture::testPopulateOptions(){
-	std::string str = "testinput.xml";
+	std::string str = "testfiles/testinput.xml";
 	Options ops;
 	std::list<unsigned int> reqCourses;
 	reqCourses.push_back(100102);
