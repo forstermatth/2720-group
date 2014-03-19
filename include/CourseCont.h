@@ -7,12 +7,15 @@ using namespace std;
 
 class CourseCont {
 public:
+
+	CourseCont();
+
 	void addCourse(Course _course);
-	Course first();
-	Course last();
+	Course& first();
+	Course& last();
 	void next();
 	void prev();
-	Course getCourse();
+	Course& getCourse();
 private:
 	list<Course> courses;
 	list<Course>::iterator it;

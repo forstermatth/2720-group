@@ -1,15 +1,20 @@
 #include "CourseCont.h"
+#include "Exceptions.h"
+
+CourseCont::CourseCont(){
+	it = courses.begin();
+}
 
 void CourseCont::addCourse(Course _course){
 	courses.push_back(_course);
 }
 
-Course CourseCont::first(){
+Course& CourseCont::first(){
 	it = courses.begin();
 	return *it;
 }
 
-Course CourseCont::last(){
+Course& CourseCont::last(){
 	it = courses.end();
 	it--;
 	return *it;
@@ -17,12 +22,22 @@ Course CourseCont::last(){
 
 void CourseCont::next(){
 	++it;
+	if(it == courses.end()){
+		it = courses.begin();
+	}
 }
 
-Course CourseCont::getCourse(){
+Course& CourseCont::getCourse(){
+	if(courses.empty()){
+		throw EmptyContainer();
+	}
 	return *it;
 }
 
 void CourseCont::prev(){
-	--it;
+	if(it == courses.begin()){
+		it = courses.end();
+	}else{
+		--it;
+	}
 }
