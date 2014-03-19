@@ -12,6 +12,7 @@ public:
 	CPPUNIT_TEST(testReturnLast);
 	CPPUNIT_TEST(testNext);
 	CPPUNIT_TEST(testPrev);
+	CPPUNIT_TEST(testOverflow);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	CourseCont* cc;
@@ -23,6 +24,7 @@ public:
 	void testReturnLast();
 	void testNext();
 	void testPrev();
+	void testOverflow();
 
 };
 
