@@ -22,7 +22,7 @@ void CourseSched::next(){
 
 void CourseSched::removeCourse(){
 	if (courses.empty()){
-		throw Exceptions("Course Sched Empty");
+		throw EmptyContainer();
 	}
 	it = courses.erase(it);
 }
@@ -62,14 +62,14 @@ void CourseSched::findConflict(Course newCourse){
 				{
 					if (newCourse.getEndTime() > getCourse().getStartTime()) //if new course ends after existing course starts
 					{
-						throw Exceptions("Time conflict");
+						throw TimeConflict();
 					}
 				}
 				else
 				{
 					if (newCourse.getStartTime() < getCourse().getEndTime()) //if new course starts before existing course ends
 					{
-						throw Exceptions("Time conflict"); 
+						throw TimeConflict();
 					}
 				}
 			}
