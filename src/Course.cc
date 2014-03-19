@@ -39,6 +39,6 @@ void Course::setRating(unsigned int _rating){
 	rating = _rating;
 }
 
-int const Course::getRating(){
+unsigned int Course::getRating()const{
 	return rating;
 }

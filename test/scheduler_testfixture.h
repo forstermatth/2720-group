@@ -10,7 +10,7 @@ public:
 	CPPUNIT_TEST_SUITE(SchedulerFixture);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	Scheduler *sch;
 public:
 	void setUp();
 	void tearDown();

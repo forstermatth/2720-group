@@ -1,4 +1,5 @@
 #include "CourseCont.h"
+#include "Course.h"
 
 void CourseCont::addCourse(Course _course){
 	courses.push_back(_course);
@@ -25,4 +26,12 @@ Course CourseCont::getCourse(){
 
 void CourseCont::prev(){
 	--it;
+}
+
+void CourseCont::sort(){
+	courses.sort(compareCourseRating);	
+}
+
+bool compareCourseRating(const Course &first, const Course &second){
+	return first.getRating() > second.getRating();
 }

@@ -13,9 +13,12 @@ public:
 	void next();
 	void prev();
 	Course getCourse();
+	void sort();
 private:
 	list<Course> courses;
 	list<Course>::iterator it;
 };
+
+bool compareCourseRating(const Course &first, const Course &second);
 
 #endif

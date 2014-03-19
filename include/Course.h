@@ -15,7 +15,7 @@ public:
 	string const getName();
 	string const getLoc();
 	int const getId();
-	int const getRating();
+	unsigned int getRating() const;
 
 	void setRating(unsigned int _rating);
 
