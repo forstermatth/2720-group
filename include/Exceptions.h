@@ -24,4 +24,11 @@ public:
 	}
 };
 
+class XmlParseExcept : public std::exception{
+public:
+	virtual const char* what() const noexcept {
+		return "Bad XML Structure";
+	}
+};
+
 #endif

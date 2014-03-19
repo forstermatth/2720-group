@@ -26,5 +26,19 @@ void InputWrap::parse(std::string _input){
 }
 
 void InputWrap::setOptions(Options &ops){
+	root_node = doc.first_node("Options");
+	rapidxml::xml_node<> * optnode;
+	try{
+		optnode = root_node->first_node();
+	}catch(rapidxml::parse_error &e){
+		std::cout << "Parse error: " << e.what() << std::endl;
+	}
+	if(optnode == 0){
+		throw XmlParseExcept();
+	}
+
+	do{
+
+	}while(optnode != 0);
 
 }
