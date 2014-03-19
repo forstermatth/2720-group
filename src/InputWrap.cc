@@ -98,3 +98,8 @@ Options InputWrap::setOptions(){
 
 
 }
+
+CourseCont InputWrap::setCourses(){
+	CourseCont cc;
+	return cc;
+}

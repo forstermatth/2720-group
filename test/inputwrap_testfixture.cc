@@ -2,6 +2,8 @@
 #include "inputwrap_testfixture.h"
 #include "Exceptions.h"
 #include "Options.h"
+#include "CourseCont.h"
+#include "Course.h"
 
 #include <string>
 
@@ -35,4 +37,19 @@ void InputWrapFixture::testPopulateOptions(){
 	CPPUNIT_ASSERT(ops.getBreakPadding() == compare.getBreakPadding());
 	CPPUNIT_ASSERT(ops.getBreakStart() == compare.getBreakStart());
 	CPPUNIT_ASSERT(ops.getBreakEnd() == compare.getBreakEnd());
+}
+
+void InputWrapFixture::testPopulateCourses(){
+	std::string str = "testfiles/testinput.xml";
+	CourseCont cc;
+	Course comp(925, 1030, "TR", "course1", "AH250", 1920932);
+
+	input->parse(str);
+	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
+	CPPUNIT_ASSERT(cc.first().getName() == comp.getName());
+	CPPUNIT_ASSERT(cc.getCourse().getStartTime() == comp.getStartTime());
+	CPPUNIT_ASSERT(cc.getCourse().getDays() == comp.getDays());
+	CPPUNIT_ASSERT(cc.getCourse().getLoc() == comp.getLoc());
+	CPPUNIT_ASSERT(cc.getCourse().getId() == comp.getId());
+	
 }

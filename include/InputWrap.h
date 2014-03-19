@@ -7,11 +7,13 @@
 #include <iostream>
 #include "rapidxml/rapidxml.hpp"
 #include "Options.h"
+#include "CourseCont.h"
 
 class InputWrap{
 public:
 		void parse(std::string _input);
 		Options setOptions();
+		CourseCont setCourses();
 
 private:
 		std::vector<char> buffer;
