@@ -11,7 +11,7 @@
 class InputWrap{
 public:
 		void parse(std::string _input);
-		void setOptions(Options &ops);
+		Options setOptions();
 
 private:
 		std::vector<char> buffer;
