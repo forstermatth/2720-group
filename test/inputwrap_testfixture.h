@@ -8,6 +8,7 @@
 class InputWrapFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(InputWrapFixture);
+	CPPUNIT_TEST(testAddFile);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	InputWrap* input;
