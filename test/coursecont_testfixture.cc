@@ -64,14 +64,14 @@ void CourseContFixture::testPrev(){
 }
 
 void CourseContFixture::testOverflow(){
-	Course c1();
-	Course c2();
+	Course c1;
+	Course c2;
 
-	cc->addCourse();
-	cc->addCourse();
+	cc->addCourse(c1);
+	cc->addCourse(c2);
 	CPPUNIT_ASSERT_NO_THROW(cc->getCourse());
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
-	
+
 }
