@@ -23,6 +23,7 @@ public:
 	void testReturnLast();
 	void testNext();
 	void testPrev();
+	void testOverflow();
 
 };
 

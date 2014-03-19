@@ -62,3 +62,16 @@ void CourseContFixture::testPrev(){
 	cc->prev();
 	CPPUNIT_ASSERT(cc->getCourse().getName() == c1.getName());
 }
+
+void CourseContFixture::testOverflow(){
+	Course c1();
+	Course c2();
+
+	cc->addCourse();
+	cc->addCourse();
+	CPPUNIT_ASSERT_NO_THROW(cc->getCourse());
+	CPPUNIT_ASSERT_NO_THROW(cc->next());
+	CPPUNIT_ASSERT_NO_THROW(cc->next());
+	CPPUNIT_ASSERT_NO_THROW(cc->next());
+	
+}
