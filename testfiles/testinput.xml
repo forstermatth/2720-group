@@ -15,8 +15,32 @@
 		<Name>course1</Name>
 		<StartTime>925</StartTime>
 		<EndTime>1030</EndTime>
-		<Days>TR</Days>
+		<Days>MWF</Days>
 		<Location>AH250</Location>
 		<id>1920932</id>
+	</Course>
+	<Course>
+		<Name>course2</name>
+		<StartTime></StartTime>
+		<EndTime></EndTime>
+		<Days></Days>
+		<Location></Location>
+		<id></id>
+	</Course>
+	<Course>
+		<Name>course3</name>
+		<StartTime></StartTime>
+		<EndTime></EndTime>
+		<Days></Days>
+		<Location></Location>
+		<id></id>
+	</Course>
+	<Course>
+		<Name>course4</name>
+		<StartTime></StartTime>
+		<EndTime></EndTime>
+		<Days></Days>
+		<Location></Location>
+		<id></id>
 	</Course>
 </Courses>

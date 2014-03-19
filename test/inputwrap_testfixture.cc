@@ -39,10 +39,10 @@ void InputWrapFixture::testPopulateOptions(){
 	CPPUNIT_ASSERT(ops.getBreakEnd() == compare.getBreakEnd());
 }
 
-void InputWrapFixture::testPopulateCourses(){
+void InputWrapFixture::testPopulateCourse(){
 	std::string str = "testfiles/testinput.xml";
 	CourseCont cc;
-	Course comp(925, 1030, "TR", "course1", "AH250", 1920932);
+	Course comp(925, 1030, "MWF", "course1", "AH250", 1920932);
 
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
@@ -52,4 +52,24 @@ void InputWrapFixture::testPopulateCourses(){
 	CPPUNIT_ASSERT(cc.getCourse().getLoc() == comp.getLoc());
 	CPPUNIT_ASSERT(cc.getCourse().getId() == comp.getId());
 	
+}
+
+void InputWrapFixture::testPopulateMultiCourses(){
+	std::string str = "testfiles/testinput.xml";
+	CourseCont cc;
+	Course comp1(925, 1030, "MWF", "course1", "AH250", 1920932);
+	Course comp2(1045, 1200, "MWF", "course2", "AH251", 43573094);
+	Course comp3(1300, 1415, "TR", "course3", "AH252", 3453434);
+	Course comp4(1430, 1630, "TR", "course4", "AH253", 87364832);
+
+	input->parse(str);
+	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
+	CPPUNIT_ASSERT(cc.first().getName() == comp1.getName());
+	cc.next();
+	CPPUNIT_ASSERT(cc.getCourse().getName() == comp2.getName());
+	cc.next();
+	CPPUNIT_ASSERT(cc.getCourse().getName() == comp3.getName());
+	cc.next();
+	CPPUNIT_ASSERT(cc.getCourse().getName() == comp4.getName());
+
 }
