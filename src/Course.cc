@@ -11,11 +11,11 @@ Course::Course(unsigned int _startTime, unsigned int _endTime, string _days, str
 	courseId = _courseId;
 }
 
-int const Course::getEndTime(){
+unsigned int const Course::getEndTime(){
 	return endTime;
 }
 
-int const Course::getStartTime(){
+unsigned int const Course::getStartTime(){
 	return startTime;
 }
 
@@ -31,7 +31,7 @@ string const Course::getLoc(){
 	return courseLoc;
 }
 
-int const Course::getId(){
+unsigned int const Course::getId(){
 	return courseId;
 }
 
@@ -39,6 +39,6 @@ void Course::setRating(unsigned int _rating){
 	rating = _rating;
 }
 
-int const Course::getRating(){
+unsigned int const Course::getRating(){
 	return rating;
 }

@@ -1,8 +1,24 @@
 #ifndef __INPUTWRAP_H
 #define __INPUTWRAP_H
 
-class InputWrap{
+#include <fstream>
+#include <vector>
+#include <string>
+#include <iostream>
+#include "rapidxml/rapidxml.hpp"
+#include "Options.h"
+#include "CourseCont.h"
 
+class InputWrap{
+public:
+		void parse(std::string _input);
+		Options setOptions();
+		CourseCont setCourses();
+
+private:
+		std::vector<char> buffer;
+		rapidxml::xml_document<> doc;
+		rapidxml::xml_node<> * root_node;
 };
 
 #endif

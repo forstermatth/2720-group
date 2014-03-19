@@ -8,12 +8,22 @@
 class InputWrapFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(InputWrapFixture);
+	CPPUNIT_TEST(testAddFile);
+	CPPUNIT_TEST(testPopulateOptions);
+	CPPUNIT_TEST(testPopulateCourse);
+	CPPUNIT_TEST(testPopulateMultiCourses);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	InputWrap* input;
 public:
 	void setUp();
 	void tearDown();
+
+	void testAddFile();
+	void testPopulateOptions();
+	void testPopulateCourse();
+	void testPopulateMultiCourses();
+
 };
 
 #endif
