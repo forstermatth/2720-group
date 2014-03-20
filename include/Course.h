@@ -19,9 +19,12 @@ public:
 
 	void addLab(Lab _lab);
 	Lab firstLab();
+	void labBegin();
+	Lab lastLab();
 
 private:
 	std::list<Lab> labs;
+	std::list<Lab>::iterator it;
 };
 
 
