@@ -8,7 +8,7 @@ using namespace std;
 
 class CourseSched{
 public:
-	void addCourse(Course _course);	
+	void addCourse(Course _course);	//throws Exceptions
 	void prev();
 	void next();
 	void removeCourse();

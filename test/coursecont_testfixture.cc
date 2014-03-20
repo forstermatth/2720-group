@@ -65,10 +65,10 @@ void CourseContFixture::testPrev(){
 
 void CourseContFixture::testSort(){
 	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
-	c1.setRating(1);
 	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
-	c2.setRating(2);
 	Course c3(1300, 1400, "TR", "name3", "loc 642", 43588934);
+	c1.setRating(1);
+	c2.setRating(2);
 	c3.setRating(3);
 	cc->addCourse(c1);
 	cc->addCourse(c2);
