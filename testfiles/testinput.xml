@@ -1,0 +1,46 @@
+<Options>
+	<NumberOfCourses>4</NumberOfClasses>
+	<RequiredCourses>
+		<id>100102</id>
+		<id>122102</id>
+	</RequiredCourses>
+	<TimePreferences>None</TimePreferences>
+	<BreakPadding>0</BreakPadding>
+	<BreakStart>1200</BreakStart>
+	<BreakEnd>1300</BreakEnd>
+</Options>
+
+<Courses>
+	<Course>
+		<Name>course1</Name>
+		<StartTime>925</StartTime>
+		<EndTime>1030</EndTime>
+		<Days>MWF</Days>
+		<Location>AH250</Location>
+		<id>1920932</id>
+	</Course>
+	<Course>
+		<Name>course2</name>
+		<StartTime></StartTime>
+		<EndTime></EndTime>
+		<Days></Days>
+		<Location></Location>
+		<id></id>
+	</Course>
+	<Course>
+		<Name>course3</name>
+		<StartTime></StartTime>
+		<EndTime></EndTime>
+		<Days></Days>
+		<Location></Location>
+		<id></id>
+	</Course>
+	<Course>
+		<Name>course4</name>
+		<StartTime></StartTime>
+		<EndTime></EndTime>
+		<Days></Days>
+		<Location></Location>
+		<id></id>
+	</Course>
+</Courses>

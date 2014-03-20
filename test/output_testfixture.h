@@ -4,7 +4,7 @@
 #include "Output.h"
 #include <cppunit/extensions/HelperMacros.h>
 
-
+/// Test - Output
 class OutputFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(OutputFixture);

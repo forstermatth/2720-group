@@ -4,7 +4,7 @@
 #include "Rater.h"
 #include <cppunit/extensions/HelperMacros.h>
 
-
+///Test - Rater
 class RaterFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(RaterFixture);

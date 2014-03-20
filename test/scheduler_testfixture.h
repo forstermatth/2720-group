@@ -4,7 +4,7 @@
 #include "Scheduler.h"
 #include <cppunit/extensions/HelperMacros.h>
 
-
+/// Test - Scheduler
 class SchedulerFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(SchedulerFixture);

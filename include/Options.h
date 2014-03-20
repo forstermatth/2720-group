@@ -4,16 +4,21 @@
 #include <list>
 using namespace std;
 
+/// \brief used to store time option type
 enum Times {Am, Pm, None};
 
+
+/** \class Options
+	\brief Store the user set values used to rate a course
+*/
 class Options{
 private:
-	unsigned int numClasses;
-	list<unsigned int> requiredCourses;
-	Times timePreference;
-	unsigned int breakPadding;
-	unsigned int breakStart;
-	unsigned int breakEnd;
+	unsigned int numClasses; ///< number of classes the user wants
+	list<unsigned int> requiredCourses; ///< a list of required courses 
+	Times timePreference; ///< the users am or pm time preference
+	unsigned int breakPadding; ///< the time padding between courses
+	unsigned int breakStart; ///< the preferred break start time
+	unsigned int breakEnd; ///< the preferred break end time
 public:
 	/**
 		Default constructor for the options class, sets everything to 0.
