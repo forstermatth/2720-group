@@ -64,3 +64,29 @@ void CourseFixture::testReturnLast(){
 	c->addLab(l2);
 	CPPUNIT_ASSERT(c->lastLab().getName() == l2.getName());
 }
+
+void CourseFixture::testNext(){
+	Lab l1(900, 1015, "MW", "name", "loc 640", 9484739);
+	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
+	Lab l3(1300, 1400, "TR", "name3", "loc 642", 43588934);
+	c->addLab(l1);
+	c->addLab(l2);
+	c->addLab(l3);
+	c->labBegin();
+	c->nextLab();
+	CPPUNIT_ASSERT(c->getLab().getName() == l2.getName());
+}
+
+void CourseFixture::testPrev(){
+	Lab l1(900, 1015, "MW", "name", "loc 640", 9484739);
+	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
+	Lab l3(1300, 1400, "TR", "name3", "loc 642", 43588934);
+	c->addLab(l1);
+	c->addLab(l2);
+	c->addLab(l3);
+	c->labBegin();
+	c->nextLab();
+	c->nextLab();
+	c->prevLab();
+	CPPUNIT_ASSERT(c->getLab().getName() == l2.getName());
+}

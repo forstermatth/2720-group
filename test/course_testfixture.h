@@ -18,6 +18,8 @@ public:
 	CPPUNIT_TEST(testRating);
 	CPPUNIT_TEST(testAddLab);
 	CPPUNIT_TEST(testReturnLast);
+	CPPUNIT_TEST(testNext);
+	CPPUNIT_TEST(testPrev);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Course * c;
@@ -35,6 +37,8 @@ public:
 	void testRating();
 	void testAddLab();
 	void testReturnLast();
+	void testNext();
+	void testPrev();
 };
 
 #endif

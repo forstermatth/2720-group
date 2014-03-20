@@ -21,6 +21,9 @@ public:
 	Lab firstLab();
 	void labBegin();
 	Lab lastLab();
+	void nextLab();
+	void prevLab();
+	Lab getLab();
 
 private:
 	std::list<Lab> labs;

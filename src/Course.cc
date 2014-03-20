@@ -17,3 +17,15 @@ Lab Course::lastLab(){
 	std::list<Lab>::iterator iter = labs.end();
 	return *--iter;
 }
+
+void Course::nextLab(){
+	it++;
+}
+
+void Course::prevLab(){
+	
+}
+
+Lab Course::getLab(){
+	return *it;
+}
