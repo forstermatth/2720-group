@@ -15,7 +15,7 @@ CourseSched* Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
 			courseList.next();
 			i++;
 			std::cout << "didn't catch any fish:(\n";
-		}catch(const Exceptions &expt){
+		}catch(const TimeConflict &expt){
 			courseList.next();
 			std::cout << "caught an Exceptions\n";
 		}

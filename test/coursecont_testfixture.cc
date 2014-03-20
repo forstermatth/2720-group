@@ -63,7 +63,6 @@ void CourseContFixture::testPrev(){
 	CPPUNIT_ASSERT(cc->getCourse().getName() == c1.getName());
 }
 
-<<<<<<< HEAD
 void CourseContFixture::testSort(){
 	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
@@ -77,7 +76,8 @@ void CourseContFixture::testSort(){
 	cc->sort();
 	CPPUNIT_ASSERT(cc->first().getId() == c3.getId());
 	CPPUNIT_ASSERT(cc->last().getId() == c1.getId());
-=======
+}
+
 void CourseContFixture::testOverflow(){
 	Course c1;
 	Course c2;
@@ -88,6 +88,4 @@ void CourseContFixture::testOverflow(){
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
-
->>>>>>> master
 }

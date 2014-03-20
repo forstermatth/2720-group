@@ -1,13 +1,10 @@
 #include "CourseCont.h"
-<<<<<<< HEAD
 #include "Course.h"
-=======
 #include "Exceptions.h"
 
 CourseCont::CourseCont(){
 	it = courses.begin();
 }
->>>>>>> master
 
 void CourseCont::addCourse(Course _course){
 	courses.push_back(_course);
@@ -39,8 +36,11 @@ Course& CourseCont::getCourse(){
 }
 
 void CourseCont::prev(){
-<<<<<<< HEAD
-	--it;
+	if(it == courses.begin()){
+		it = courses.end();
+	}else{
+		--it;
+	}
 }
 
 void CourseCont::sort(){
@@ -49,11 +49,5 @@ void CourseCont::sort(){
 
 bool compareCourseRating(const Course &first, const Course &second){
 	return first.getRating() > second.getRating();
-=======
-	if(it == courses.begin()){
-		it = courses.end();
-	}else{
-		--it;
-	}
->>>>>>> master
 }
+	
