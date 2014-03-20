@@ -77,6 +77,36 @@ void CourseContFixture::testPrev(){
 	CPPUNIT_ASSERT(cc->getCourse().getName() == c1.getName());
 }
 
+void CourseContFixture::testBegin(){
+	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
+	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
+	cc->addCourse(c1);
+	cc->addCourse(c2);
+	cc->begin();
+	CPPUNIT_ASSERT(cc->getCourse().getStartTime() == c1.getStartTime());
+	CPPUNIT_ASSERT(cc->getCourse().getEndTime() == c1.getEndTime());
+	CPPUNIT_ASSERT(cc->getCourse().getStartTime() == c1.getStartTime());
+	CPPUNIT_ASSERT(cc->getCourse().getDays() == c1.getDays());
+	CPPUNIT_ASSERT(cc->getCourse().getName() == c1.getName());
+	CPPUNIT_ASSERT(cc->getCourse().getLoc() == c1.getLoc());
+	CPPUNIT_ASSERT(cc->getCourse().getId() == c1.getId());
+}
+
+void CourseContFixture::testEnd(){
+	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
+	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
+	cc->addCourse(c1);
+	cc->addCourse(c2);
+	cc->end();
+	CPPUNIT_ASSERT(cc->getCourse().getStartTime() == c2.getStartTime());
+	CPPUNIT_ASSERT(cc->getCourse().getEndTime() == c2.getEndTime());
+	CPPUNIT_ASSERT(cc->getCourse().getStartTime() == c2.getStartTime());
+	CPPUNIT_ASSERT(cc->getCourse().getDays() == c2.getDays());
+	CPPUNIT_ASSERT(cc->getCourse().getName() == c2.getName());
+	CPPUNIT_ASSERT(cc->getCourse().getLoc() == c2.getLoc());
+	CPPUNIT_ASSERT(cc->getCourse().getId() == c2.getId());
+}
+
 void CourseContFixture::testSort(){
 	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);

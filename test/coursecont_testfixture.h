@@ -13,6 +13,8 @@ public:
 	CPPUNIT_TEST(testReturnFirst);
 	CPPUNIT_TEST(testNext);
 	CPPUNIT_TEST(testPrev);
+	CPPUNIT_TEST(testBegin);
+	CPPUNIT_TEST(testEnd);
 	CPPUNIT_TEST(testSort);
 	CPPUNIT_TEST(testOverflow);
 	CPPUNIT_TEST_SUITE_END();
@@ -27,6 +29,8 @@ public:
 	void testReturnFirst();
 	void testNext();
 	void testPrev();
+	void testBegin();
+	void testEnd();
 	void testSort();
 	void testOverflow();
 
