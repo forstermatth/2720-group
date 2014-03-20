@@ -1,6 +1,7 @@
 #include "Course.h"
 #include "course_testfixture.h"
 #include "Exceptions.h"
+#include "Lab.h"
 
 void CourseFixture::setUp(){
 	c = new Course(1115, 1500, "TR", "course", "location", 894372);
@@ -47,4 +48,10 @@ void CourseFixture::testGetId(){
 void CourseFixture::testRating(){
 	c->setRating(5);
 	CPPUNIT_ASSERT(c->getRating() == 5);
+}
+
+void CourseFixture::testAddLab(){
+	Lab la(915, 1000, "F", "courselab", "labloc", 000101);
+	c->addLab(la);
+	CPPUNIT_ASSERT(c->firstLab().getName() == la.getName());
 }
