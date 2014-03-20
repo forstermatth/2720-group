@@ -50,4 +50,7 @@ void CourseCont::sort(){
 bool compareCourseRating(const Course &first, const Course &second){
 	return first.getRating() > second.getRating();
 }
-	
+
+int CourseCont::size(){
+	return courses.size();
+}	

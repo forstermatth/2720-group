@@ -32,6 +32,7 @@ public:
 	\param char the second character to compare
 	*/
 	int compareDays(char, char);
+
 private:
 
 };

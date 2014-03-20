@@ -37,12 +37,14 @@ public:
 	/// Return a reference to a course based on the current position of the iterator
 	Course& getCourse();
 
+	///Retuns the number of classes in the course container.
+	int size();
 protected:
 	list<Course> courses; ///< course container
 	list<Course>::iterator it; ///< course iterator
 };
 
-/*
+/**
 	returns true if first has a higher rating then second, false otherwise.
 */
 bool compareCourseRating(const Course &first, const Course &second);
