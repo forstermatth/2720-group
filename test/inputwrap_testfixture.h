@@ -4,7 +4,7 @@
 #include "InputWrap.h"
 #include <cppunit/extensions/HelperMacros.h>
 
-
+/// Test - InputWrap
 class InputWrapFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(InputWrapFixture);

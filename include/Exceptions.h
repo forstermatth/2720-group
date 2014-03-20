@@ -3,11 +3,13 @@
 
 #include <exception>
 
+/// General Exception for the program -  all customs should inherit from this
 class ScheduleException : public std::exception{
 public:
 	virtual const char* what() const noexcept = 0;
 };
 
+/// Exception to throw if there is an empty container
 class EmptyContainer : public ScheduleException{
 public:
 	virtual const char* what() const noexcept {
@@ -15,6 +17,7 @@ public:
 	}
 };
 
+/// Exception to throw if there is a time conflict
 class TimeConflict : public ScheduleException{
 public:
 	virtual const char* what() const noexcept {
@@ -22,6 +25,7 @@ public:
 	}
 };
 
+/// Exception to throw if there is a file problem
 class FileExcept : public ScheduleException{
 public:
 	virtual const char* what() const noexcept {
@@ -29,6 +33,7 @@ public:
 	}
 };
 
+/// Exception to throw if there is a structural parse problem
 class XmlParseExcept : public ScheduleException{
 public:
 	virtual const char* what() const noexcept {
@@ -36,6 +41,7 @@ public:
 	}
 };
 
+/// Exception to throw if an unkown node is encountered while parsing
 class UnknownNode : public ScheduleException{
 public:
 	virtual const char* what() const noexcept {
@@ -43,6 +49,7 @@ public:
 	}
 };
 
+/// Exception to throw if there is a bad time type passed
 class BadTime : public ScheduleException{
 public:
 	virtual const char* what() const noexcept {

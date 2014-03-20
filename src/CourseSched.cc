@@ -1,23 +1,12 @@
 #include "CourseSched.h"
 #include <iostream>
 #include <string>
+
 void CourseSched::addCourse(Course _course){
 	findConflict(_course);
 	
 	courses.push_back(_course);
 	it = courses.begin();
-}
-
-Course CourseSched::getCourse(){
-	return *it;
-}
-
-void CourseSched::prev(){
-	--it;
-}
-
-void CourseSched::next(){
-	++it;
 }
 
 void CourseSched::removeCourse(){

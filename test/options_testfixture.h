@@ -4,7 +4,7 @@
 #include "Options.h"
 #include <cppunit/extensions/HelperMacros.h>
 
-
+/// Test - Options
 class OptionsFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(OptionsFixture);

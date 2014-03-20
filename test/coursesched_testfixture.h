@@ -4,7 +4,7 @@
 #include "CourseSched.h"
 #include <cppunit/extensions/HelperMacros.h>
 
-
+/// Test - CourseSched
 class CourseSchedFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(CourseSchedFixture);
