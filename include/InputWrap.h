@@ -28,7 +28,7 @@ public:
 private:
 		std::vector<char> buffer; ///< the file buffer stored after parse
 		rapidxml::xml_document<> doc; ///< the DOM tree parsed
-		rapidxml::xml_node<> * root_node; ///the root node of the tree
+		rapidxml::xml_node<> * root_node; ///< the root node of the tree
 };
 
 #endif
