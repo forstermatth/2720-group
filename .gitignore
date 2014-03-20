@@ -241,3 +241,5 @@ pip-log.txt
 Doxyfile
 sched
 tests
+Vagrantfile
+setup-cpp.sh

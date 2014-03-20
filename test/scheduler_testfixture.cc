@@ -48,5 +48,5 @@ void SchedulerFixture::testCourseConflict(){
 	CourseSched *cs = sch->generateSchedule(cc, opts);
 	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
 	cs->next();
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c2.getId());
+	CPPUNIT_ASSERT(cs->getCourse().getId() == c3.getId());
 }
