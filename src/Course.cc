@@ -14,6 +14,6 @@ Lab Course::firstLab(){
 }
 
 Lab Course::lastLab(){
-	// std::list<Lab>::iterator iter = labs.end();
-	// return *--iter;
+	std::list<Lab>::iterator iter = labs.end();
+	return *--iter;
 }
