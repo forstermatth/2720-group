@@ -46,7 +46,7 @@ void InputWrapFixture::testPopulateCourse(){
 
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
-	CPPUNIT_ASSERT(cc.first().getName() == comp.getName());
+	CPPUNIT_ASSERT(cc.begin().getName() == comp.getName());
 	CPPUNIT_ASSERT(cc.getCourse().getStartTime() == comp.getStartTime());
 	CPPUNIT_ASSERT(cc.getCourse().getDays() == comp.getDays());
 	CPPUNIT_ASSERT(cc.getCourse().getLoc() == comp.getLoc());
@@ -64,7 +64,7 @@ void InputWrapFixture::testPopulateMultiCourses(){
 
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
-	CPPUNIT_ASSERT(cc.first().getName() == comp1.getName());
+	CPPUNIT_ASSERT(cc.begin().getName() == comp1.getName());
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp2.getName());
 	cc.next();

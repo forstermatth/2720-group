@@ -10,6 +10,7 @@ public:
 	CPPUNIT_TEST_SUITE(CourseContFixture);
 	CPPUNIT_TEST(testAddCourse);
 	CPPUNIT_TEST(testReturnLast);
+	CPPUNIT_TEST(testReturnFirst);
 	CPPUNIT_TEST(testNext);
 	CPPUNIT_TEST(testPrev);
 	CPPUNIT_TEST(testSort);
@@ -23,6 +24,7 @@ public:
 
 	void testAddCourse();
 	void testReturnLast();
+	void testReturnFirst();
 	void testNext();
 	void testPrev();
 	void testSort();

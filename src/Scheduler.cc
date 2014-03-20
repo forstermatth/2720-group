@@ -8,9 +8,9 @@
 CourseSched* Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
 	CourseSched *schedule = new CourseSched;
 	courseList.sort();
-	courseList.first();
+	courseList.begin();
 	std::cout << "Making a schedule.\n";
-	for(int i = 0; i < opts.getNumCourses() && courseList.getCourse() != courseList.last();){
+	for(int i = 0; i < opts.getNumCourses();){
 		std::cout << "Adding a course.\n";
 		try{
 			schedule->addCourse(courseList.getCourse());

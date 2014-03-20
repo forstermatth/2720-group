@@ -3,7 +3,6 @@
 #include "coursecont_testfixture.h"
 #include "Exceptions.h"
 
-
 void CourseContFixture::setUp(){
 	cc = new CourseCont();
 }
@@ -22,6 +21,21 @@ void CourseContFixture::testAddCourse(){
 	CPPUNIT_ASSERT(cc->first().getName() == c.getName());
 	CPPUNIT_ASSERT(cc->first().getLoc() == c.getLoc());
 	CPPUNIT_ASSERT(cc->first().getId() == c.getId());
+}
+
+
+void CourseContFixture::testReturnFirst(){
+	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
+	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
+	cc->addCourse(c1);
+	cc->addCourse(c2);
+	CPPUNIT_ASSERT(cc->first().getStartTime() == c1.getStartTime());
+	CPPUNIT_ASSERT(cc->first().getEndTime() == c1.getEndTime());
+	CPPUNIT_ASSERT(cc->first().getStartTime() == c1.getStartTime());
+	CPPUNIT_ASSERT(cc->first().getDays() == c1.getDays());
+	CPPUNIT_ASSERT(cc->first().getName() == c1.getName());
+	CPPUNIT_ASSERT(cc->first().getLoc() == c1.getLoc());
+	CPPUNIT_ASSERT(cc->first().getId() == c1.getId());
 }
 
 void CourseContFixture::testReturnLast(){
@@ -45,7 +59,7 @@ void CourseContFixture::testNext(){
 	cc->addCourse(c1);
 	cc->addCourse(c2);
 	cc->addCourse(c3);
-	cc->first();
+	cc->begin();
 	cc->next();
 	CPPUNIT_ASSERT(cc->getCourse().getName() == c2.getName());
 }
@@ -57,7 +71,7 @@ void CourseContFixture::testPrev(){
 	cc->addCourse(c1);
 	cc->addCourse(c2);
 	cc->addCourse(c3);
-	cc->first();
+	cc->begin();
 	cc->next();
 	cc->prev();
 	CPPUNIT_ASSERT(cc->getCourse().getName() == c1.getName());

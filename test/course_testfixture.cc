@@ -1,8 +1,11 @@
 #include "Course.h"
 #include "course_testfixture.h"
 #include "Exceptions.h"
+#include <iostream>
+using namespace std;
 
 void CourseFixture::setUp(){
+	cout << "CourseFixture\n";
 	c = new Course(1115, 1500, "TR", "course", "location", 894372);
 }
 

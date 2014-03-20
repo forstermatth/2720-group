@@ -19,11 +19,17 @@ public:
 	/** \param _course the course to add */
 	void addCourse(Course _course);
 
-	/// Moves the iterator to the first element of the container and returns it a reference to that object
+	/// Returns a reference to the first object
 	Course& first();
 
-	/// Moves the iterator to the last element of the containter and returns it a reference to that object
+	/// Returns a reference to the last object
 	Course& last();
+
+	/// Moves the iterator to the first element of the container and returns it a reference to that object
+	Course& begin();
+
+	/// Moves the iterator to the last element of the containter and returns it a reference to that object
+	Course& end();
 
 	/// Move the iterator one forward. If last element, will move to the front.
 	void next();

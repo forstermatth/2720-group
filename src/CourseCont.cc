@@ -1,6 +1,7 @@
 #include "CourseCont.h"
 #include "Course.h"
 #include "Exceptions.h"
+#include <iostream>
 
 CourseCont::CourseCont(){
 	it = courses.begin();
@@ -10,15 +11,24 @@ void CourseCont::addCourse(Course _course){
 	courses.push_back(_course);
 }
 
-Course& CourseCont::first(){
+Course& CourseCont::begin(){
 	it = courses.begin();
 	return *it;
 }
 
-Course& CourseCont::last(){
+Course& CourseCont::end(){
 	it = courses.end();
-	it--;
+	--it;
 	return *it;
+}
+
+Course& CourseCont::first(){
+	return *courses.begin();
+}
+
+Course& CourseCont::last(){
+	std::cout << "test\n";
+	return *(--courses.end());
 }
 
 void CourseCont::next(){
