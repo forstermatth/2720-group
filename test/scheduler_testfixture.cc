@@ -72,3 +72,23 @@ void SchedulerFixture::testNotEnoughCourses(){
 	CPPUNIT_ASSERT(cs->getCourse().getId() == c3.getId());
 	CPPUNIT_ASSERT(cs->size() == 2);
 }
+
+void SchedulerFixture::testCoursesWithPadding(){
+	list<unsigned int> requiredCouses;
+	CourseCont cc;
+	Options opts(5, requiredCouses, Times::None, 30, 0, 1);
+	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
+	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
+	Course c3(1030, 1015, "TR", "name", "loc 641", 462348);
+	c1.setRating(10);
+	c2.setRating(9);
+	c3.setRating(8);
+	cc.addCourse(c1);
+	cc.addCourse(c2);
+	cc.addCourse(c3);
+	CourseSched *cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
+	cs->next();
+	CPPUNIT_ASSERT(cs->getCourse().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs->size() == 2);
+}

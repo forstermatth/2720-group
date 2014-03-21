@@ -14,12 +14,14 @@ CourseSched* Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
 	for(int i = 0; i < opts.getNumCourses() && !reachEnd;){
 		reachEnd = courseList.getCourse().equal(courseList.last());
 		try{
+			courseList.getCourse().addPadding(opts.getBreakPadding());
 			schedule->addCourse(courseList.getCourse());
 			courseList.next();
 			i++;
 		}catch(const TimeConflict &expt){
 			courseList.next();
 		}catch(const EmptyContainer &epct){
+			break;
 		}
 	}
 	
