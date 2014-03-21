@@ -51,3 +51,7 @@ bool Course::equal(Course& crs){
 		&& crs.getId() == courseId
 		&& crs.getLoc() == courseLoc);
 }
+
+void Course::addPadding(unsigned int _padding){
+
+}

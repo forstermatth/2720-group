@@ -18,6 +18,7 @@ public:
 	CPPUNIT_TEST(testRating);
 	CPPUNIT_TEST(testEqual);
 	CPPUNIT_TEST(testNotEqual);
+	CPPUNIT_TEST(testAddPadding);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Course * c;
@@ -35,6 +36,7 @@ public:
 	void testRating();
 	void testEqual();
 	void testNotEqual();
+	void testAddPadding();
 };
 
 #endif
