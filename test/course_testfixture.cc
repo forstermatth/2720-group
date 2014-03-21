@@ -1,11 +1,8 @@
 #include "Course.h"
 #include "course_testfixture.h"
 #include "Exceptions.h"
-#include <iostream>
-using namespace std;
 
 void CourseFixture::setUp(){
-	cout << "CourseFixture\n";
 	c = new Course(1115, 1500, "TR", "course", "location", 894372);
 }
 
@@ -50,4 +47,15 @@ void CourseFixture::testGetId(){
 void CourseFixture::testRating(){
 	c->setRating(5);
 	CPPUNIT_ASSERT(c->getRating() == 5);
+}
+
+void CourseFixture::testEqual(){
+	Course co(945, 1215, "MWF", "coursename", "courseloc", 788934);
+	CPPUNIT_ASSERT(co.equal(co));
+}
+
+void CourseFixture::testNotEqual(){
+	Course c0(945, 1215, "MWF", "coursename", "courseloc", 788934);
+	Course c1(1300, 1400, "TR", "name3", "loc 642", 43588934);
+	CPPUNIT_ASSERT(!c0.equal(c1));
 }

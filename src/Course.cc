@@ -42,3 +42,12 @@ void Course::setRating(unsigned int _rating){
 unsigned int Course::getRating() const{
 	return rating;
 }
+
+bool Course::equal(Course& crs){
+	return (crs.getEndTime() == endTime
+		&& crs.getStartTime() == startTime
+		&& crs.getDays() == days
+		&& crs.getName() == courseName
+		&& crs.getId() == courseId
+		&& crs.getLoc() == courseLoc);
+}

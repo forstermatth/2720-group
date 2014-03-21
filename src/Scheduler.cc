@@ -9,17 +9,19 @@ CourseSched* Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
 	CourseSched *schedule = new CourseSched;
 	courseList.sort();
 	courseList.begin();
-	std::cout << "Making a schedule.\n";
-	for(int i = 0; i < opts.getNumCourses();){
-		std::cout << "Adding a course.\n";
+	bool reachEnd = false;
+
+	for(int i = 0; i < opts.getNumCourses() && !reachEnd;){
+		reachEnd = courseList.getCourse().equal(courseList.last());
 		try{
 			schedule->addCourse(courseList.getCourse());
 			courseList.next();
 			i++;
 		}catch(const TimeConflict &expt){
 			courseList.next();
+		}catch(const EmptyContainer &epct){
 		}
 	}
-	std::cout << "schedule size: " << schedule->size() << std::endl;
+	
 	return schedule;
 }

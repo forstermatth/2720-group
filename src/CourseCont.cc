@@ -1,7 +1,6 @@
 #include "CourseCont.h"
 #include "Course.h"
 #include "Exceptions.h"
-#include <iostream>
 
 CourseCont::CourseCont(){
 	it = courses.begin();
@@ -27,7 +26,6 @@ Course& CourseCont::first(){
 }
 
 Course& CourseCont::last(){
-	std::cout << "test\n";
 	return *(--courses.end());
 }
 

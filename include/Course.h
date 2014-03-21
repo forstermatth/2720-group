@@ -43,8 +43,12 @@ public:
 	unsigned int getRating() const;
 
 	/// sets the course rating
-	/** \oaram _rating the rating to set for the course */
+	/** \param _rating the rating to set for the course */
 	void setRating(unsigned int _rating);
+
+	/// returns true if the courses are the same, false otherwise
+	/** \param crs the course to compare against */
+	bool equal(Course& crs);
 
 private:
 	unsigned int startTime; ///< the course start time

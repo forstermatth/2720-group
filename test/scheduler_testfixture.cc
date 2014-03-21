@@ -30,6 +30,7 @@ void SchedulerFixture::testAddCourses(){
 	CPPUNIT_ASSERT(cs->getCourse().getId() == c2.getId());
 	cs->next();
 	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
+	CPPUNIT_ASSERT(cs->size() == 2);
 }
 
 void SchedulerFixture::testCourseConflict(){
@@ -49,6 +50,7 @@ void SchedulerFixture::testCourseConflict(){
 	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
 	cs->next();
 	CPPUNIT_ASSERT(cs->getCourse().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs->size() == 2);
 }
 
 void SchedulerFixture::testNotEnoughCourses(){

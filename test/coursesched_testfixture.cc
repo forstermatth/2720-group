@@ -2,7 +2,7 @@
 #include "coursesched_testfixture.h"
 #include "Exceptions.h"
 #include "Course.h"
-#include <iostream>
+
 void CourseSchedFixture::setUp(){
 	cs = new CourseSched();
 }
