@@ -15,7 +15,9 @@ public:
 
 	/// Constructor - call the parent constructor
 	Course(unsigned int _startTime, unsigned int _endTime, std::string _days, std::string _courseName, std::string _courseLoc, unsigned int _courseId) :
-		CourseBase(_startTime, _endTime, _days, _courseName, _courseLoc, _courseId) {};
+		CourseBase(_startTime, _endTime, _days, _courseName, _courseLoc, _courseId) {
+			it = labs.begin();
+		};
 
 	void addLab(Lab _lab);
 	Lab firstLab();

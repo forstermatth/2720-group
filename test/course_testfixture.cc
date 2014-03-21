@@ -91,15 +91,15 @@ void CourseFixture::testPrev(){
 	CPPUNIT_ASSERT(c->getLab().getName() == l2.getName());
 }
 
-// void CourseFixture::testOverflow(){
-// 	Lab l1;
-// 	Lab l2;
+void CourseFixture::testOverflow(){
+	Lab l1;
+	Lab l2;
 
-// 	c->addCourse(l1);
-// 	c->addCourse(l2);
-// 	CPPUNIT_ASSERT_NO_THROW(cc->getCourse());
-// 	CPPUNIT_ASSERT_NO_THROW(cc->next());
-// 	CPPUNIT_ASSERT_NO_THROW(cc->next());
-// 	CPPUNIT_ASSERT_NO_THROW(cc->next());
-
-// }
+	c->addLab(l1);
+	c->addLab(l2);
+	c->labBegin();
+	CPPUNIT_ASSERT_NO_THROW(c->getLab());
+	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
+	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
+	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
+}

@@ -1,4 +1,5 @@
 #include "Course.h"
+#include "Exceptions.h"
 
 void Course::labBegin(){
 	it = labs.begin();
@@ -33,5 +34,8 @@ void Course::prevLab(){
 }
 
 Lab Course::getLab(){
+	if(labs.empty()){
+		throw EmptyContainer();
+	}
 	return *it;
 }
