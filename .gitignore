@@ -241,3 +241,4 @@ pip-log.txt
 Doxyfile
 sched
 tests
+.vagrant/
