@@ -64,5 +64,5 @@ void CourseFixture::testAddPadding(){
 	Course c0(945, 1215, "MWF", "coursename", "courseloc", 788934);
 	c0.addPadding(15);
 	CPPUNIT_ASSERT(c0.getStartTime() == 930);
-	CPPUNIT_ASSERT(c0.getStartTime() == 1230);
+	CPPUNIT_ASSERT(c0.getEndTime() == 1230);
 }

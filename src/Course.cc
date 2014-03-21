@@ -53,5 +53,6 @@ bool Course::equal(Course& crs){
 }
 
 void Course::addPadding(unsigned int _padding){
-
+	startTime -= _padding;
+	endTime += _padding;
 }
