@@ -20,10 +20,16 @@ Lab Course::lastLab(){
 
 void Course::nextLab(){
 	it++;
+	if( it == labs.end()){
+		it--;
+	}
 }
 
 void Course::prevLab(){
-	
+	if(it == labs.begin()){
+		exit;
+	}
+	it--;
 }
 
 Lab Course::getLab(){
