@@ -152,7 +152,7 @@ CourseCont InputWrap::setCourses(){
 			std::string cval = datanode->value();
 
 			if(cnode == "Lab"){
-				haslab == true;
+				haslab = true;
 			}else{
 				setVars(cnode, cval, cname, cstart, cend, cdays, cloc, cid);
 			}

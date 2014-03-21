@@ -85,6 +85,7 @@ void InputWrapFixture::testParseLab(){
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 
 	CPPUNIT_ASSERT_NO_THROW(cc.first().labBegin());
+	CPPUNIT_ASSERT(cc.first().hasLab() == 1);
 	CPPUNIT_ASSERT_NO_THROW(la = cc.first().getLab());
 
 	CPPUNIT_ASSERT(la.getName() == lcomp.getName());
