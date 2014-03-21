@@ -94,3 +94,33 @@ void InputWrapFixture::testParseLab(){
 	CPPUNIT_ASSERT(la.getLoc() == lcomp.getLoc());
 	CPPUNIT_ASSERT(la.getId() == lcomp.getId());
 }
+
+void InputWrapFixture::testMultiLabs(){
+	std::string str = "testfiles/testinput.xml";
+	CourseCont cc;
+	Course parsed;
+	Lab lcomp1(925, 1030, "MWF", "course1lab", "AH250", 1920933);
+	Lab lcomp2(1040, 1300, "MWF", "course3lab1", "AH250", 1920931);
+	Lab lcomp3(1140, 1400, "TR", "course3lab2", "AH250", 1920934);
+	Lab lcomp4(1240, 1500, "MWF", "course3lab3", "AH250", 1920935);
+
+	input->parse(str);
+	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
+
+	CPPUNIT_ASSERT_NO_THROW(cc.first().labBegin());
+	CPPUNIT_ASSERT(cc.first().hasLab() == 1);
+
+	cc.next();
+	cc.next();
+
+	parsed = cc.getCourse();
+	CPPUNIT_ASSERT(parsed.hasLab() == 1);
+	CPPUNIT_ASSERT_NO_THROW(parsed.labBegin());
+
+	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp2.getName());
+	parsed.nextLab();
+	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp3.getName());
+	parsed.nextLab();
+	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp4.getName());
+
+}
