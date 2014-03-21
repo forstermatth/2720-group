@@ -26,6 +26,7 @@ public:
 	void nextLab();
 	void prevLab();
 	Lab getLab();
+	int hasLab();
 
 private:
 	std::list<Lab> labs;

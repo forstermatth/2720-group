@@ -103,3 +103,10 @@ void CourseFixture::testOverflow(){
 	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
 	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
 }
+
+void CourseFixture::testHasLab(){
+	Lab la(915, 1000, "F", "courselab", "labloc", 000101);
+	CPPUNIT_ASSERT(c->hasLab() == 0);
+	c->addLab(la);
+	CPPUNIT_ASSERT(c->hasLab() == 1);
+}

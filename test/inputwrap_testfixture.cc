@@ -4,6 +4,7 @@
 #include "Options.h"
 #include "CourseCont.h"
 #include "Course.h"
+#include "Lab.h"
 
 #include <string>
 
@@ -72,4 +73,23 @@ void InputWrapFixture::testPopulateMultiCourses(){
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp4.getName());
 
+}
+
+void InputWrapFixture::testParseLab(){
+	std::string str = "testfiles/testinput.xml";
+	CourseCont cc;
+	Lab la;
+	Lab lcomp(1040, 1200, "MWF", "course1lab", "AH250", 1920933);
+
+	input->parse(str);
+	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
+
+	CPPUNIT_ASSERT_NO_THROW(cc.first().labBegin());
+	CPPUNIT_ASSERT_NO_THROW(la = cc.first().getLab());
+
+	CPPUNIT_ASSERT(la.getName() == lcomp.getName());
+	CPPUNIT_ASSERT(la.getStartTime() == lcomp.getStartTime());
+	CPPUNIT_ASSERT(la.getDays() == lcomp.getDays());
+	CPPUNIT_ASSERT(la.getLoc() == lcomp.getLoc());
+	CPPUNIT_ASSERT(la.getId() == lcomp.getId());
 }

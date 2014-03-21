@@ -21,6 +21,7 @@ public:
 	CPPUNIT_TEST(testNext);
 	CPPUNIT_TEST(testPrev);
 	CPPUNIT_TEST(testOverflow);
+	CPPUNIT_TEST(testHasLab);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Course * c;
@@ -41,6 +42,7 @@ public:
 	void testNext();
 	void testPrev();
 	void testOverflow();
+	void testHasLab();
 };
 
 #endif

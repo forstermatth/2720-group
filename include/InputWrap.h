@@ -4,10 +4,12 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <list>
 #include <iostream>
 #include "rapidxml/rapidxml.hpp"
 #include "Options.h"
 #include "CourseCont.h"
+#include "Lab.h"
 
 
 /**
@@ -29,6 +31,11 @@ private:
 		std::vector<char> buffer; ///< the file buffer stored after parse
 		rapidxml::xml_document<> doc; ///< the DOM tree parsed
 		rapidxml::xml_node<> * root_node; ///< the root node of the tree
+
+		void setVars(std::string node, std::string value, std::string &_name, \
+					 unsigned int &_start, unsigned int &_end, \
+					 std::string &_days, std::string &_loc, unsigned int &_id);
+
 };
 
 #endif

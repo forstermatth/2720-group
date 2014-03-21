@@ -39,3 +39,10 @@ Lab Course::getLab(){
 	}
 	return *it;
 }
+
+int Course::hasLab(){
+	if(labs.empty()){
+		return 0;
+	}
+	return 1;
+}

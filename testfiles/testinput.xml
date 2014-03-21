@@ -18,6 +18,14 @@
 		<Days>MWF</Days>
 		<Location>AH250</Location>
 		<id>1920932</id>
+		<Lab>
+			<Name>course1lab</Name>
+			<StartTime>1040</StartTime>
+			<EndTime>1200</EndTime>
+			<Days>MWF</Days>
+			<Location>AH250</Location>
+			<id>1920933</id>
+		</Lab>
 	</Course>
 	<Course>
 		<Name>course2</name>
