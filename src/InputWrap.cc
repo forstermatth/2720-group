@@ -2,6 +2,8 @@
 #include "Exceptions.h"
 #include <cstdlib>
 
+#include <iostream>
+
 void InputWrap::parse(std::string _input){
 	std::ifstream inputfile;
 
@@ -102,6 +104,10 @@ Options InputWrap::setOptions(){
 CourseCont InputWrap::setCourses(){
 	CourseCont cc;
 
+	//Temporary Storage
+	std::list<Lab> labs;
+	std::list<Course> courses;
+
 	//start at courses header
 	try{
 		root_node = doc.first_node("Courses");
@@ -130,39 +136,92 @@ CourseCont InputWrap::setCourses(){
 	
 
 	do{
-		std::string cname;
-		unsigned int cstart;
-		unsigned int cend;
-		std::string cdays;
-		std::string cloc;
-		unsigned int cid;
+		std::string cname = "";
+		unsigned int cstart = 0;
+		unsigned int cend = 0;
+		std::string cdays = "";
+		std::string cloc = "";
+		unsigned int cid = 0;
+
+		bool haslab = false;
 		
 		datanode = coursenode->first_node();
 		do{
-			std::string name = datanode->name();
-			if(name == (std::string) "Name"){
-				cname = datanode->value();
-			}else if(name == "StartTime"){
-				cstart = atoi(datanode->value());
-			}else if(name == "EndTime"){
-				cend = atoi(datanode->value());
-			}else if(name == "Days"){
-				cdays = datanode->value();
-			}else if(name == "Location"){
-				cloc = datanode->value();
-			}else if(name == "id"){
-				cid = atoi(datanode->value());
+
+			std::string cnode = datanode->name();
+			std::string cval = datanode->value();
+
+			if(cnode == "Lab"){
+				haslab = true;
 			}else{
-				throw UnknownNode();
+				setVars(cnode, cval, cname, cstart, cend, cdays, cloc, cid);
 			}
+			
 			datanode = datanode->next_sibling();
 		}while(datanode != 0);
 
-		cc.addCourse(Course(cstart, cend, cdays, cname, cloc, cid));
+		courses.push_back(Course(cstart, cend, cdays, cname, cloc, cid));
+
+		if(haslab){
+
+			datanode = coursenode->first_node("Lab");
+
+			do{
+
+				std::string lname = "";
+				unsigned int lstart = 0;
+				unsigned int lend = 0;
+				std::string ldays = "";
+				std::string lloc = "";
+				unsigned int lid = 0;
+				
+				rapidxml::xml_node<> * labdata = datanode->first_node();
+				do{
+
+					std::string lnode = labdata->name();
+					std::string labval = labdata->value();
+					setVars(lnode, labval, lname, lstart, lend, ldays, lloc, lid);
+
+					labdata = labdata->next_sibling();
+				}while(labdata != 0);
+
+				courses.back().addLab(Lab(lstart, lend, ldays, lname, lloc, lid));
+
+				datanode = datanode->next_sibling("Lab");
+			}while(datanode != 0);
+			
+		}
+
+
 		coursenode = coursenode->next_sibling();
 	}while(coursenode != 0);
 
-
+	for(std::list<Course>::iterator it = courses.begin(); it != courses.end(); it++){
+		cc.addCourse(*it);
+	}
 
 	return cc;
+}
+
+
+void InputWrap::setVars(std::string node, std::string value, std::string &_name, \
+            		    unsigned int &_start, unsigned int &_end, \
+					    std::string &_days, std::string &_loc, unsigned int &_id){
+
+	if(node == (std::string) "Name"){
+		_name = value;
+	}else if(node == "StartTime"){
+		_start = atoi(value.c_str());
+	}else if(node == "EndTime"){
+		_end = atoi(value.c_str());
+	}else if(node == "Days"){
+		_days = value;
+	}else if(node == "Location"){
+		_loc = value;
+	}else if(node == "id"){
+		_id = atoi(value.c_str());
+	}else{
+		throw UnknownNode();
+	}
+
 }

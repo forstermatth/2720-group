@@ -1,4 +1,5 @@
 
+#include "lab_testfixture.h"
 #include "course_testfixture.h"
 #include "coursecont_testfixture.h"
 #include "coursesched_testfixture.h"
@@ -14,6 +15,7 @@
 int main(){
 	
 	CppUnit::TextUi::TestRunner runnner;
+	runnner.addTest(LabFixture::suite());
 	runnner.addTest(CourseFixture::suite());
 	runnner.addTest(CourseContFixture::suite());
 	runnner.addTest(CourseSchedFixture::suite());

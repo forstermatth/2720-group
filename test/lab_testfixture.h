@@ -1,13 +1,13 @@
-#ifndef __COURSE_TESTFIXTURE_H
-#define __COURSE_TESTFIXTURE_H
+#ifndef __LAB_TESTFIXTURE_H
+#define __LAB_TESTFIXTURE_H
 
-#include "Course.h"
 #include <cppunit/extensions/HelperMacros.h>
+#include "Lab.h"
 
-///Test - Course
-class CourseFixture : public CppUnit::TestFixture {
+///Test - Lab
+class LabFixture : public CppUnit::TestFixture{
 public:
-	CPPUNIT_TEST_SUITE(CourseFixture);
+	CPPUNIT_TEST_SUITE(LabFixture);
 	CPPUNIT_TEST(testGetEndTime);
 	CPPUNIT_TEST(testGetStartTime);
 	CPPUNIT_TEST(testConstructor);
@@ -16,15 +16,9 @@ public:
 	CPPUNIT_TEST(testGetLoc);
 	CPPUNIT_TEST(testGetId);
 	CPPUNIT_TEST(testRating);
-	CPPUNIT_TEST(testAddLab);
-	CPPUNIT_TEST(testReturnLast);
-	CPPUNIT_TEST(testNext);
-	CPPUNIT_TEST(testPrev);
-	CPPUNIT_TEST(testOverflow);
-	CPPUNIT_TEST(testHasLab);
 	CPPUNIT_TEST_SUITE_END();
 private:
-	Course * c;
+	Lab * l;
 public:
 	void setUp();
 	void tearDown();
@@ -37,12 +31,8 @@ public:
 	void testGetLoc();
 	void testGetId();
 	void testRating();
-	void testAddLab();
-	void testReturnLast();
-	void testNext();
-	void testPrev();
-	void testOverflow();
-	void testHasLab();
 };
+
+
 
 #endif

@@ -1,44 +1,48 @@
 #include "Course.h"
-#include <string>
-using namespace std;
+#include "Exceptions.h"
 
-Course::Course(unsigned int _startTime, unsigned int _endTime, string _days, string _courseName, string _courseLoc, unsigned int _courseId){
-	startTime = _startTime;
-	endTime = _endTime;
-	days = _days;
-	courseName = _courseName;
-	courseLoc = _courseLoc;
-	courseId = _courseId;
+void Course::labBegin(){
+	it = labs.begin();
 }
 
-unsigned int Course::getEndTime() const{
-	return endTime;
+void Course::addLab(Lab _lab){
+	labs.push_back(_lab);
 }
 
-unsigned int Course::getStartTime() const{
-	return startTime;
+Lab Course::firstLab(){
+	std::list<Lab>::iterator iter = labs.begin();
+	return *iter;
 }
 
-string Course::getDays() const{
-	return days;
+Lab Course::lastLab(){
+	std::list<Lab>::iterator iter = labs.end();
+	return *--iter;
 }
 
-string Course::getName() const{
-	return courseName;
+void Course::nextLab(){
+	it++;
+	if( it == labs.end()){
+		it--;
+	}
 }
 
-string Course::getLoc() const{
-	return courseLoc;
+void Course::prevLab(){
+	if(it == labs.begin()){
+		exit;
+	}
+	it--;
 }
 
-unsigned int Course::getId() const{
-	return courseId;
+Lab Course::getLab(){
+	if(labs.empty()){
+		throw EmptyContainer();
+	}
+	return *it;
 }
 
-void Course::setRating(unsigned int _rating){
-	rating = _rating;
-}
-
-unsigned int Course::getRating() const{
-	return rating;
+int Course::hasLab(){
+	if(labs.empty()){
+		return 0;
+	}
+	return 1;
 }

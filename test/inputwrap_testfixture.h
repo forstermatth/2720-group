@@ -12,6 +12,8 @@ public:
 	CPPUNIT_TEST(testPopulateOptions);
 	CPPUNIT_TEST(testPopulateCourse);
 	CPPUNIT_TEST(testPopulateMultiCourses);
+	CPPUNIT_TEST(testParseLab);
+	CPPUNIT_TEST(testMultiLabs);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	InputWrap* input;
@@ -23,6 +25,8 @@ public:
 	void testPopulateOptions();
 	void testPopulateCourse();
 	void testPopulateMultiCourses();
+	void testParseLab();
+	void testMultiLabs();
 
 };
 

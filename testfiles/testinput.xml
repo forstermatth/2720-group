@@ -18,6 +18,14 @@
 		<Days>MWF</Days>
 		<Location>AH250</Location>
 		<id>1920932</id>
+		<Lab>
+			<Name>course1lab</Name>
+			<StartTime>1040</StartTime>
+			<EndTime>1200</EndTime>
+			<Days>MWF</Days>
+			<Location>AH250</Location>
+			<id>1920933</id>
+		</Lab>
 	</Course>
 	<Course>
 		<Name>course2</name>
@@ -34,6 +42,30 @@
 		<Days></Days>
 		<Location></Location>
 		<id></id>
+		<Lab>
+			<Name>course3lab1</Name>
+			<StartTime>1040</StartTime>
+			<EndTime>1300</EndTime>
+			<Days>MWF</Days>
+			<Location>AH250</Location>
+			<id>1920931</id>
+		</Lab>
+		<Lab>
+			<Name>course3lab2</Name>
+			<StartTime>1140</StartTime>
+			<EndTime>1400</EndTime>
+			<Days>TR</Days>
+			<Location>AH250</Location>
+			<id>1920933</id>
+		</Lab>
+		<Lab>
+			<Name>course3lab3</Name>
+			<StartTime>1240</StartTime>
+			<EndTime>1500</EndTime>
+			<Days>MWF</Days>
+			<Location>AH250</Location>
+			<id>1920933</id>
+		</Lab>
 	</Course>
 	<Course>
 		<Name>course4</name>
