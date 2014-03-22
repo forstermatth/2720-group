@@ -13,6 +13,10 @@ public:
 	/// Constructor - call the parent constructor
 	Course() : CourseBase() {}
 
+	Course(const Course& _course) : CourseBase(_course) { labs = _course.labs; it = _course.it; }
+
+	Course& operator= (const Course& _course);
+
 	/// Constructor - call the parent constructor
 	Course(unsigned int _startTime, unsigned int _endTime, std::string _days, std::string _courseName, std::string _courseLoc, unsigned int _courseId) :
 		CourseBase(_startTime, _endTime, _days, _courseName, _courseLoc, _courseId) {

@@ -109,6 +109,7 @@ void CourseFixture::testHasLab(){
 	CPPUNIT_ASSERT(c->hasLab() == 0);
 	c->addLab(la);
 	CPPUNIT_ASSERT(c->hasLab() == 1);
+}
 
 void CourseFixture::testEqual(){
 	Course co(945, 1215, "MWF", "coursename", "courseloc", 788934);

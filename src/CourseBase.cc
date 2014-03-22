@@ -42,3 +42,14 @@ void CourseBase::setRating(unsigned int _rating){
 unsigned int CourseBase::getRating() const{
 	return rating;
 }
+
+CourseBase& CourseBase::operator= (const CourseBase& rhs){
+	this->startTime = rhs.getStartTime();
+	this->endTime = rhs.getEndTime();
+	this->days = rhs.getDays();
+	this->courseName = rhs.getName();
+	this->courseLoc = rhs.getLoc();
+	this->courseId = rhs.getId();
+
+	return *this;
+}

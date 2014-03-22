@@ -28,7 +28,7 @@ void Course::nextLab(){
 
 void Course::prevLab(){
 	if(it == labs.begin()){
-		exit;
+		return;
 	}
 	it--;
 }
@@ -45,6 +45,7 @@ int Course::hasLab(){
 		return 0;
 	}
 	return 1;
+}
 
 bool Course::equal(Course& crs){
 	return (crs.getEndTime() == endTime
@@ -60,3 +61,13 @@ void Course::addPadding(unsigned int _padding){
 	endTime += _padding;
 
 }
+
+Course& Course::operator= (const Course& _course){
+	CourseBase::operator=(_course);
+	this->labs = _course.labs;
+	this->it = _course.it;
+
+	return *this;
+}
+
+

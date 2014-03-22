@@ -20,6 +20,18 @@ public:
 	*/
 	CourseBase(unsigned int _startTime, unsigned int _endTime, std::string _days, std::string _courseName, std::string _courseLoc, unsigned int _courseId);
 	
+	CourseBase(const CourseBase& _course){
+		startTime = _course.startTime;
+		endTime =  _course.endTime;
+		days =  _course.days;
+		courseName =  _course.courseName;
+		courseLoc =  _course.courseLoc;
+		courseId = _course.courseId;
+		rating = _course.rating;
+	}
+
+	CourseBase& operator= (const CourseBase& rhs);
+
 	/// Constructor - does nothing
 	CourseBase(){};
 
