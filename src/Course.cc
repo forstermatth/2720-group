@@ -47,6 +47,10 @@ int Course::hasLab(){
 	return 1;
 }
 
+int Course::labsize(){
+	return labs.size();
+}
+
 bool Course::equal(Course& crs){
 	return (crs.getEndTime() == endTime
 		&& crs.getStartTime() == startTime
@@ -63,7 +67,8 @@ void Course::addPadding(unsigned int _padding){
 }
 
 Course& Course::operator= (const Course& _course){
-	CourseBase::operator=(_course);
+
+	this->CourseBase::operator=(_course);
 	this->labs = _course.labs;
 	this->it = _course.it;
 

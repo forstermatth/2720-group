@@ -41,6 +41,14 @@ public:
 	}
 };
 
+/// Exception to throw if node is not set with a value
+class NoValue : public ScheduleException{
+public:
+	virtual const char* what() const noexcept {
+		return "No value for node";
+	}
+};
+
 /// Exception to throw if an unkown node is encountered while parsing
 class UnknownNode : public ScheduleException{
 public:

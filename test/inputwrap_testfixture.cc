@@ -47,7 +47,9 @@ void InputWrapFixture::testPopulateCourse(){
 
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
+
 	CPPUNIT_ASSERT(cc.begin().getName() == comp.getName());
+	std::cout << "\nPARSED: " << cc.begin().getName() << " = " << comp.getName();
 	CPPUNIT_ASSERT(cc.getCourse().getStartTime() == comp.getStartTime());
 	CPPUNIT_ASSERT(cc.getCourse().getDays() == comp.getDays());
 	CPPUNIT_ASSERT(cc.getCourse().getLoc() == comp.getLoc());
@@ -66,12 +68,16 @@ void InputWrapFixture::testPopulateMultiCourses(){
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 	CPPUNIT_ASSERT(cc.begin().getName() == comp1.getName());
+	std::cout << "\nPARSED: " << cc.begin().getName() << " = " << comp1.getName();
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp2.getName());
+	std::cout << "\nPARSED: " << cc.getCourse().getName() << " = " << comp2.getName();
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp3.getName());
+	std::cout << "\nPARSED: " << cc.getCourse().getName() << " = " << comp3.getName();
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp4.getName());
+	std::cout << "\nPARSED: " << cc.getCourse().getName() << " = " << comp4.getName();
 
 }
 
@@ -95,6 +101,26 @@ void InputWrapFixture::testParseLab(){
 	CPPUNIT_ASSERT(la.getId() == lcomp.getId());
 }
 
+void InputWrapFixture::testNumberCourses(){
+	std::string str = "testfiles/testinput.xml";
+	CourseCont cc;
+	input->parse(str);
+	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
+	CPPUNIT_ASSERT(cc.size() == 4);
+}
+
+void InputWrapFixture::testNumberLabs(){
+	std::string str = "testfiles/testinput.xml";
+	CourseCont cc;
+	input->parse(str);
+	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
+	
+	CPPUNIT_ASSERT(cc.begin().labsize() == 3);
+	cc.next();
+	cc.next();
+	CPPUNIT_ASSERT(cc.getCourse().labsize() == 3);
+}
+
 void InputWrapFixture::testMultiLabs(){
 	std::string str = "testfiles/testinput.xml";
 	CourseCont cc;
@@ -113,11 +139,12 @@ void InputWrapFixture::testMultiLabs(){
 	cc.next();
 	cc.next();
 
-	parsed = cc.getCourse();
+	parsed = cc.first();
+
 	CPPUNIT_ASSERT(parsed.hasLab() == 1);
 	CPPUNIT_ASSERT_NO_THROW(parsed.labBegin());
 
-	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp2.getName());
+	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp1.getName());
 	parsed.nextLab();
 	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp3.getName());
 	parsed.nextLab();

@@ -31,6 +31,7 @@ public:
 	void prevLab();
 	Lab getLab();
 	int hasLab();
+	int labsize();
 
 	/// returns true if the courses are the same, false otherwise
 	/** \param crs the course to compare against */

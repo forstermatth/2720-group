@@ -208,6 +208,10 @@ void InputWrap::setVars(std::string node, std::string value, std::string &_name,
             		    unsigned int &_start, unsigned int &_end, \
 					    std::string &_days, std::string &_loc, unsigned int &_id){
 
+	if(value.empty()){
+		throw NoValue();
+	}
+
 	if(node == (std::string) "Name"){
 		_name = value;
 	}else if(node == "StartTime"){

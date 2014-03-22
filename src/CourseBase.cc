@@ -44,6 +44,7 @@ unsigned int CourseBase::getRating() const{
 }
 
 CourseBase& CourseBase::operator= (const CourseBase& rhs){
+	
 	this->startTime = rhs.getStartTime();
 	this->endTime = rhs.getEndTime();
 	this->days = rhs.getDays();
