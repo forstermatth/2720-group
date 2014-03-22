@@ -1,4 +1,5 @@
 #include "CourseCont.h"
+#include "Course.h"
 #include "Exceptions.h"
 
 CourseCont::CourseCont(){
@@ -9,15 +10,23 @@ void CourseCont::addCourse(Course _course){
 	courses.push_back(_course);
 }
 
-Course& CourseCont::first(){
+Course& CourseCont::begin(){
 	it = courses.begin();
 	return *it;
 }
 
-Course& CourseCont::last(){
+Course& CourseCont::end(){
 	it = courses.end();
-	it--;
+	--it;
 	return *it;
+}
+
+Course& CourseCont::first(){
+	return *courses.begin();
+}
+
+Course& CourseCont::last(){
+	return *(--courses.end());
 }
 
 void CourseCont::next(){
@@ -41,3 +50,15 @@ void CourseCont::prev(){
 		--it;
 	}
 }
+
+void CourseCont::sort(){
+	courses.sort(compareCourseRating);	
+}
+
+bool compareCourseRating(const Course &first, const Course &second){
+	return first.getRating() > second.getRating();
+}
+
+int CourseCont::size(){
+	return courses.size();
+}	

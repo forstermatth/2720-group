@@ -242,3 +242,6 @@ Doxyfile
 sched
 tests
 .vagrant/
+Vagrantfile
+setup-cpp.sh
+

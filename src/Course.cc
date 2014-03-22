@@ -45,4 +45,18 @@ int Course::hasLab(){
 		return 0;
 	}
 	return 1;
+
+bool Course::equal(Course& crs){
+	return (crs.getEndTime() == endTime
+		&& crs.getStartTime() == startTime
+		&& crs.getDays() == days
+		&& crs.getName() == courseName
+		&& crs.getId() == courseId
+		&& crs.getLoc() == courseLoc);
+}
+
+void Course::addPadding(unsigned int _padding){
+	startTime -= _padding;
+	endTime += _padding;
+
 }

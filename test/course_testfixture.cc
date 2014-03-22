@@ -109,4 +109,22 @@ void CourseFixture::testHasLab(){
 	CPPUNIT_ASSERT(c->hasLab() == 0);
 	c->addLab(la);
 	CPPUNIT_ASSERT(c->hasLab() == 1);
+
+void CourseFixture::testEqual(){
+	Course co(945, 1215, "MWF", "coursename", "courseloc", 788934);
+	CPPUNIT_ASSERT(co.equal(co));
+}
+
+void CourseFixture::testNotEqual(){
+	Course c0(945, 1215, "MWF", "coursename", "courseloc", 788934);
+	Course c1(1300, 1400, "TR", "name3", "loc 642", 43588934);
+	CPPUNIT_ASSERT(!c0.equal(c1));
+}
+
+void CourseFixture::testAddPadding(){
+	Course c0(945, 1215, "MWF", "coursename", "courseloc", 788934);
+	c0.addPadding(15);
+	CPPUNIT_ASSERT(c0.getStartTime() == 930);
+	CPPUNIT_ASSERT(c0.getEndTime() == 1230);
+
 }
