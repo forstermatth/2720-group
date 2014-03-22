@@ -65,4 +65,12 @@ public:
 	}
 };
 
+/// Exception to throw if there is a bad time type passed
+class UninitializedIterator : public ScheduleException{
+public:
+	virtual const char* what() const noexcept {
+		return "Iterator is not pointing to any object. Perhaps you didn't initialize the iterator after parsing?";
+	}
+};
+
 #endif

@@ -199,7 +199,8 @@ CourseCont InputWrap::setCourses(){
 	for(std::list<Course>::iterator it = courses.begin(); it != courses.end(); it++){
 		cc.addCourse(*it);
 	}
-
+	
+	cc.begin();
 	return cc;
 }
 

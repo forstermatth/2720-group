@@ -40,6 +40,7 @@ Course& CourseCont::getCourse(){
 	if(courses.empty()){
 		throw EmptyContainer();
 	}
+	if(it == courses.end()) throw UninitializedIterator();
 	return *it;
 }
 

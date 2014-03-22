@@ -26,6 +26,9 @@ public:
 	Course& last();
 
 	/// Moves the iterator to the first element of the container and returns it a reference to that object
+	/**
+		Must be called after filling the container with objects, i.e. after parse.
+	*/
 	Course& begin();
 
 	/// Moves the iterator to the last element of the containter and returns it a reference to that object

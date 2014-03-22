@@ -49,7 +49,6 @@ void InputWrapFixture::testPopulateCourse(){
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 
 	CPPUNIT_ASSERT(cc.begin().getName() == comp.getName());
-	std::cout << "\nPARSED: " << cc.begin().getName() << " = " << comp.getName();
 	CPPUNIT_ASSERT(cc.getCourse().getStartTime() == comp.getStartTime());
 	CPPUNIT_ASSERT(cc.getCourse().getDays() == comp.getDays());
 	CPPUNIT_ASSERT(cc.getCourse().getLoc() == comp.getLoc());
@@ -68,16 +67,12 @@ void InputWrapFixture::testPopulateMultiCourses(){
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 	CPPUNIT_ASSERT(cc.begin().getName() == comp1.getName());
-	std::cout << "\nPARSED: " << cc.begin().getName() << " = " << comp1.getName();
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp2.getName());
-	std::cout << "\nPARSED: " << cc.getCourse().getName() << " = " << comp2.getName();
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp3.getName());
-	std::cout << "\nPARSED: " << cc.getCourse().getName() << " = " << comp3.getName();
 	cc.next();
 	CPPUNIT_ASSERT(cc.getCourse().getName() == comp4.getName());
-	std::cout << "\nPARSED: " << cc.getCourse().getName() << " = " << comp4.getName();
 
 }
 
@@ -132,19 +127,18 @@ void InputWrapFixture::testMultiLabs(){
 
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
-
-	CPPUNIT_ASSERT_NO_THROW(cc.first().labBegin());
-	CPPUNIT_ASSERT(cc.first().hasLab() == 1);
+	cc.begin();
 
 	cc.next();
 	cc.next();
 
-	parsed = cc.first();
+    CPPUNIT_ASSERT(cc.getCourse().labsize() == 3);
+	parsed = cc.getCourse();
 
 	CPPUNIT_ASSERT(parsed.hasLab() == 1);
 	CPPUNIT_ASSERT_NO_THROW(parsed.labBegin());
 
-	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp1.getName());
+	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp2.getName());
 	parsed.nextLab();
 	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp3.getName());
 	parsed.nextLab();

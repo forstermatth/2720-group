@@ -128,6 +128,7 @@ void CourseContFixture::testOverflow(){
 
 	cc->addCourse(c1);
 	cc->addCourse(c2);
+	cc->begin();
 	CPPUNIT_ASSERT_NO_THROW(cc->getCourse());
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
 	CPPUNIT_ASSERT_NO_THROW(cc->next());
