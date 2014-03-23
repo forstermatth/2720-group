@@ -80,3 +80,12 @@ void CourseSchedFixture::testAddLab(){
 	cs->addLab(la);
 	CPPUNIT_ASSERT(la.getId() == cs->getLab().getId());
 }
+
+void CourseSchedFixture::testAddMultipleLabs(){
+	Lab l1(900, 1015, "MWF", "name", "loc 640", 9484739);
+	Lab l2(1000, 1050, "W", "name2", "loc 641", 9484730);
+	cs->addLab(l1);
+	cs->addLab(l2);
+	CPPUNIT_ASSERT(l1.getId() == cs->firstLab().getId());
+	CPPUNIT_ASSERT(l2.getId() == cs->lastLab().getId());
+}

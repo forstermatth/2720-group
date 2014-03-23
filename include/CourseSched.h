@@ -39,6 +39,10 @@ public:
 
 	///gets the current lab
 	Lab& getLab();
+
+	Lab& firstLab();
+
+	Lab& lastLab();
 private:
 	Lab lab;
 };

@@ -108,3 +108,11 @@ void CourseSched::addLab(Lab _lab){
 Lab& CourseSched::getLab(){
 	return lab;
 }
+
+Lab& CourseSched::firstLab(){
+	return lab;
+}
+
+Lab& CourseSched::lastLab(){
+	return lab;
+}
