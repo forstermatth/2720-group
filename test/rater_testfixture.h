@@ -10,6 +10,7 @@ public:
 	CPPUNIT_TEST_SUITE(RaterFixture);
 	CPPUNIT_TEST(setRatingOnReqCourses);
 	CPPUNIT_TEST(setRatingForMorningBreakPref);
+	CPPUNIT_TEST(setRatingForAfternoonBreakPref);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Options* opts;
@@ -18,6 +19,7 @@ public:
 	void setUp();
 	void setRatingOnReqCourses();
 	void setRatingForMorningBreakPref();
+	void setRatingForAfternoonBreakPref();
 	void tearDown();
 };
 
