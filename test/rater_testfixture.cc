@@ -62,3 +62,11 @@ void RaterFixture::ignoreClassOnLunchBreak(){
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 0);
 }
+
+void RaterFixture::setRatingForClassesBeforeLunchBreak(){
+	Course c(900, 1015, "MW", "name", "loc 640", 894370);
+	cc->addCourse(c);
+	Rater r(opts, cc);
+	r.rateCourses();
+	CPPUNIT_ASSERT(cc->first().getRating() == 10);
+}
