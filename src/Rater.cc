@@ -12,6 +12,9 @@ void Rater::rateCourses(){
 	if (opts->getTimePreference() == Times::Am && cc->getCourse().getEndTime() < 1200){
 		rating += 5;
 	}
+	else if (opts->getTimePreference() == Times::Pm && cc->getCourse().getStartTime() > 1199){
+		rating += 5;
+	}
 	for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
 		if (requiredCourses2.front() == cc->getCourse().getId()) {
 			rating = 30;
