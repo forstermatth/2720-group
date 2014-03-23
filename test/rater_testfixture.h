@@ -8,11 +8,14 @@
 class RaterFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(RaterFixture);
+	CPPUNIT_TEST(setRatingOnReqCourses);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	Options* opts;
+	CourseCont* cc;
 public:
 	void setUp();
+	void setRatingOnReqCourses();
 	void tearDown();
 };
 
