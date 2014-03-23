@@ -23,7 +23,7 @@ void RaterFixture::setRatingOnReqCourses(){
 	CPPUNIT_ASSERT(cc->first().getRating() == 30);
 }
 
-void RaterFixture::setRatingForMorningBreakPref(){
+void RaterFixture::setRatingForMorningTimePref(){
 	Course c(900, 1015, "MW", "name", "loc 640", 894370);
 	cc->addCourse(c);
 	Rater r(opts, cc);
@@ -32,7 +32,7 @@ void RaterFixture::setRatingForMorningBreakPref(){
 	CPPUNIT_ASSERT(cc->first().getRating() == 5);
 }
 
-void RaterFixture::setRatingForAfternoonBreakPref(){
+void RaterFixture::setRatingForAfternoonTimePref(){
 	Course c(1300, 1415, "MW", "name", "loc 640", 894370);
 	cc->addCourse(c);
 	list<unsigned int> requiredCourses;
@@ -44,7 +44,7 @@ void RaterFixture::setRatingForAfternoonBreakPref(){
 	delete newopts;
 }
 
-void RaterFixture::setRatingForNoBreakPref(){
+void RaterFixture::setRatingForNoTimePref(){
 	Course c(1300, 1415, "MW", "name", "loc 640", 894370);
 	cc->addCourse(c);
 	list<unsigned int> requiredCourses;
