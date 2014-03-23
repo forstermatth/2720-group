@@ -122,7 +122,15 @@ Lab& CourseSched::beginLab(){
 	return labs.front();
 }
 
-
 void CourseSched::nextLab(){
 	labsit++;
+}
+
+Lab& CourseSched::endLab(){
+	labsit = --labs.end();
+	return labs.back();
+}
+
+void CourseSched::prevLab(){
+	labsit--;
 }

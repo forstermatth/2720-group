@@ -18,6 +18,7 @@ public:
 	CPPUNIT_TEST(testAddLab);
 	CPPUNIT_TEST(testAddMultipleLabs);
 	CPPUNIT_TEST(testNextLab);
+	CPPUNIT_TEST(testPrevLab);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	CourseSched* cs;
@@ -34,6 +35,7 @@ public:
 	void testAddLab();
 	void testAddMultipleLabs();
 	void testNextLab();
+	void testPrevLab();
 };
 
 #endif

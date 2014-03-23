@@ -53,6 +53,12 @@ public:
 	/// Move the iterator one forward. If last element, will move to the front.
 	void nextLab();
 
+	///Moves the lab iterator to the end of the list and returns a reference to the lab
+	Lab& endLab();
+
+	///Move the iterator one backward. If last element, will move to the end.
+	void prevLab();
+
 private:
 	list<Lab> labs;
 	list<Lab>::iterator labsit;
