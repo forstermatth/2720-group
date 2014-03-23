@@ -124,6 +124,9 @@ Lab& CourseSched::beginLab(){
 
 void CourseSched::nextLab(){
 	labsit++;
+	if(labsit == labs.end()){
+		labsit = labs.begin();
+	}
 }
 
 Lab& CourseSched::endLab(){
