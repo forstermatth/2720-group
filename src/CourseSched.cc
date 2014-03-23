@@ -102,7 +102,7 @@ int CourseSched::compareDays(char c1, char c2){
 }
 
 void CourseSched::addLab(Lab _lab){
-
+	lab = _lab;
 }
 
 Lab& CourseSched::getLab(){
