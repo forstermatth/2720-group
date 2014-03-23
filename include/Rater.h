@@ -4,10 +4,14 @@
 #include "Course.h"
 #include "Options.h"
 class Rater{
+
+/** \class Rater
+	\brief Rates all courses in the course container according to the user-set options.
+*/
 private:
-	Options* opts;
-	CourseCont* cc;
-	enum Times {Am, Pm, None};
+	Options* opts; /// holds the user's options
+	CourseCont* cc; /// holds all courses
+	enum Times {Am, Pm, None}; // used to compare to Times stored in options.
 public:
 	/**
 		Constructor 

@@ -6,7 +6,6 @@ Rater::Rater(Options* _opts, CourseCont* _cc) : opts(_opts), cc(_cc){
 
 void Rater::rateCourses(){
 	cc->begin();
-	Course end = cc->last();
 	unsigned int rating = 0;
 	int count = 0;
 	do
@@ -38,5 +37,5 @@ void Rater::rateCourses(){
 		cc->getCourse().setRating(rating);
 		rating = 0;
 	}
-	while (cc->getCourse().getId() != end.getId());
+	while (cc->getCourse().getId() != cc->last().getId());
 }
