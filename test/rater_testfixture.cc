@@ -78,3 +78,17 @@ void RaterFixture::setRatingForClassesAfterLunchBreak(){
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 5);
 }
+
+void RaterFixture::setRatingForMultipleReqCourses(){
+	Course c1(900, 1015, "MW", "name", "loc 640", 894372);
+	Course c2(1300, 1430, "MW", "name", "loc 640", 894373);
+	Course c3(900, 1015, "MW", "name", "loc 640", 894374);
+	cc->addCourse(c1);
+	cc->addCourse(c2);
+	cc->addCourse(c3);
+	Rater r(opts, cc);
+	r.rateCourses();
+	CPPUNIT_ASSERT(cc->first().getRating() == 30);
+	cc->next();
+	CPPUNIT_ASSERT(cc->getCourse().getRating() == 30);
+}

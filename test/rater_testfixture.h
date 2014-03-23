@@ -15,6 +15,7 @@ public:
 	CPPUNIT_TEST(ignoreClassOnLunchBreak);
 	CPPUNIT_TEST(setRatingForClassesBeforeLunchBreak);
 	CPPUNIT_TEST(setRatingForClassesAfterLunchBreak);
+	CPPUNIT_TEST(setRatingForMultipleReqCourses);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Options* opts;
@@ -28,6 +29,7 @@ public:
 	void ignoreClassOnLunchBreak();
 	void setRatingForClassesBeforeLunchBreak();
 	void setRatingForClassesAfterLunchBreak();
+	void setRatingForMultipleReqCourses();
 	void tearDown();
 };
 
