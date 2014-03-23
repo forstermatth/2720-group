@@ -14,6 +14,7 @@ public:
 	CPPUNIT_TEST(setRatingForNoTimePref);
 	CPPUNIT_TEST(ignoreClassOnLunchBreak);
 	CPPUNIT_TEST(setRatingForClassesBeforeLunchBreak);
+	CPPUNIT_TEST(setRatingForClassesAfterLunchBreak);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Options* opts;
@@ -26,7 +27,7 @@ public:
 	void setRatingForNoTimePref();
 	void ignoreClassOnLunchBreak();
 	void setRatingForClassesBeforeLunchBreak();
-
+	void setRatingForClassesAfterLunchBreak();
 	void tearDown();
 };
 

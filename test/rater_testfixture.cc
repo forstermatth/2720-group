@@ -70,3 +70,11 @@ void RaterFixture::setRatingForClassesBeforeLunchBreak(){
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 10);
 }
+
+void RaterFixture::setRatingForClassesAfterLunchBreak(){
+	Course c(1300, 1515, "MW", "name", "loc 640", 894370);
+	cc->addCourse(c);
+	Rater r(opts, cc);
+	r.rateCourses();
+	CPPUNIT_ASSERT(cc->first().getRating() == 10);
+}
