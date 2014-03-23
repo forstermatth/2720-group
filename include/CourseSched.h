@@ -44,7 +44,7 @@ public:
 
 	Lab& lastLab();
 private:
-	Lab lab;
+	list<Lab> labs;
 };
 
 #endif
