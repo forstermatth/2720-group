@@ -8,8 +8,13 @@ void Rater::rateCourses(){
 	cc->begin();
 	Course end = cc->last();
 	unsigned int rating = 0;
+	int count = 0;
 	do
 	{
+		if (count != 0){
+			cc->next();
+		}
+		count = 1;
 		list<unsigned int> requiredCourses = opts->getRequiredCourses();
 		list<unsigned int> requiredCourses2 = requiredCourses;
 		if (opts->getTimePreference() == Times::Am && cc->getCourse().getEndTime() < 1200){
@@ -32,7 +37,6 @@ void Rater::rateCourses(){
 		}
 		cc->getCourse().setRating(rating);
 		rating = 0;
-		cc->next();
 	}
 	while (cc->getCourse().getId() != end.getId());
 }
