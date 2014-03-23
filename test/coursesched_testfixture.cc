@@ -2,7 +2,7 @@
 #include "coursesched_testfixture.h"
 #include "Exceptions.h"
 #include "Course.h"
-
+#include <iostream>
 void CourseSchedFixture::setUp(){
 	cs = new CourseSched();
 }
@@ -78,6 +78,7 @@ void CourseSchedFixture::testAddMWFandWConflictingException(){
 void CourseSchedFixture::testAddLab(){
 	Lab la(900, 1015, "MWF", "name", "loc 640", 9484739);
 	cs->addLab(la);
+	cs->beginLab();
 	CPPUNIT_ASSERT(la.getId() == cs->getLab().getId());
 }
 
@@ -88,4 +89,19 @@ void CourseSchedFixture::testAddMultipleLabs(){
 	cs->addLab(l2);
 	CPPUNIT_ASSERT(l1.getId() == cs->firstLab().getId());
 	CPPUNIT_ASSERT(l2.getId() == cs->lastLab().getId());
+}
+
+void CourseSchedFixture::testNextLab(){
+	Lab l1(900, 1015, "MW", "name", "loc 640", 9484739);
+	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
+	Lab l3(1300, 1400, "TR", "name3", "loc 642", 5);
+	cs->addLab(l1);
+	cs->addLab(l2);
+	cs->addLab(l3);
+	cs->beginLab();
+	CPPUNIT_ASSERT(l1.getId() == cs->getLab().getId());
+	cs->nextLab();
+	CPPUNIT_ASSERT(l2.getId() == cs->getLab().getId());
+	cs->nextLab();
+	CPPUNIT_ASSERT(l3.getId() == cs->getLab().getId());
 }

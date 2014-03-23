@@ -43,8 +43,19 @@ public:
 	Lab& firstLab();
 
 	Lab& lastLab();
+
+	/// Moves the iterator to the first element of the container and returns it a reference to that object
+	/**
+		Must be called after filling the container with objects, e.g. after parse.
+	*/
+	Lab& beginLab();
+
+	/// Move the iterator one forward. If last element, will move to the front.
+	void nextLab();
+
 private:
 	list<Lab> labs;
+	list<Lab>::iterator labsit;
 };
 
 #endif

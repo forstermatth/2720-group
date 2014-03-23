@@ -17,6 +17,7 @@ public:
 	CPPUNIT_TEST_EXCEPTION(testAddMWFandWConflictingException, TimeConflict);
 	CPPUNIT_TEST(testAddLab);
 	CPPUNIT_TEST(testAddMultipleLabs);
+	CPPUNIT_TEST(testNextLab);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	CourseSched* cs;
@@ -32,6 +33,7 @@ public:
 	void testAddMWFandWConflictingException();		
 	void testAddLab();
 	void testAddMultipleLabs();
+	void testNextLab();
 };
 
 #endif

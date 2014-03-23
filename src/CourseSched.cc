@@ -106,7 +106,7 @@ void CourseSched::addLab(Lab _lab){
 }
 
 Lab& CourseSched::getLab(){
-	return labs.front();
+	return *labsit;
 }
 
 Lab& CourseSched::firstLab(){
@@ -115,4 +115,14 @@ Lab& CourseSched::firstLab(){
 
 Lab& CourseSched::lastLab(){
 	return labs.back();
+}
+
+Lab& CourseSched::beginLab(){
+	labsit = labs.begin();
+	return labs.front();
+}
+
+
+void CourseSched::nextLab(){
+	labsit++;
 }
