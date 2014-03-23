@@ -28,5 +28,5 @@ void RaterFixture::setRatingForMorningBreakPref(){
 	cc->addCourse(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().getRating() == 10);
+	CPPUNIT_ASSERT(cc->first().getRating() == 5);
 }

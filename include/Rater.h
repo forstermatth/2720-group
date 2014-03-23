@@ -7,6 +7,7 @@ class Rater{
 private:
 	Options* opts;
 	CourseCont* cc;
+	enum Times {Am, Pm, None};
 public:
 	/**
 		Constructor 
