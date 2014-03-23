@@ -39,7 +39,7 @@ void RaterFixture::setRatingForAfternoonTimePref(){
 	Options* newopts = new Options(5, requiredCourses, Times::Pm, 30, 1200, 1230);
 	Rater r(newopts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().getRating() == 5);
+	CPPUNIT_ASSERT(cc->first().getRating() == 10);
 	delete newopts;
 }
 
@@ -51,12 +51,12 @@ void RaterFixture::setRatingForNoTimePref(){
 	Options* newopts = new Options(5, requiredCourses, Times::None, 30, 1200, 1230);
 	Rater r(newopts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().getRating() == 5);
+	CPPUNIT_ASSERT(cc->first().getRating() == 10);
 	delete newopts;
 }
 
 void RaterFixture::ignoreClassOnLunchBreak(){
-	Course c(1230, 1330, "MW", "name", "loc 640", 894370);
+	Course c(1215, 1330, "MW", "name", "loc 640", 894370);
 	cc->addCourse(c);
 	Rater r(opts, cc);
 	r.rateCourses();
@@ -76,5 +76,5 @@ void RaterFixture::setRatingForClassesAfterLunchBreak(){
 	cc->addCourse(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().getRating() == 10);
+	CPPUNIT_ASSERT(cc->first().getRating() == 5);
 }

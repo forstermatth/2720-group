@@ -18,7 +18,7 @@ void Rater::rateCourses(){
 	else if (opts->getTimePreference() == Times::None){
 		rating += 5;
 	}
-	if (opts->getBreakStart() > cc->getCourse().getEndTime()){
+	if (opts->getBreakStart() >= cc->getCourse().getEndTime() || opts->getBreakEnd() <= cc->getCourse().getStartTime()){
 		rating += 5;
 	}
 	for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
