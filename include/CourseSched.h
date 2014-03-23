@@ -24,7 +24,11 @@ public:
 
 	/// find a time conflict
 	/** \param course a course not yet in the schedule - compared to all that are */
-	void findConflict(Course course);
+	void findCourseConflict(Course course);
+
+	/// find a lab time conflict
+	/** \param lab a lab not yet in the schedule*/
+	void findLabConflict(Lab lab);
 
 	/**
 	Sets a numeric value to d1,d2 according to c1,c2 day of the week (M=1,T=2...)

@@ -21,12 +21,14 @@ public:
 	CPPUNIT_TEST(testPrevLab);
 	CPPUNIT_TEST(testNextLabWraps);
 	CPPUNIT_TEST(testPrevLabWraps);
+	CPPUNIT_TEST_EXCEPTION(testLabCollision, TimeConflict);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	CourseSched* cs;
 public:
 	void setUp();
 	void tearDown();
+
 	void testAddCourse();
 	void testNext();
 	void testPrev();
@@ -40,6 +42,7 @@ public:
 	void testPrevLab();
 	void testNextLabWraps();
 	void testPrevLabWraps();
+	void testLabCollision();
 };
 
 #endif
