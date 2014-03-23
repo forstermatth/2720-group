@@ -1,4 +1,5 @@
 #include "CourseSched.h"
+#include "Lab.h"
 #include <iostream>
 #include <string>
 
@@ -66,6 +67,7 @@ void CourseSched::findConflict(Course newCourse){
 		while (temp==1);
 	}
 }
+
 /*
 	Sets a numeric value to d1,d2 according to c1,c2 day of the week (M=1,T=2...)
 	Compares d1 and d2, if d1 is earlier the week return 0, if d2 is earlier return 1
@@ -99,3 +101,10 @@ int CourseSched::compareDays(char c1, char c2){
 		return 1;
 }
 
+void CourseSched::addLab(Lab _lab){
+
+}
+
+Lab& CourseSched::getLab(){
+	return lab;
+}

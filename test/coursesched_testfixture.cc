@@ -74,3 +74,9 @@ void CourseSchedFixture::testAddMWFandWConflictingException(){
 	cs->addCourse(c1);
 	cs->addCourse(c2);
 }
+
+void CourseSchedFixture::testAddLab(){
+	Lab la(900, 1015, "MWF", "name", "loc 640", 9484739);
+	cs->addLab(la);
+	CPPUNIT_ASSERT(la.getId() == cs->getLab().getId());
+}

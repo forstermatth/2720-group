@@ -5,6 +5,7 @@
 #include <list>
 #include "Exceptions.h"
 #include "CourseCont.h"
+#include "Lab.h"
 using namespace std;
 
 
@@ -33,8 +34,13 @@ public:
 	*/
 	int compareDays(char, char);
 
-private:
+	/// Adds a lab.
+	void addLab(Lab _lab);
 
+	///gets the current lab
+	Lab& getLab();
+private:
+	Lab lab;
 };
 
 #endif
