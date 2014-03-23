@@ -16,7 +16,7 @@ void Rater::rateCourses(){
 		rating += 5;
 	}
 	else if (opts->getTimePreference() == Times::None){
-		//rating += 5;
+		rating += 5;
 	}
 	for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
 		if (requiredCourses2.front() == cc->getCourse().getId()) {
