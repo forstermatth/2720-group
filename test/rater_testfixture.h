@@ -8,11 +8,30 @@
 class RaterFixture : public CppUnit::TestFixture {
 public:
 	CPPUNIT_TEST_SUITE(RaterFixture);
+	CPPUNIT_TEST(setRatingOnReqCourses);
+	CPPUNIT_TEST(setRatingForMorningTimePref);
+	CPPUNIT_TEST(setRatingForAfternoonTimePref);
+	CPPUNIT_TEST(setRatingForNoTimePref);
+	CPPUNIT_TEST(ignoreCourseOnLunchBreak);
+	CPPUNIT_TEST(setRatingForCourseBeforeLunchBreak);
+	CPPUNIT_TEST(setRatingForCourseAfterLunchBreak);
+	CPPUNIT_TEST(setRatingForMultipleReqCourses);
+	CPPUNIT_TEST(ignoreCourseOverlappingLunch);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	Options* opts;
+	CourseCont* cc;
 public:
 	void setUp();
+	void setRatingOnReqCourses();
+	void setRatingForMorningTimePref();
+	void setRatingForAfternoonTimePref();
+	void setRatingForNoTimePref();
+	void ignoreCourseOnLunchBreak();
+	void setRatingForCourseBeforeLunchBreak();
+	void setRatingForCourseAfterLunchBreak();
+	void setRatingForMultipleReqCourses();
+	void ignoreCourseOverlappingLunch();
 	void tearDown();
 };
 
