@@ -11,7 +11,7 @@ class Rater{
 private:
 	Options* opts; /// holds the user's options
 	CourseCont* cc; /// holds all courses
-	enum Times {Am, Pm, None}; // used to compare to Times stored in options.
+
 public:
 	/**
 		Constructor 
