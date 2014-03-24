@@ -35,6 +35,8 @@ public:
 	/// Constructor - does nothing
 	CourseBase(){};
 
+	virtual ~CourseBase(){}
+
 	/// returns the course end time
 	unsigned int getEndTime() const;
 
