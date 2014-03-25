@@ -4,10 +4,13 @@ compiler:
 install:
     - sudo apt-get update
     - sudo apt-get install libcppunit-dev
+    - sudo apt-get install valgrind
     - mkdir bin
     - make
 script: 
     - ./tests
+    - valgrind --leak-check=yes ./tests
+
 notifications:
     recipients:
         - forster.matth@gmail.com
