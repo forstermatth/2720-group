@@ -15,10 +15,10 @@ $(shell mkdir -p bin)
 all: tests sched
 
 tests: $(TESTOBJECTS)
-	${GXX} -o $@ $^ $(LNFLAGS)
+	${GXX} -g -o $@ $^ $(LNFLAGS)
 
 sched: $(OBJECTLIST)
-	${GXX} -o $@ $^ $(LNFLAGS) 
+	${GXX} -g -o $@ $^ $(LNFLAGS) 
 
 
 bin/%.o : %.cc
