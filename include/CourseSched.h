@@ -44,8 +44,10 @@ public:
 	///gets the current lab
 	Lab& getLab();
 
+	/// returns first lab
 	Lab& firstLab();
 
+	/// returns last lab
 	Lab& lastLab();
 
 	/// Moves the iterator to the first element of the container and returns it a reference to that object

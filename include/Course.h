@@ -13,8 +13,10 @@ public:
 	/// Constructor - call the parent constructor
 	Course() : CourseBase() {}
 
+	/// Overloaded copy constructor to ensure proper assignment. Calls parent copy constructor.
 	Course(const Course& _course) : CourseBase(_course) { labs = _course.labs; it = _course.it; }
 
+	/// Overloaded equals operator to ensure proper assignment. Calls parent operator.
 	Course& operator= (const Course& _course);
 
 	/// Constructor - call the parent constructor
@@ -23,14 +25,32 @@ public:
 			it = labs.begin();
 		};
 
+	/// Add a lab to the course
+	/* \param _lab The lab to add */
 	void addLab(Lab _lab);
+
+	/// Return the first lab - moves the lab iterator to the beginning of the list permanently
 	Lab firstLab();
+
+	/// Moves the iterator to the beginning of the lab list
 	void labBegin();
+
+	/// Returns the last lab - moves the iterator to the end of the list
 	Lab lastLab();
+
+	/// Moves the iterator to the next lab on the list
 	void nextLab();
+
+	/// Moves the iterator to the previous lab on the list
 	void prevLab();
+
+	/// Returns the lab that the current iterator is pointing to
 	Lab getLab();
+
+	/// checks to see if there are labs attached to the course, returns 1 or 0
 	int hasLab();
+
+	/// returns the amount of labs the class has attached
 	int labsize();
 
 	/// returns true if the courses are the same, false otherwise
@@ -42,8 +62,8 @@ public:
 	void addPadding(unsigned int _padding);
 
 private:
-	std::list<Lab> labs;
-	std::list<Lab>::iterator it;
+	std::list<Lab> labs; ///< the labs container
+	std::list<Lab>::iterator it; ///< the labs iterator
 };
 
 

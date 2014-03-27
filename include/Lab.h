@@ -12,6 +12,7 @@ public:
 	///Constructor - call the parent constructor
 	Lab() : CourseBase() {}
 
+	/// lab copy constructor - calls parent constructor
 	Lab(const Lab& _lab) : CourseBase(_lab) {}
 
 	///Constructor - call the parent constructor

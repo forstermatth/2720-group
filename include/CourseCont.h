@@ -55,6 +55,8 @@ protected:
 
 /**
 	returns true if first has a higher rating then second, false otherwise.
+	\param first the first course to compare
+	\param second the second course to compare
 */
 bool compareCourseRating(const Course &first, const Course &second);
 

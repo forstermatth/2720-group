@@ -20,6 +20,7 @@ public:
 	*/
 	CourseBase(unsigned int _startTime, unsigned int _endTime, std::string _days, std::string _courseName, std::string _courseLoc, unsigned int _courseId);
 	
+	/// Copy constuctor - ensures proper assignment
 	CourseBase(const CourseBase& _course){
 		startTime = _course.startTime;
 		endTime =  _course.endTime;
@@ -30,6 +31,7 @@ public:
 		rating = _course.rating;
 	}
 
+	/// Overloaded assignment operator - ensures proper assignment
 	CourseBase& operator= (const CourseBase& rhs);
 
 	/// Constructor - does nothing
