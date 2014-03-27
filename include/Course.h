@@ -5,7 +5,7 @@
 #include <list>
 
 /**
-	\brief Lab conceptual object - inherits from Course
+	\brief Course conceptual object - inherits from CourseBase
 */
 class Course : public CourseBase {
 public:

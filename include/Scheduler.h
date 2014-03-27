@@ -5,6 +5,9 @@
 #include "CourseCont.h"
 #include "CourseSched.h"
 
+/** \class Scheduler
+	Class wrapper to generate and return a schedule
+*/
 class Scheduler{
 public:
 	CourseSched* generateSchedule(CourseCont& courseList, Options &opts);

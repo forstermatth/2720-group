@@ -4,7 +4,7 @@
 
 
 /**
-	\brief Lab conceptual object - inherits from Course
+	\brief Lab conceptual object - inherits from CourseBase
 */
 class Lab : public CourseBase {
 public:

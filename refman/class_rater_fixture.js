@@ -1,0 +1,27 @@
+var class_rater_fixture =
+[
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#a9fb06cbfee5dd9f3b6821243372cf614", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#a11c3ec6a97dfebdc53b0bb798104a0ca", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#a6e1b01b5702a7e687106c544b19cf08b", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#ad713737d6cd9fb83679aa7830fc211e2", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#a092cb193c4652cc72933508852c55495", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#a579b212aa7f710541edc08093e8dc5b1", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#aa2b272f17474ba2cbd96c525e844999e", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#a3990c9c3fcc06af6e53e6fa73067abb3", null ],
+    [ "CPPUNIT_TEST", "class_rater_fixture.html#a0575e92ef521f0499af5bba707b0e49d", null ],
+    [ "CPPUNIT_TEST_SUITE", "class_rater_fixture.html#a23dec3073d268a176547e13081ed92f2", null ],
+    [ "CPPUNIT_TEST_SUITE_END", "class_rater_fixture.html#a7e4013cfb0c41e75f82ecc3e370c86e7", null ],
+    [ "ignoreCourseOnLunchBreak", "class_rater_fixture.html#a6e9dd08e95e017cd87b4c3820474c3d1", null ],
+    [ "ignoreCourseOverlappingLunch", "class_rater_fixture.html#a172fac505bbb5a9d2a238c10a5a13643", null ],
+    [ "setRatingForAfternoonTimePref", "class_rater_fixture.html#ab000f8fbc0f53d2ab71da503b7c4f867", null ],
+    [ "setRatingForCourseAfterLunchBreak", "class_rater_fixture.html#aa7ce8da24361bdcb89d9b21f4384f21f", null ],
+    [ "setRatingForCourseBeforeLunchBreak", "class_rater_fixture.html#a701f009378e70c068456d2d98c36ee77", null ],
+    [ "setRatingForMorningTimePref", "class_rater_fixture.html#a5328e09749665a0888268b587dfe6f7e", null ],
+    [ "setRatingForMultipleReqCourses", "class_rater_fixture.html#a120e573d61bc3ac3ea12b268e06448f7", null ],
+    [ "setRatingForNoTimePref", "class_rater_fixture.html#afadf8598cd9639e238f64efe2d05c4ea", null ],
+    [ "setRatingOnReqCourses", "class_rater_fixture.html#a4500846e04efb6f3a8fbe1b059554616", null ],
+    [ "setUp", "class_rater_fixture.html#a9bb92fd068f3e56175f7d7a3aaef380b", null ],
+    [ "tearDown", "class_rater_fixture.html#a66a9afc07ff28535270997ee27a87d0f", null ],
+    [ "cc", "class_rater_fixture.html#aaf03787eb7551435a48e30aef8e1bed9", null ],
+    [ "opts", "class_rater_fixture.html#ad3a24ad9fadcbd5c63960427b191a140", null ]
+];

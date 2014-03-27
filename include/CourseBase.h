@@ -5,7 +5,7 @@
 #include <list>
 
 
-/// Course base object class for storing course and lab values
+/// CourseBase object class for storing course and lab values
 class CourseBase {
 public:
 
