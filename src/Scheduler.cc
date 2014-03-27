@@ -5,8 +5,8 @@
 
 #include <iostream>
 
-CourseSched* Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
-	CourseSched *schedule = new CourseSched;
+CourseSched Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
+	CourseSched schedule;
 	courseList.sort();
 	courseList.begin();
 	bool reachEnd = false;
@@ -15,7 +15,7 @@ CourseSched* Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
 		reachEnd = courseList.getCourse().equal(courseList.last());
 		try{
 			courseList.getCourse().addPadding(opts.getBreakPadding());
-			schedule->addCourse(courseList.getCourse());
+			schedule.addCourse(courseList.getCourse());
 			courseList.next();
 			i++;
 		}catch(const TimeConflict &expt){
