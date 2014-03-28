@@ -152,3 +152,17 @@ void CourseSchedFixture::testLabCollision(){
 	cs->addLab(l1);
 	cs->addLab(l1);
 }
+
+void CourseSchedFixture::testCousreLabCollision(){
+	Lab l1(900, 1015, "MW", "name", "loc", 1234);
+	Course c1(900, 1015, "MW", "name", "loc", 1235);
+	cs->addCourse(c1);
+	cs->addLab(l1);
+}
+
+void CourseSchedFixture::testLabCourseCollision(){
+	Lab l1(900, 1015, "MW", "name", "loc", 1234);
+	Course c1(900, 1015, "MW", "name", "loc", 1235);
+	cs->addLab(l1);
+	cs->addCourse(c1);
+}

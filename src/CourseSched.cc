@@ -1,11 +1,12 @@
 #include "CourseSched.h"
+#include "CourseBase.h"
 #include "Lab.h"
 #include <iostream>
 #include <string>
 #include <stdexcept>
 
 void CourseSched::addCourse(Course _course){
-	findCourseConflict(_course);
+	findConflict(&_course);
 	courses.push_back(_course);
 	it = courses.begin();
 }
@@ -17,12 +18,12 @@ void CourseSched::removeCourse(){
 	it = courses.erase(it);
 }
 
-void CourseSched::findCourseConflict(Course newCourse){
-	int i = 0; //counter for new course
-	int j = 0; //counter for existing course
-	string newDays = newCourse.getDays(); //load days of the new course into newDays local variable
+void CourseSched::findConflict(CourseBase* newCourse){
+	string newDays = newCourse->getDays(); //load days of the new course into newDays local variable
 
 	for (std::list<Course>::iterator it=courses.begin() ; it != courses.end(); ++it) {
+		int i = 0; //counter for new course
+		int j = 0; //counter for existing course
 		//load days of the existing course into days local variable
 		string days = getCourse().getDays(); 
 		int temp;
@@ -48,14 +49,57 @@ void CourseSched::findCourseConflict(Course newCourse){
 			}else{ //begin time conflict logic
 				temp = 0;
 				//if new course starts before existing course
-				if (newCourse.getStartTime() < getCourse().getStartTime()){ 
+				if (newCourse->getStartTime() < getCourse().getStartTime()){ 
 					//if new course ends after existing course starts
-					if (newCourse.getEndTime() > getCourse().getStartTime()){ 
+					if (newCourse->getEndTime() > getCourse().getStartTime()){ 
 						throw TimeConflict();
 					}
 				}else{
 					//if new course starts before existing course ends
-					if (newCourse.getStartTime() < getCourse().getEndTime()){ 
+					if (newCourse->getStartTime() < getCourse().getEndTime()){ 
+						throw TimeConflict();
+					}
+				}
+			}
+		}while (temp==1);
+	}
+
+	for (std::list<Lab>::iterator it = labs.begin(); it != labs.end(); ++it) {
+		int i = 0; //counter for new course
+		int j = 0; //counter for existing course
+		//load days of the existing course into days local variable
+		string days = it->getDays(); 
+		int temp;
+		do {
+			//if newCourse has the same day as course
+			if (newDays.at(i) != days.at(j)){ 
+				//compare days to determine which counter to increment
+				if(compareDays(newDays.at(i), days.at(j)) == 0){ 
+					if (i<newDays.length()-1){
+						temp=1;
+						i++;
+					}else{
+						temp=0;
+					}
+				}else{
+					if (j<days.length()-1){
+						temp=1;
+						j++;
+					}else{		
+						temp=0;
+					}
+				}
+			}else{ //begin time conflict logic
+				temp = 0;
+				//if new course starts before existing course
+				if (newCourse->getStartTime() < it->getStartTime()){ 
+					//if new course ends after existing course starts
+					if (newCourse->getEndTime() > it->getStartTime()){ 
+						throw TimeConflict();
+					}
+				}else{
+					//if new course starts before existing course ends
+					if (newCourse->getStartTime() < it->getEndTime()){ 
 						throw TimeConflict();
 					}
 				}
@@ -98,7 +142,7 @@ int CourseSched::compareDays(char c1, char c2){
 }
 
 void CourseSched::addLab(Lab _lab){
-	findLabConflict(_lab);
+	findConflict(&_lab);
 	labs.push_back(_lab);
 }
 
@@ -136,52 +180,5 @@ void CourseSched::prevLab(){
 		labsit = --labs.end();
 	}else {
 		labsit--;
-	}
-}
-
-void CourseSched::findLabConflict(Lab newLab){
-	string newDays = newLab.getDays(); //load days of the new course into newDays local variable
-
-	for (std::list<Lab>::iterator it = labs.begin(); it != labs.end(); ++it) {
-		int i = 0; //counter for new course
-		int j = 0; //counter for existing course
-		//load days of the existing course into days local variable
-		string days = it->getDays(); 
-		int temp;
-		do {
-			//if newCourse has the same day as course
-			if (newDays.at(i) != days.at(j)){ 
-				//compare days to determine which counter to increment
-				if(compareDays(newDays.at(i), days.at(j)) == 0){ 
-					if (i<newDays.length()-1){
-						temp=1;
-						i++;
-					}else{
-						temp=0;
-					}
-				}else{
-					if (j<days.length()-1){
-						temp=1;
-						j++;
-					}else{		
-						temp=0;
-					}
-				}
-			}else{ //begin time conflict logic
-				temp = 0;
-				//if new course starts before existing course
-				if (newLab.getStartTime() < it->getStartTime()){ 
-					//if new course ends after existing course starts
-					if (newLab.getEndTime() > it->getStartTime()){ 
-						throw TimeConflict();
-					}
-				}else{
-					//if new course starts before existing course ends
-					if (newLab.getStartTime() < it->getEndTime()){ 
-						throw TimeConflict();
-					}
-				}
-			}
-		}while (temp==1);
 	}
 }

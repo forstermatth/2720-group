@@ -22,6 +22,8 @@ public:
 	CPPUNIT_TEST(testNextLabWraps);
 	CPPUNIT_TEST(testPrevLabWraps);
 	CPPUNIT_TEST_EXCEPTION(testLabCollision, TimeConflict);
+	CPPUNIT_TEST_EXCEPTION(testCousreLabCollision, TimeConflict);
+	CPPUNIT_TEST_EXCEPTION(testLabCourseCollision, TimeConflict);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	CourseSched* cs;
@@ -43,6 +45,8 @@ public:
 	void testNextLabWraps();
 	void testPrevLabWraps();
 	void testLabCollision();
+	void testCousreLabCollision();
+	void testLabCourseCollision();
 };
 
 #endif
