@@ -17,14 +17,14 @@ class CourseSched : public CourseCont{
 public:
 	/// Add a course to the schedule. Checks for conflicts.
 	/** \param _course the course to add */
-	void addCourse(Course _course);
+	void addCourse(Course _coursem, int padding = 0);
 
 	/// remove the current course from the container
 	void removeCourse();
 
 	/// find a time conflict
 	/** \param course a course not yet in the schedule - compared to all that are */
-	void findCourseConflict(Course course);
+	void findCourseConflict(Course course, int padding = 0);
 
 	/// find a lab time conflict
 	/** \param lab a lab not yet in the schedule*/

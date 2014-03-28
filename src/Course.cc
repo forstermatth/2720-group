@@ -60,11 +60,11 @@ bool Course::equal(Course& crs){
 		&& crs.getLoc() == courseLoc);
 }
 
-void Course::addPadding(unsigned int _padding){
-	startTime -= _padding;
-	endTime += _padding;
+// void Course::addPadding(unsigned int _padding){
+// 	startTime -= _padding;
+// 	endTime += _padding;
 
-}
+// }
 
 Course& Course::operator= (const Course& _course){
 

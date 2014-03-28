@@ -4,8 +4,8 @@
 #include <string>
 #include <stdexcept>
 
-void CourseSched::addCourse(Course _course){
-	findCourseConflict(_course);
+void CourseSched::addCourse(Course _course, int padding){
+	findCourseConflict(_course, padding);
 	courses.push_back(_course);
 	it = courses.begin();
 }
@@ -17,7 +17,7 @@ void CourseSched::removeCourse(){
 	it = courses.erase(it);
 }
 
-void CourseSched::findCourseConflict(Course newCourse){
+void CourseSched::findCourseConflict(Course newCourse, int padding){
 	int i = 0; //counter for new course
 	int j = 0; //counter for existing course
 	string newDays = newCourse.getDays(); //load days of the new course into newDays local variable
@@ -48,14 +48,14 @@ void CourseSched::findCourseConflict(Course newCourse){
 			}else{ //begin time conflict logic
 				temp = 0;
 				//if new course starts before existing course
-				if (newCourse.getStartTime() < getCourse().getStartTime()){ 
+				if (newCourse.getStartTime() - (padding) < getCourse().getStartTime()){ 
 					//if new course ends after existing course starts
-					if (newCourse.getEndTime() > getCourse().getStartTime()){ 
+					if (newCourse.getEndTime() + (padding) > getCourse().getStartTime()){ 
 						throw TimeConflict();
 					}
 				}else{
 					//if new course starts before existing course ends
-					if (newCourse.getStartTime() < getCourse().getEndTime()){ 
+					if (newCourse.getStartTime() - (padding) < getCourse().getEndTime()){ 
 						throw TimeConflict();
 					}
 				}
