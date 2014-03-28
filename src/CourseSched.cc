@@ -184,4 +184,47 @@ void CourseSched::findLabConflict(Lab newLab){
 			}
 		}while (temp==1);
 	}
+
+	for (std::list<Course>::iterator it=courses.begin() ; it != courses.end(); ++it) {
+		int i = 0; //counter for new course
+		int j = 0; //counter for existing course
+		//load days of the existing course into days local variable
+		string days = getCourse().getDays(); 
+		int temp;
+		do {
+			//if newCourse has the same day as course
+			if (newDays.at(i) != days.at(j)){ 
+				//compare days to determine which counter to increment
+				if(compareDays(newDays.at(i), days.at(j)) == 0){ 
+					if (i<newDays.length()-1){
+						temp=1;
+						i++;
+					}else{
+						temp=0;
+					}
+				}else{
+					if (j<days.length()-1){
+						temp=1;
+						j++;
+					}else{		
+						temp=0;
+					}
+				}
+			}else{ //begin time conflict logic
+				temp = 0;
+				//if new course starts before existing course
+				if (newLab.getStartTime() < getCourse().getStartTime()){ 
+					//if new course ends after existing course starts
+					if (newLab.getEndTime() > getCourse().getStartTime()){ 
+						throw TimeConflict();
+					}
+				}else{
+					//if new course starts before existing course ends
+					if (newLab.getStartTime() < getCourse().getEndTime()){ 
+						throw TimeConflict();
+					}
+				}
+			}
+		}while (temp==1);
+	}
 }
