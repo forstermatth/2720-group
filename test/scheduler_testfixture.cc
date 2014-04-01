@@ -26,11 +26,11 @@ void SchedulerFixture::testAddCourses(){
 	c2.setRating(2);
 	cc.addCourse(c1);
 	cc.addCourse(c2);
-	CourseSched *cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c2.getId());
-	cs->next();
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
-	CPPUNIT_ASSERT(cs->size() == 2);
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c2.getId());
+	cs.next();
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
+	CPPUNIT_ASSERT(cs.size() == 2);
 }
 
 void SchedulerFixture::testCourseConflict(){
@@ -46,11 +46,11 @@ void SchedulerFixture::testCourseConflict(){
 	cc.addCourse(c1);
 	cc.addCourse(c2);
 	cc.addCourse(c3);
-	CourseSched *cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
-	cs->next();
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c3.getId());
-	CPPUNIT_ASSERT(cs->size() == 2);
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
+	cs.next();
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs.size() == 2);
 }
 
 void SchedulerFixture::testNotEnoughCourses(){
@@ -66,11 +66,11 @@ void SchedulerFixture::testNotEnoughCourses(){
 	cc.addCourse(c1);
 	cc.addCourse(c2);
 	cc.addCourse(c3);
-	CourseSched *cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
-	cs->next();
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c3.getId());
-	CPPUNIT_ASSERT(cs->size() == 2);
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
+	cs.next();
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs.size() == 2);
 }
 
 void SchedulerFixture::testCoursesWithPadding(){
@@ -86,9 +86,9 @@ void SchedulerFixture::testCoursesWithPadding(){
 	cc.addCourse(c1);
 	cc.addCourse(c2);
 	cc.addCourse(c3);
-	CourseSched *cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c1.getId());
-	cs->next();
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c3.getId());
-	CPPUNIT_ASSERT(cs->size() == 2);
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
+	cs.next();
+	CPPUNIT_ASSERT(cs.getCourse().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs.size() == 2);
 }
