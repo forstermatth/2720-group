@@ -2,7 +2,6 @@ var NAVTREE =
 [
   [ "Class Scheduler", "index.html", [
     [ "readme", "md_include_readme.html", null ],
-    [ "2720-group", "md__r_e_a_d_m_e.html", null ],
     [ "readme", "md_src_readme.html", null ],
     [ "readme", "md_test_readme.html", null ],
     [ "Classes", null, [
@@ -30,7 +29,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_course_8cc.html",
-"class_input_wrap_fixture.html#afd5c1fbfa3519a1f601aa3c510cc3866"
+"class_input_wrap_fixture.html#ae67387840de80aafaa6e9020de387265"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
