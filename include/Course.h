@@ -37,9 +37,9 @@ public:
 	/** \param crs the course to compare against */
 	bool equal(Course& crs);
 
-	// /// Adds the specified amount of padding to start and end time.
-	// /** \param _padding The amount of padding to add. */
-	// void addPadding(unsigned int _padding);
+	/// Adds the specified amount of padding to start and end time.
+	/** \param _padding The amount of padding to add.*/
+	void addPadding(unsigned int _padding);
 
 private:
 	std::list<Lab> labs;

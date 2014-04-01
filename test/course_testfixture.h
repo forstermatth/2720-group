@@ -23,7 +23,7 @@ public:
 	CPPUNIT_TEST(testOverflow);
 	CPPUNIT_TEST(testEqual);
 	CPPUNIT_TEST(testNotEqual);
-	// CPPUNIT_TEST(testAddPadding);
+	CPPUNIT_TEST(testAddPadding);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Course * c;
@@ -47,7 +47,7 @@ public:
 	void testHasLab();
 	void testEqual();
 	void testNotEqual();
-	// void testAddPadding();
+	void testAddPadding();
 };
 
 #endif
