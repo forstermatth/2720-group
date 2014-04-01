@@ -17,7 +17,7 @@ CourseSched Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
 			Course add, comp;
 			add = comp = courseList.getCourse(); //.addPadding(opts.getBreakPadding());
 			comp.addPadding(opts.getBreakPadding());
-			schedule.findCourseConflict(comp); //will throw and skip if conflict
+			schedule.findConflict(&comp); //will throw and skip if conflict
 			schedule.addCourse(add);
 			courseList.next();
 			i++;
