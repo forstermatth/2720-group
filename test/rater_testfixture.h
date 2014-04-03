@@ -17,6 +17,12 @@ public:
 	CPPUNIT_TEST(setRatingForCourseAfterLunchBreak);
 	CPPUNIT_TEST(setRatingForMultipleReqCourses);
 	CPPUNIT_TEST(ignoreCourseOverlappingLunch);
+	CPPUNIT_TEST(setRatingOnReqLab);
+	CPPUNIT_TEST(setRatingForLabMorningPref);
+	CPPUNIT_TEST(setRatingForLabAfternoonPref);
+	CPPUNIT_TEST(setRatingForLabBeforeLunchBreak);
+	CPPUNIT_TEST(setRatingForLabAfterLunchBreak);
+	CPPUNIT_TEST(setRatingForMultipleLabs);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Options* opts;
@@ -32,6 +38,12 @@ public:
 	void setRatingForCourseAfterLunchBreak();
 	void setRatingForMultipleReqCourses();
 	void ignoreCourseOverlappingLunch();
+	void setRatingOnReqLab();
+	void setRatingForLabMorningPref();
+	void setRatingForLabAfternoonPref();
+	void setRatingForLabBeforeLunchBreak();
+	void setRatingForLabAfterLunchBreak();
+	void setRatingForMultipleLabs();
 	void tearDown();
 };
 

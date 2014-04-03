@@ -20,10 +20,15 @@ public:
 	*/
 	Rater(Options* _opts, CourseCont* _cc);
 	/**
-		Looks at each course in the course container and gives them each a rating 
-			according to the options.
+		Looks at each course in the course container and calls processCourse() for each one.
 	*/
 	void rateCourses();
+	/**
+		@param c Course reference object
+		Looks at the course and rates it according to the user defined options.
+		If the course has labs then it rates each one as well.
+	*/
+	void processCourse(Course&);
 };
 
 #endif
