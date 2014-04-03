@@ -158,3 +158,16 @@ void RaterFixture::setRatingForLabAfternoonPref(){
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
 }
+
+void RaterFixture::setRatingForLabBeforeLunchBreak(){
+	list<unsigned int> requiredCourses;
+	requiredCourses.push_back(894371);
+	opts = new Options(5, requiredCourses, Times::Pm, 30, 1000, 1230);
+	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
+	Lab l(915, 945, "F", "courselab", "labloc", 894370);
+	c.addLab(l);
+	cc->addCourse(c);
+	Rater r(opts, cc);
+	r.rateCourses();
+	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
+}

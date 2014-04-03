@@ -20,6 +20,7 @@ public:
 	CPPUNIT_TEST(setRatingOnReqLab);
 	CPPUNIT_TEST(setRatingForLabMorningPref);
 	CPPUNIT_TEST(setRatingForLabAfternoonPref);
+	CPPUNIT_TEST(setRatingForLabBeforeLunchBreak);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Options* opts;
@@ -38,6 +39,7 @@ public:
 	void setRatingOnReqLab();
 	void setRatingForLabMorningPref();
 	void setRatingForLabAfternoonPref();
+	void setRatingForLabBeforeLunchBreak();
 	void tearDown();
 };
 
