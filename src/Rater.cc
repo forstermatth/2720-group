@@ -50,6 +50,9 @@ void Rater::processCourse(Course& c){
 			if (opts->getTimePreference() == Times::Am && c.getLab().getEndTime() < 1200){
 				rating += 5;
 			}
+			else if (opts->getTimePreference() == Times::Pm && c.getLab().getStartTime() > 1199){
+				rating += 5;
+			}
 			requiredCourses = opts->getRequiredCourses();
 			requiredCourses2 = requiredCourses;
 			for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
