@@ -6,106 +6,116 @@
 #include <stdexcept>
 
 void CourseSched::addCourse(Course _course){
-	findConflict(&_course);
-	courses.push_back(_course);
-	it = courses.begin();
+	if(courses.size() > 0) findConflict(&_course);
+	courses.add(_course);
 }
 
-void CourseSched::removeCourse(){
-	if (courses.empty()){
-		throw EmptyContainer();
-	}
-	it = courses.erase(it);
+void CourseSched::addLab(Lab _lab){
+	if(labs.size() > 0) findConflict(&_lab);
+	labs.add(_lab);
 }
 
 void CourseSched::findConflict(CourseBase* newCourse){
 	string newDays = newCourse->getDays(); //load days of the new course into newDays local variable
 
-	for (std::list<Course>::iterator it=courses.begin() ; it != courses.end(); ++it) {
-		int i = 0; //counter for new course
-		int j = 0; //counter for existing course
-		//load days of the existing course into days local variable
-		string days = getCourse().getDays(); 
-		int temp;
-		do {
-			//if newCourse has the same day as course
-			if (newDays.at(i) != days.at(j)){ 
-				//compare days to determine which counter to increment
-				if(compareDays(newDays.at(i), days.at(j)) == 0){ 
-					if (i<newDays.length()-1){
-						temp=1;
-						i++;
+	if(courses.size() != 0){
+		Course course_ = courses.begin();
+		while(!course_.equal(courses.last())) {
+			int i = 0; //counter for new course
+			int j = 0; //counter for existing course
+			//load days of the existing course into days local variable
+			string days = course_.getDays(); 
+			int temp;
+			do {
+				//if newCourse has the same day as course
+				if (newDays.at(i) != days.at(j)){ 
+					//compare days to determine which counter to increment
+					if(compareDays(newDays.at(i), days.at(j)) == 0){ 
+						if (i<newDays.length()-1){
+							temp=1;
+							i++;
+						}else{
+							temp=0;
+						}
 					}else{
-						temp=0;
+						if (j<days.length()-1){
+							temp=1;
+							j++;
+						}else{		
+							temp=0;
+						}
 					}
-				}else{
-					if (j<days.length()-1){
-						temp=1;
-						j++;
-					}else{		
-						temp=0;
-					}
-				}
-			}else{ //begin time conflict logic
-				temp = 0;
-				//if new course starts before existing course
-				if (newCourse->getStartTime() < getCourse().getStartTime()){ 
-					//if new course ends after existing course starts
-					if (newCourse->getEndTime() > getCourse().getStartTime()){ 
-						throw TimeConflict();
-					}
-				}else{
-					//if new course starts before existing course ends
-					if (newCourse->getStartTime() < getCourse().getEndTime()){ 
-						throw TimeConflict();
+				}else{ //begin time conflict logic
+					temp = 0;
+					//if new course starts before existing course
+					if (newCourse->getStartTime() < course_.getStartTime()){ 
+						//if new course ends after existing course starts
+						if (newCourse->getEndTime() > course_.getStartTime()){ 
+							throw TimeConflict();
+						}
+					}else{
+						//if new course starts before existing course ends
+						if (newCourse->getStartTime() < course_.getEndTime()){ 
+							throw TimeConflict();
+						}
 					}
 				}
-			}
-		}while (temp==1);
-	}
+			}while (temp==1);
 
-	for (std::list<Lab>::iterator it = labs.begin(); it != labs.end(); ++it) {
-		int i = 0; //counter for new course
-		int j = 0; //counter for existing course
-		//load days of the existing course into days local variable
-		string days = it->getDays(); 
-		int temp;
-		do {
-			//if newCourse has the same day as course
-			if (newDays.at(i) != days.at(j)){ 
-				//compare days to determine which counter to increment
-				if(compareDays(newDays.at(i), days.at(j)) == 0){ 
-					if (i<newDays.length()-1){
-						temp=1;
-						i++;
-					}else{
-						temp=0;
-					}
-				}else{
-					if (j<days.length()-1){
-						temp=1;
-						j++;
-					}else{		
-						temp=0;
-					}
-				}
-			}else{ //begin time conflict logic
-				temp = 0;
-				//if new course starts before existing course
-				if (newCourse->getStartTime() < it->getStartTime()){ 
-					//if new course ends after existing course starts
-					if (newCourse->getEndTime() > it->getStartTime()){ 
-						throw TimeConflict();
-					}
-				}else{
-					//if new course starts before existing course ends
-					if (newCourse->getStartTime() < it->getEndTime()){ 
-						throw TimeConflict();
-					}
-				}
-			}
-		}while (temp==1);
+			courses.next();
+			course_ = courses.get();
+		}
 	}
+	
+	if(labs.size() != 0){
+		Lab lab_ = labs.begin();
+		while(!lab_.equal(labs.last())) {
+			int i = 0; //counter for new course
+			int j = 0; //counter for existing course
+			//load days of the existing course into days local variable
+			string days = lab_.getDays(); 
+			int temp;
+			do {
+				//if newCourse has the same day as course
+				if (newDays.at(i) != days.at(j)){ 
+					//compare days to determine which counter to increment
+					if(compareDays(newDays.at(i), days.at(j)) == 0){ 
+						if (i<newDays.length()-1){
+							temp=1;
+							i++;
+						}else{
+							temp=0;
+						}
+					}else{
+						if (j<days.length()-1){
+							temp=1;
+							j++;
+						}else{		
+							temp=0;
+						}
+					}
+				}else{ //begin time conflict logic
+					temp = 0;
+					//if new course starts before existing course
+					if (newCourse->getStartTime() < lab_.getStartTime()){ 
+						//if new course ends after existing course starts
+						if (newCourse->getEndTime() > lab_.getStartTime()){ 
+							throw TimeConflict();
+						}
+					}else{
+						//if new course starts before existing course ends
+						if (newCourse->getStartTime() < lab_.getEndTime()){ 
+							throw TimeConflict();
+						}
+					}
+				}
+			}while (temp==1);
+
+			labs.next();
+			lab_ = labs.get();
+		}
+	}
+	
 }
 
 /*
@@ -139,46 +149,4 @@ int CourseSched::compareDays(char c1, char c2){
 		return 0;
 	else
 		return 1;
-}
-
-void CourseSched::addLab(Lab _lab){
-	findConflict(&_lab);
-	labs.push_back(_lab);
-}
-
-Lab& CourseSched::getLab(){
-	return *labsit;
-}
-
-Lab& CourseSched::firstLab(){
-	return labs.front();
-}
-
-Lab& CourseSched::lastLab(){
-	return labs.back();
-}
-
-Lab& CourseSched::beginLab(){
-	labsit = labs.begin();
-	return labs.front();
-}
-
-void CourseSched::nextLab(){
-	labsit++;
-	if(labsit == labs.end()){
-		labsit = labs.begin();
-	}
-}
-
-Lab& CourseSched::endLab(){
-	labsit = --labs.end();
-	return labs.back();
-}
-
-void CourseSched::prevLab(){
-	if(labsit == labs.begin()){
-		labsit = --labs.end();
-	}else {
-		labsit--;
-	}
 }

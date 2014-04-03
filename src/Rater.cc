@@ -13,9 +13,9 @@ void Rater::rateCourses(){
 			cc->next();
 		}
 		count = 1;
-		processCourse(cc->getCourse());
+		processCourse(cc->get());
 	}
-	while (cc->getCourse().getId() != cc->last().getId());
+	while (cc->get().getId() != cc->last().getId());
 }
 
 void Rater::processCourse(Course& c){
@@ -41,35 +41,35 @@ void Rater::processCourse(Course& c){
 		requiredCourses2.pop_front();
 	}
 	c.setRating(rating);
-	if(c.hasLab()==1){
-		Lab last = c.lastLab();
-		c.labBegin();
+	if(c.labs.size() > 0){
+		Lab last = c.labs.last();
+		c.labs.begin();
 		do 
 		{
 			rating = 0;
-			if (opts->getTimePreference() == Times::Am && c.getLab().getEndTime() < 1200){
+			if (opts->getTimePreference() == Times::Am && c.labs.get().getEndTime() < 1200){
 				rating += 5;
 			}
-			else if (opts->getTimePreference() == Times::Pm && c.getLab().getStartTime() > 1199){
+			else if (opts->getTimePreference() == Times::Pm && c.labs.get().getStartTime() > 1199){
 				rating += 5;
 			}
 			else if (opts->getTimePreference() == Times::None){
 				rating += 5;
 			}
-			if (opts->getBreakStart() >= c.getLab().getEndTime() || opts->getBreakEnd() <= c.getLab().getStartTime()){
+			if (opts->getBreakStart() >= c.labs.get().getEndTime() || opts->getBreakEnd() <= c.labs.get().getStartTime()){
 				rating += 5;
 			}
 			requiredCourses = opts->getRequiredCourses();
 			requiredCourses2 = requiredCourses;
 			for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
-				if (requiredCourses2.front() == c.getLab().getId()) {
+				if (requiredCourses2.front() == c.labs.get().getId()) {
 					rating = 30;
 				}
 				requiredCourses2.pop_front();
 			}
-			c.getLab().setRating(rating);
-			c.nextLab();
+			c.labs.get().setRating(rating);
+			c.labs.next();
 		}
-		while (c.getLab().getId() != last.getId());
+		while (c.labs.get().getId() != last.getId());
 	}
 }

@@ -43,6 +43,15 @@ unsigned int CourseBase::getRating() const{
 	return rating;
 }
 
+bool CourseBase::equal(CourseBase& crs){
+	return (crs.getEndTime() == endTime
+		&& crs.getStartTime() == startTime
+		&& crs.getDays() == days
+		&& crs.getName() == courseName
+		&& crs.getId() == courseId
+		&& crs.getLoc() == courseLoc);
+}
+
 CourseBase& CourseBase::operator= (const CourseBase& rhs){
 	
 	this->startTime = rhs.getStartTime();

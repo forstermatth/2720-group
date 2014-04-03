@@ -24,13 +24,13 @@ void SchedulerFixture::testAddCourses(){
 	Course c2(1030, 1015, "TR", "name2", "loc 641", 453224);
 	c1.setRating(1);
 	c2.setRating(2);
-	cc.addCourse(c1);
-	cc.addCourse(c2);
+	cc.add(c1);
+	cc.add(c2);
 	CourseSched cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c2.getId());
-	cs.next();
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
-	CPPUNIT_ASSERT(cs.size() == 2);
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c2.getId());
+	cs.courses.next();
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c1.getId());
+	CPPUNIT_ASSERT(cs.courses.size() == 2);
 }
 
 void SchedulerFixture::testCourseConflict(){
@@ -43,14 +43,14 @@ void SchedulerFixture::testCourseConflict(){
 	c1.setRating(10);
 	c2.setRating(9);
 	c3.setRating(8);
-	cc.addCourse(c1);
-	cc.addCourse(c2);
-	cc.addCourse(c3);
+	cc.add(c1);
+	cc.add(c2);
+	cc.add(c3);
 	CourseSched cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
-	cs.next();
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c3.getId());
-	CPPUNIT_ASSERT(cs.size() == 2);
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c1.getId());
+	cs.courses.next();
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs.courses.size() == 2);
 }
 
 void SchedulerFixture::testNotEnoughCourses(){
@@ -63,14 +63,14 @@ void SchedulerFixture::testNotEnoughCourses(){
 	c1.setRating(10);
 	c2.setRating(9);
 	c3.setRating(8);
-	cc.addCourse(c1);
-	cc.addCourse(c2);
-	cc.addCourse(c3);
+	cc.add(c1);
+	cc.add(c2);
+	cc.add(c3);
 	CourseSched cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
-	cs.next();
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c3.getId());
-	CPPUNIT_ASSERT(cs.size() == 2);
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c1.getId());
+	cs.courses.next();
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs.courses.size() == 2);
 }
 
 void SchedulerFixture::testCoursesWithPadding(){
@@ -83,12 +83,12 @@ void SchedulerFixture::testCoursesWithPadding(){
 	c1.setRating(10);
 	c2.setRating(9);
 	c3.setRating(8);
-	cc.addCourse(c1);
-	cc.addCourse(c2);
-	cc.addCourse(c3);
+	cc.add(c1);
+	cc.add(c2);
+	cc.add(c3);
 	CourseSched cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c1.getId());
-	cs.next();
-	CPPUNIT_ASSERT(cs.getCourse().getId() == c3.getId());
-	CPPUNIT_ASSERT(cs.size() == 2);
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c1.getId());
+	cs.courses.next();
+	CPPUNIT_ASSERT(cs.courses.get().getId() == c3.getId());
+	CPPUNIT_ASSERT(cs.courses.size() == 2);
 }

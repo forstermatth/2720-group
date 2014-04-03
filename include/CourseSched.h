@@ -1,12 +1,16 @@
 #ifndef __COURSESCHED_H
 #define __COURSESCHED_H
 
-#include "Course.h"
-#include "CourseBase.h"
 #include <list>
+
+#include "CourseBase.h"
+#include "Course.h"
+#include "Lab.h"
+
 #include "Exceptions.h"
 #include "CourseCont.h"
-#include "Lab.h"
+#include "LabCont.h"
+
 using namespace std;
 
 
@@ -14,14 +18,12 @@ using namespace std;
 	Course Schedule Container
 	Holds a created schedule, checks for time conflicts
 */
-class CourseSched : public CourseCont{
+class CourseSched{
 public:
 	/// Add a course to the schedule. Checks for conflicts.
 	/** \param _course the course to add */
 	void addCourse(Course _course);
-
-	/// remove the current course from the container
-	void removeCourse();
+	void addLab(Lab _lab);
 
 	/// find a time conflict
 	/** \param course a course not yet in the schedule - compared to all that are */
@@ -35,36 +37,11 @@ public:
 	*/
 	int compareDays(char, char);
 
-	/// Adds a lab.
-	void addLab(Lab _lab);
-
-	///gets the current lab
-	Lab& getLab();
-
-	/// returns first lab
-	Lab& firstLab();
-
-	/// returns last lab
-	Lab& lastLab();
-
-	/// Moves the iterator to the first element of the container and returns it a reference to that object
-	/**
-		Must be called after filling the container with objects, e.g. after parse.
-	*/
-	Lab& beginLab();
-
-	/// Move the iterator one forward. If last element, will move to the front.
-	void nextLab();
-
-	///Moves the lab iterator to the end of the list and returns a reference to the lab
-	Lab& endLab();
-
-	///Move the iterator one backward. If last element, will move to the end.
-	void prevLab();
+	CourseCont courses;
+	LabCont labs;
 
 private:
-	list<Lab> labs;
-	list<Lab>::iterator labsit;
+
 };
 
 #endif

@@ -1,7 +1,7 @@
 CFLAGS = -I include -std=c++0x
 LIBDIR =
 LNFLAGS = -lcppunit -ldl
-OBJECTS = CourseBase.o Course.o Lab.o CourseCont.o CourseSched.o InputWrap.o main.o Options.o Output.o Rater.o Scheduler.o
+OBJECTS = CourseBase.o Course.o Lab.o CourseCont.o LabCont.o CourseSched.o InputWrap.o main.o Options.o Output.o Rater.o Scheduler.o
 OBJECTLIST = $(addprefix bin/,${OBJECTS})
 VPATH = src test
 

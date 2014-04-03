@@ -49,10 +49,10 @@ void InputWrapFixture::testPopulateCourse(){
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 
 	CPPUNIT_ASSERT(cc.begin().getName() == comp.getName());
-	CPPUNIT_ASSERT(cc.getCourse().getStartTime() == comp.getStartTime());
-	CPPUNIT_ASSERT(cc.getCourse().getDays() == comp.getDays());
-	CPPUNIT_ASSERT(cc.getCourse().getLoc() == comp.getLoc());
-	CPPUNIT_ASSERT(cc.getCourse().getId() == comp.getId());
+	CPPUNIT_ASSERT(cc.get().getStartTime() == comp.getStartTime());
+	CPPUNIT_ASSERT(cc.get().getDays() == comp.getDays());
+	CPPUNIT_ASSERT(cc.get().getLoc() == comp.getLoc());
+	CPPUNIT_ASSERT(cc.get().getId() == comp.getId());
 	
 }
 
@@ -68,11 +68,11 @@ void InputWrapFixture::testPopulateMultiCourses(){
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 	CPPUNIT_ASSERT(cc.begin().getName() == comp1.getName());
 	cc.next();
-	CPPUNIT_ASSERT(cc.getCourse().getName() == comp2.getName());
+	CPPUNIT_ASSERT(cc.get().getName() == comp2.getName());
 	cc.next();
-	CPPUNIT_ASSERT(cc.getCourse().getName() == comp3.getName());
+	CPPUNIT_ASSERT(cc.get().getName() == comp3.getName());
 	cc.next();
-	CPPUNIT_ASSERT(cc.getCourse().getName() == comp4.getName());
+	CPPUNIT_ASSERT(cc.get().getName() == comp4.getName());
 
 }
 
@@ -85,9 +85,9 @@ void InputWrapFixture::testParseLab(){
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 
-	CPPUNIT_ASSERT_NO_THROW(cc.first().labBegin());
-	CPPUNIT_ASSERT(cc.first().hasLab() == 1);
-	CPPUNIT_ASSERT_NO_THROW(la = cc.first().getLab());
+	CPPUNIT_ASSERT_NO_THROW(cc.first().labs.begin());
+	CPPUNIT_ASSERT(cc.first().labs.size() > 0);
+	CPPUNIT_ASSERT_NO_THROW(la = cc.first().labs.get());
 
 	CPPUNIT_ASSERT(la.getName() == lcomp.getName());
 	CPPUNIT_ASSERT(la.getStartTime() == lcomp.getStartTime());
@@ -110,10 +110,10 @@ void InputWrapFixture::testNumberLabs(){
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 	
-	CPPUNIT_ASSERT(cc.begin().labsize() == 3);
+	CPPUNIT_ASSERT(cc.begin().labs.size() == 3);
 	cc.next();
 	cc.next();
-	CPPUNIT_ASSERT(cc.getCourse().labsize() == 3);
+	CPPUNIT_ASSERT(cc.get().labs.size() == 3);
 }
 
 void InputWrapFixture::testMultiLabs(){
@@ -132,16 +132,16 @@ void InputWrapFixture::testMultiLabs(){
 	cc.next();
 	cc.next();
 
-    CPPUNIT_ASSERT(cc.getCourse().labsize() == 3);
-	parsed = cc.getCourse();
+    CPPUNIT_ASSERT(cc.get().labs.size() == 3);
+	parsed = cc.get();
 
-	CPPUNIT_ASSERT(parsed.hasLab() == 1);
-	CPPUNIT_ASSERT_NO_THROW(parsed.labBegin());
+	CPPUNIT_ASSERT(parsed.labs.size() > 0);
+	CPPUNIT_ASSERT_NO_THROW(parsed.labs.begin());
 
-	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp2.getName());
-	parsed.nextLab();
-	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp3.getName());
-	parsed.nextLab();
-	CPPUNIT_ASSERT(parsed.getLab().getName() == lcomp4.getName());
+	CPPUNIT_ASSERT(parsed.labs.get().getName() == lcomp2.getName());
+	parsed.labs.next();
+	CPPUNIT_ASSERT(parsed.labs.get().getName() == lcomp3.getName());
+	parsed.labs.next();
+	CPPUNIT_ASSERT(parsed.labs.get().getName() == lcomp4.getName());
 
 }

@@ -12,10 +12,10 @@ CourseSched Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
 	bool reachEnd = false;
 
 	for(int i = 0; i < opts.getNumCourses() && !reachEnd;){
-		reachEnd = courseList.getCourse().equal(courseList.last());
+		reachEnd = courseList.get().equal(courseList.last());
 		try{
 			Course add, comp;
-			add = comp = courseList.getCourse(); //.addPadding(opts.getBreakPadding());
+			add = comp = courseList.get(); //.addPadding(opts.getBreakPadding());
 			comp.addPadding(opts.getBreakPadding());
 			schedule.findConflict(&comp); //will throw and skip if conflict
 			schedule.addCourse(add);

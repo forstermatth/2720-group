@@ -6,7 +6,7 @@ CourseCont::CourseCont(){
 	it = courses.begin();
 }
 
-void CourseCont::addCourse(Course _course){
+void CourseCont::add(Course _course){
 	courses.push_back(_course);
 }
 
@@ -36,7 +36,7 @@ void CourseCont::next(){
 	}
 }
 
-Course& CourseCont::getCourse(){
+Course& CourseCont::get(){
 	if(courses.empty()){
 		throw EmptyContainer();
 	}
@@ -46,19 +46,24 @@ Course& CourseCont::getCourse(){
 
 void CourseCont::prev(){
 	if(it == courses.begin()){
-		it = courses.end();
+		it = --courses.end();
 	}else{
 		--it;
 	}
 }
 
+void CourseCont::erase(){
+	if(it == courses.end()) throw EmptyContainer();
+	courses.erase(it);
+}
+
 void CourseCont::sort(){
 	courses.sort(compareCourseRating);	
 }
-
 bool compareCourseRating(const Course &first, const Course &second){
 	return first.getRating() > second.getRating();
 }
+
 
 int CourseCont::size(){
 	return courses.size();
