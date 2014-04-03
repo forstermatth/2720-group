@@ -30,13 +30,13 @@ public:
 	void addLab(Lab _lab);
 
 	/// Return the first lab - moves the lab iterator to the beginning of the list permanently
-	Lab firstLab();
+	Lab& firstLab();
 
 	/// Moves the iterator to the beginning of the lab list
 	void labBegin();
 
 	/// Returns the last lab - moves the iterator to the end of the list
-	Lab lastLab();
+	Lab& lastLab();
 
 	/// Moves the iterator to the next lab on the list
 	void nextLab();
@@ -45,7 +45,7 @@ public:
 	void prevLab();
 
 	/// Returns the lab that the current iterator is pointing to
-	Lab getLab();
+	Lab& getLab();
 
 	/// checks to see if there are labs attached to the course, returns 1 or 0
 	int hasLab();

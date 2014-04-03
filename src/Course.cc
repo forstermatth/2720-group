@@ -9,12 +9,12 @@ void Course::addLab(Lab _lab){
 	labs.push_back(_lab);
 }
 
-Lab Course::firstLab(){
+Lab& Course::firstLab(){
 	std::list<Lab>::iterator iter = labs.begin();
 	return *iter;
 }
 
-Lab Course::lastLab(){
+Lab& Course::lastLab(){
 	std::list<Lab>::iterator iter = labs.end();
 	return *--iter;
 }
@@ -33,7 +33,7 @@ void Course::prevLab(){
 	it--;
 }
 
-Lab Course::getLab(){
+Lab& Course::getLab(){
 	if(labs.empty()){
 		throw EmptyContainer();
 	}
