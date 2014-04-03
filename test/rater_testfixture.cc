@@ -119,3 +119,16 @@ void RaterFixture::ignoreCourseOverlappingLunch(){
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 0);
 }
+
+void RaterFixture::setRatingOnReqLab(){
+	list<unsigned int> requiredCourses;
+	requiredCourses.push_back(894370);
+	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
+	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
+	Lab l(915, 1000, "F", "courselab", "labloc", 894370);
+	c.addLab(l);
+	cc->addCourse(c);
+	Rater r(opts, cc);
+	r.rateCourses();
+	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 30);
+}
