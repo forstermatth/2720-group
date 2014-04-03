@@ -53,6 +53,12 @@ void Rater::processCourse(Course& c){
 			else if (opts->getTimePreference() == Times::Pm && c.getLab().getStartTime() > 1199){
 				rating += 5;
 			}
+			else if (opts->getTimePreference() == Times::None){
+				rating += 5;
+			}
+			if (opts->getBreakStart() >= c.getLab().getEndTime() || opts->getBreakEnd() <= c.getLab().getStartTime()){
+				rating += 5;
+			}
 			requiredCourses = opts->getRequiredCourses();
 			requiredCourses2 = requiredCourses;
 			for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
