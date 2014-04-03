@@ -24,6 +24,7 @@ public:
 			according to the options.
 	*/
 	void rateCourses();
+	void processCourse(Course&);
 };
 
 #endif
