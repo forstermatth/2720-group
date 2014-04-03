@@ -6,12 +6,12 @@
 #include <stdexcept>
 
 void CourseSched::addCourse(Course _course){
-	if(courses.size() > 0) findConflict(&_course);
+	findConflict(&_course);
 	courses.add(_course);
 }
 
 void CourseSched::addLab(Lab _lab){
-	if(labs.size() > 0) findConflict(&_lab);
+	findConflict(&_lab);
 	labs.add(_lab);
 }
 
@@ -20,7 +20,7 @@ void CourseSched::findConflict(CourseBase* newCourse){
 
 	if(courses.size() != 0){
 		Course course_ = courses.begin();
-		while(!course_.equal(courses.last())) {
+		do {
 			int i = 0; //counter for new course
 			int j = 0; //counter for existing course
 			//load days of the existing course into days local variable
@@ -61,15 +61,14 @@ void CourseSched::findConflict(CourseBase* newCourse){
 					}
 				}
 			}while (temp==1);
-
 			courses.next();
 			course_ = courses.get();
-		}
+		}while (!course_.equal(courses.last()));
 	}
 	
 	if(labs.size() != 0){
 		Lab lab_ = labs.begin();
-		while(!lab_.equal(labs.last())) {
+		do{
 			int i = 0; //counter for new course
 			int j = 0; //counter for existing course
 			//load days of the existing course into days local variable
@@ -113,7 +112,7 @@ void CourseSched::findConflict(CourseBase* newCourse){
 
 			labs.next();
 			lab_ = labs.get();
-		}
+		}while(!lab_.equal(labs.last()));
 	}
 	
 }

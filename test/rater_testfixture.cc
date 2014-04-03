@@ -196,13 +196,10 @@ void RaterFixture::setRatingForMultipleLabs(){
 	c.labs.add(l2);
 	cc->add(c);
 	Rater r(opts, cc);
-
 	r.rateCourses();
-
 	Course rated = cc->begin();
-	cout << rated.labs.begin().getRating() << endl;
+	rated.labs.begin();
 	CPPUNIT_ASSERT(rated.labs.first().getRating() == 5);
 	rated.labs.next();
-	cout << rated.labs.get().getRating();
 	CPPUNIT_ASSERT(rated.labs.get().getRating() == 0);
 }

@@ -1,6 +1,7 @@
 #include "CourseCont.h"
 #include "Course.h"
 #include "Exceptions.h"
+#include <iostream>
 
 CourseCont::CourseCont(){
 	it = courses.begin();
