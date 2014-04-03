@@ -25,6 +25,7 @@ public:
 	*/
 	void rateCourses();
 	void processCourse(Course&);
+	void processLab(Lab&);
 };
 
 #endif

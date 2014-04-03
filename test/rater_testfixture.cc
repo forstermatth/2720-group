@@ -184,3 +184,20 @@ void RaterFixture::setRatingForLabAfterLunchBreak(){
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
 }
+
+void RaterFixture::setRatingForMultipleLabs(){
+	list<unsigned int> requiredCourses;
+	requiredCourses.push_back(894371);
+	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
+	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
+	Lab l1(900, 1050, "W", "courselab1", "labloc", 894370);
+	Lab l2(1215, 1300, "F", "courselab2", "labloc", 894370);
+	c.addLab(l1);
+	c.addLab(l2);
+	cc->addCourse(c);
+	Rater r(opts, cc);
+	r.rateCourses();
+	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
+	cc->next();
+	CPPUNIT_ASSERT(cc->getCourse().getLab().getRating() == 0);
+}
