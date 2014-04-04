@@ -64,6 +64,10 @@ public:
 	/** \param _rating the rating to set for the course */
 	void setRating(unsigned int _rating);
 
+	/// returns true if the courses are the same, false otherwise
+	/** \param crs the course to compare against */
+	bool equal(CourseBase& crs);
+
 protected:
 	unsigned int startTime; ///< the course start time
 	unsigned int endTime; ///< the course end time

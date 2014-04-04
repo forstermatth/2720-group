@@ -13,32 +13,35 @@ void CourseSchedFixture::tearDown(){
 
 void CourseSchedFixture::testAddCourse(){
 	Course c(900, 1015, "MW", "name", "loc 640", 9484739);
-	CPPUNIT_ASSERT_NO_THROW(cs->addCourse(c));
-	CPPUNIT_ASSERT(cs->getCourse().getStartTime() == c.getStartTime());
-	CPPUNIT_ASSERT(cs->getCourse().getEndTime() == c.getEndTime());
-	CPPUNIT_ASSERT(cs->getCourse().getStartTime() == c.getStartTime());
-	CPPUNIT_ASSERT(cs->getCourse().getDays() == c.getDays());
-	CPPUNIT_ASSERT(cs->getCourse().getName() == c.getName());
-	CPPUNIT_ASSERT(cs->getCourse().getLoc() == c.getLoc());
-	CPPUNIT_ASSERT(cs->getCourse().getId() == c.getId());
+	CPPUNIT_ASSERT_NO_THROW(cs->courses.add(c));
+	CPPUNIT_ASSERT(cs->courses.begin().getStartTime() == c.getStartTime());
+	CPPUNIT_ASSERT(cs->courses.get().getEndTime() == c.getEndTime());
+	CPPUNIT_ASSERT(cs->courses.get().getStartTime() == c.getStartTime());
+	CPPUNIT_ASSERT(cs->courses.get().getDays() == c.getDays());
+	CPPUNIT_ASSERT(cs->courses.get().getName() == c.getName());
+	CPPUNIT_ASSERT(cs->courses.get().getLoc() == c.getLoc());
+	CPPUNIT_ASSERT(cs->courses.get().getId() == c.getId());
 }
 
 void CourseSchedFixture::testRemoveCourse(){
 	Course c(900, 1015, "MW", "name", "loc 640", 9484739);
-	CPPUNIT_ASSERT_NO_THROW(cs->addCourse(c));
-	cs->removeCourse();
-	cs->removeCourse();
+	CPPUNIT_ASSERT_NO_THROW(cs->courses.add(c));
+	cs->courses.erase();
+	cs->courses.erase();
 }
 
 void CourseSchedFixture::testNext(){
 	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Course c2(1030, 1200, "MW", "name2", "loc 641", 453224);
 	Course c3(1300, 1400, "TR", "name3", "loc 642", 43588934);
+
 	cs->addCourse(c1);
 	cs->addCourse(c2);
 	cs->addCourse(c3);
-	cs->next();
-	CPPUNIT_ASSERT(cs->getCourse().getName() == c2.getName());
+
+	cs->courses.begin();
+	cs->courses.next();
+	CPPUNIT_ASSERT(cs->courses.get().getName() == c2.getName());
 }
 
 void CourseSchedFixture::testPrev(){
@@ -48,9 +51,10 @@ void CourseSchedFixture::testPrev(){
 	cs->addCourse(c1);
 	cs->addCourse(c2);
 	cs->addCourse(c3);
-	cs->next();
-	cs->prev();
-	CPPUNIT_ASSERT(cs->getCourse().getName() == c1.getName());
+	cs->courses.begin();
+	cs->courses.next();
+	cs->courses.prev();
+	CPPUNIT_ASSERT(cs->courses.get().getName() == c1.getName());
 }
 
 void CourseSchedFixture::testAddTwoMWFConflictingException(){
@@ -78,8 +82,8 @@ void CourseSchedFixture::testAddMWFandWConflictingException(){
 void CourseSchedFixture::testAddLab(){
 	Lab la(900, 1015, "MWF", "name", "loc 640", 9484739);
 	cs->addLab(la);
-	cs->beginLab();
-	CPPUNIT_ASSERT(la.getId() == cs->getLab().getId());
+	cs->labs.begin();
+	CPPUNIT_ASSERT(la.getId() == cs->labs.get().getId());
 }
 
 void CourseSchedFixture::testAddMultipleLabs(){
@@ -87,8 +91,8 @@ void CourseSchedFixture::testAddMultipleLabs(){
 	Lab l2(1030, 1050, "T", "name2", "loc 641", 9484730);
 	cs->addLab(l1);
 	cs->addLab(l2);
-	CPPUNIT_ASSERT(l1.getId() == cs->firstLab().getId());
-	CPPUNIT_ASSERT(l2.getId() == cs->lastLab().getId());
+	CPPUNIT_ASSERT(l1.getId() == cs->labs.first().getId());
+	CPPUNIT_ASSERT(l2.getId() == cs->labs.last().getId());
 }
 
 void CourseSchedFixture::testNextLab(){
@@ -98,12 +102,12 @@ void CourseSchedFixture::testNextLab(){
 	cs->addLab(l1);
 	cs->addLab(l2);
 	cs->addLab(l3);
-	cs->beginLab();
-	CPPUNIT_ASSERT(l1.getId() == cs->getLab().getId());
-	cs->nextLab();
-	CPPUNIT_ASSERT(l2.getId() == cs->getLab().getId());
-	cs->nextLab();
-	CPPUNIT_ASSERT(l3.getId() == cs->getLab().getId());
+	cs->labs.begin();
+	CPPUNIT_ASSERT(l1.getId() == cs->labs.get().getId());
+	cs->labs.next();
+	CPPUNIT_ASSERT(l2.getId() == cs->labs.get().getId());
+	cs->labs.next();
+	CPPUNIT_ASSERT(l3.getId() == cs->labs.get().getId());
 }
 
 void CourseSchedFixture::testPrevLab(){
@@ -113,12 +117,12 @@ void CourseSchedFixture::testPrevLab(){
 	cs->addLab(l1);
 	cs->addLab(l2);
 	cs->addLab(l3);
-	cs->endLab();
-	CPPUNIT_ASSERT(l3.getId() == cs->getLab().getId());
-	cs->prevLab();
-	CPPUNIT_ASSERT(l2.getId() == cs->getLab().getId());
-	cs->prevLab();
-	CPPUNIT_ASSERT(l1.getId() == cs->getLab().getId());
+	cs->labs.end();
+	CPPUNIT_ASSERT(l3.getId() == cs->labs.get().getId());
+	cs->labs.prev();
+	CPPUNIT_ASSERT(l2.getId() == cs->labs.get().getId());
+	cs->labs.prev();
+	CPPUNIT_ASSERT(l1.getId() == cs->labs.get().getId());
 }
 
 void CourseSchedFixture::testNextLabWraps(){
@@ -126,12 +130,12 @@ void CourseSchedFixture::testNextLabWraps(){
 	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
 	cs->addLab(l1);
 	cs->addLab(l2);
-	cs->beginLab();
-	CPPUNIT_ASSERT(l1.getId() == cs->getLab().getId());
-	cs->nextLab();
-	CPPUNIT_ASSERT(l2.getId() == cs->getLab().getId());
-	cs->nextLab();
-	CPPUNIT_ASSERT(l1.getId() == cs->getLab().getId());
+	cs->labs.begin();
+	CPPUNIT_ASSERT(l1.getId() == cs->labs.get().getId());
+	cs->labs.next();
+	CPPUNIT_ASSERT(l2.getId() == cs->labs.get().getId());
+	cs->labs.next();
+	CPPUNIT_ASSERT(l1.getId() == cs->labs.get().getId());
 }
 
 void CourseSchedFixture::testPrevLabWraps(){
@@ -139,12 +143,12 @@ void CourseSchedFixture::testPrevLabWraps(){
 	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
 	cs->addLab(l1);
 	cs->addLab(l2);
-	cs->endLab();
-	CPPUNIT_ASSERT(l2.getId() == cs->getLab().getId());
-	cs->prevLab();
-	CPPUNIT_ASSERT(l1.getId() == cs->getLab().getId());
-	cs->prevLab();
-	CPPUNIT_ASSERT(l2.getId() == cs->getLab().getId());
+	cs->labs.end();
+	CPPUNIT_ASSERT(l2.getId() == cs->labs.get().getId());
+	cs->labs.prev();
+	CPPUNIT_ASSERT(l1.getId() == cs->labs.get().getId());
+	cs->labs.prev();
+	CPPUNIT_ASSERT(l2.getId() == cs->labs.get().getId());
 }
 
 void CourseSchedFixture::testLabCollision(){

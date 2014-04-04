@@ -185,7 +185,7 @@ CourseCont InputWrap::setCourses(){
 					labdata = labdata->next_sibling();
 				}while(labdata != 0);
 
-				courses.back().addLab(Lab(lstart, lend, ldays, lname, lloc, lid));
+				courses.back().labs.add(Lab(lstart, lend, ldays, lname, lloc, lid));
 
 				datanode = datanode->next_sibling("Lab");
 			}while(datanode != 0);
@@ -197,7 +197,7 @@ CourseCont InputWrap::setCourses(){
 	}while(coursenode != 0);
 
 	for(std::list<Course>::iterator it = courses.begin(); it != courses.end(); it++){
-		cc.addCourse(*it);
+		cc.add(*it);
 	}
 	
 	cc.begin();

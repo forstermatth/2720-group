@@ -52,63 +52,63 @@ void CourseFixture::testRating(){
 
 void CourseFixture::testAddLab(){
 	Lab la(915, 1000, "F", "courselab", "labloc", 000101);
-	c->addLab(la);
-	c->labBegin();
-	CPPUNIT_ASSERT(c->firstLab().getName() == la.getName());
+	c->labs.add(la);
+	c->labs.begin();
+	CPPUNIT_ASSERT(c->labs.first().getName() == la.getName());
 }
 
 void CourseFixture::testReturnLast(){
 	Lab l1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
-	c->addLab(l1);
-	c->addLab(l2);
-	CPPUNIT_ASSERT(c->lastLab().getName() == l2.getName());
+	c->labs.add(l1);
+	c->labs.add(l2);
+	CPPUNIT_ASSERT(c->labs.last().getName() == l2.getName());
 }
 
 void CourseFixture::testNext(){
 	Lab l1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
 	Lab l3(1300, 1400, "TR", "name3", "loc 642", 43588934);
-	c->addLab(l1);
-	c->addLab(l2);
-	c->addLab(l3);
-	c->labBegin();
-	c->nextLab();
-	CPPUNIT_ASSERT(c->getLab().getName() == l2.getName());
+	c->labs.add(l1);
+	c->labs.add(l2);
+	c->labs.add(l3);
+	c->labs.begin();
+	c->labs.next();
+	CPPUNIT_ASSERT(c->labs.get().getName() == l2.getName());
 }
 
 void CourseFixture::testPrev(){
 	Lab l1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Lab l2(1030, 1200, "MW", "name2", "loc 641", 453224);
 	Lab l3(1300, 1400, "TR", "name3", "loc 642", 43588934);
-	c->addLab(l1);
-	c->addLab(l2);
-	c->addLab(l3);
-	c->labBegin();
-	c->nextLab();
-	c->nextLab();
-	c->prevLab();
-	CPPUNIT_ASSERT(c->getLab().getName() == l2.getName());
+	c->labs.add(l1);
+	c->labs.add(l2);
+	c->labs.add(l3);
+	c->labs.begin();
+	c->labs.next();
+	c->labs.next();
+	c->labs.prev();
+	CPPUNIT_ASSERT(c->labs.get().getName() == l2.getName());
 }
 
 void CourseFixture::testOverflow(){
 	Lab l1;
 	Lab l2;
 
-	c->addLab(l1);
-	c->addLab(l2);
-	c->labBegin();
-	CPPUNIT_ASSERT_NO_THROW(c->getLab());
-	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
-	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
-	CPPUNIT_ASSERT_NO_THROW(c->nextLab());
+	c->labs.add(l1);
+	c->labs.add(l2);
+	c->labs.begin();
+	CPPUNIT_ASSERT_NO_THROW(c->labs.get());
+	CPPUNIT_ASSERT_NO_THROW(c->labs.next());
+	CPPUNIT_ASSERT_NO_THROW(c->labs.next());
+	CPPUNIT_ASSERT_NO_THROW(c->labs.next());
 }
 
 void CourseFixture::testHasLab(){
 	Lab la(915, 1000, "F", "courselab", "labloc", 000101);
-	CPPUNIT_ASSERT(c->hasLab() == 0);
-	c->addLab(la);
-	CPPUNIT_ASSERT(c->hasLab() == 1);
+	CPPUNIT_ASSERT(c->labs.size() == 0);
+	c->labs.add(la);
+	CPPUNIT_ASSERT(c->labs.size() == 1);
 }
 
 void CourseFixture::testEqual(){

@@ -16,7 +16,7 @@ void RaterFixture::setRatingOnReqCourses(){
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::Pm, 30, 1000, 1230);
 	Course c(900, 1015, "MW", "name", "loc 640", 894372);
-	cc->addCourse(c);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 30);
@@ -27,7 +27,7 @@ void RaterFixture::setRatingForMorningTimePref(){
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
 	Course c(900, 1015, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 5);
@@ -35,7 +35,7 @@ void RaterFixture::setRatingForMorningTimePref(){
 
 void RaterFixture::setRatingForAfternoonTimePref(){
 	Course c(1300, 1415, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c);
+	cc->add(c);
 	list<unsigned int> requiredCourses;
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::Pm, 30, 1200, 1330);
@@ -46,7 +46,7 @@ void RaterFixture::setRatingForAfternoonTimePref(){
 
 void RaterFixture::setRatingForNoTimePref(){
 	Course c(1300, 1415, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c);
+	cc->add(c);
 	list<unsigned int> requiredCourses;
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::None, 30, 1200, 1330);
@@ -60,7 +60,7 @@ void RaterFixture::ignoreCourseOnLunchBreak(){
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
 	Course c(1200, 1230, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 0);
@@ -71,7 +71,7 @@ void RaterFixture::setRatingForCourseBeforeLunchBreak(){
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::Pm, 30, 1100, 1230);
 	Course c(900, 1015, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 5);
@@ -82,7 +82,7 @@ void RaterFixture::setRatingForCourseAfterLunchBreak(){
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
 	Course c(1300, 1515, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 5);
@@ -96,17 +96,17 @@ void RaterFixture::setRatingForMultipleReqCourses(){
 	Course c1(900, 1015, "MW", "name", "loc 640", 894372);
 	Course c2(1300, 1430, "MW", "name", "loc 640", 894373);
 	Course c3(1300, 1515, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c1);
-	cc->addCourse(c2);
-	cc->addCourse(c3);
+	cc->add(c1);
+	cc->add(c2);
+	cc->add(c3);
 	Rater r(opts, cc);
 	r.rateCourses();
 	cc->begin();
-	CPPUNIT_ASSERT(cc->getCourse().getRating() == 30);
+	CPPUNIT_ASSERT(cc->get().getRating() == 30);
 	cc->next();
-	CPPUNIT_ASSERT(cc->getCourse().getRating() == 30);
+	CPPUNIT_ASSERT(cc->get().getRating() == 30);
 	cc->next();
-	CPPUNIT_ASSERT(cc->getCourse().getRating() == 5);
+	CPPUNIT_ASSERT(cc->get().getRating() == 5);
 }
 
 void RaterFixture::ignoreCourseOverlappingLunch(){
@@ -114,7 +114,7 @@ void RaterFixture::ignoreCourseOverlappingLunch(){
 	requiredCourses.push_back(894372);
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
-	cc->addCourse(c);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
 	CPPUNIT_ASSERT(cc->first().getRating() == 0);
@@ -126,11 +126,11 @@ void RaterFixture::setRatingOnReqLab(){
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
 	Lab l(915, 1000, "F", "courselab", "labloc", 894370);
-	c.addLab(l);
-	cc->addCourse(c);
+	c.labs.add(l);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 30);
+	CPPUNIT_ASSERT(cc->first().labs.first().getRating() == 30);
 }
 
 void RaterFixture::setRatingForLabMorningPref(){
@@ -139,11 +139,11 @@ void RaterFixture::setRatingForLabMorningPref(){
 	opts = new Options(5, requiredCourses, Times::Am, 30, 900, 1230);
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
 	Lab l(915, 1000, "F", "courselab", "labloc", 894370);
-	c.addLab(l);
-	cc->addCourse(c);
+	c.labs.add(l);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
+	CPPUNIT_ASSERT(cc->first().labs.first().getRating() == 5);
 }
 
 void RaterFixture::setRatingForLabAfternoonPref(){
@@ -152,11 +152,11 @@ void RaterFixture::setRatingForLabAfternoonPref(){
 	opts = new Options(5, requiredCourses, Times::Pm, 30, 1000, 1330);
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
 	Lab l(1315, 1430, "F", "courselab", "labloc", 894370);
-	c.addLab(l);
-	cc->addCourse(c);
+	c.labs.add(l);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
+	CPPUNIT_ASSERT(cc->first().labs.first().getRating() == 5);
 }
 
 void RaterFixture::setRatingForLabBeforeLunchBreak(){
@@ -165,11 +165,11 @@ void RaterFixture::setRatingForLabBeforeLunchBreak(){
 	opts = new Options(5, requiredCourses, Times::Pm, 30, 1000, 1230);
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
 	Lab l(915, 945, "F", "courselab", "labloc", 894370);
-	c.addLab(l);
-	cc->addCourse(c);
+	c.labs.add(l);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
+	CPPUNIT_ASSERT(cc->first().labs.first().getRating() == 5);
 }
 
 void RaterFixture::setRatingForLabAfterLunchBreak(){
@@ -178,11 +178,11 @@ void RaterFixture::setRatingForLabAfterLunchBreak(){
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
 	Lab l(1445, 1600, "F", "courselab", "labloc", 894370);
-	c.addLab(l);
-	cc->addCourse(c);
+	c.labs.add(l);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
+	CPPUNIT_ASSERT(cc->first().labs.first().getRating() == 5);
 }
 
 void RaterFixture::setRatingForMultipleLabs(){
@@ -192,12 +192,14 @@ void RaterFixture::setRatingForMultipleLabs(){
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
 	Lab l1(900, 1050, "W", "courselab1", "labloc", 894370);
 	Lab l2(1215, 1300, "F", "courselab2", "labloc", 894370);
-	c.addLab(l1);
-	c.addLab(l2);
-	cc->addCourse(c);
+	c.labs.add(l1);
+	c.labs.add(l2);
+	cc->add(c);
 	Rater r(opts, cc);
 	r.rateCourses();
-	CPPUNIT_ASSERT(cc->first().firstLab().getRating() == 5);
-	cc->next();
-	CPPUNIT_ASSERT(cc->getCourse().getLab().getRating() == 0);
+	Course rated = cc->begin();
+	rated.labs.begin();
+	CPPUNIT_ASSERT(rated.labs.first().getRating() == 5);
+	rated.labs.next();
+	CPPUNIT_ASSERT(rated.labs.get().getRating() == 0);
 }

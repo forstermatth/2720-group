@@ -1,7 +1,7 @@
-#ifndef __COURSECONT_H
-#define __COURSECONT_H
+#ifndef __LABCONT_H
+#define __LABCONT_H
 
-#include "Course.h"
+#include "Lab.h"
 #include <list>
 using namespace std;
 
@@ -9,53 +9,54 @@ using namespace std;
 /**
 	\brief Course Container - used for storing courses in a size agnostic manner
 */
-class CourseCont {
+class LabCont {
 public:
 
 	/// Constructor - Initializes iterator
-	CourseCont();
+	LabCont();
 
 	/// Adds a course to the container
 	/** \param _course the course to add */
-	void add(Course _course);
+	void add(Lab _lab);
 
 	/// Returns a reference to the first object
-	Course& first();
+	Lab& first();
 
 	/// Returns a reference to the last object
-	Course& last();
+	Lab& last();
 
 	/// Moves the iterator to the first element of the container and returns it a reference to that object
 	/**
 		Must be called after filling the container with objects, i.e. after parse.
 	*/
-	Course& begin();
+	Lab& begin();
 
 	/// Moves the iterator to the last element of the containter and returns it a reference to that object
-	Course& end();
+	Lab& end();
 
 	/// Move the iterator one forward. If last element, will move to the front.
 	void next();
 
 	/// Move the iterator one backward. If the first elemebt, wil move to the back.
 	void prev();
-	
-	void erase();
 
 	/// Sorts the list from highest to lowest rating.
 	void sort();
 
 	/// Return a reference to a course based on the current position of the iterator
-	Course& get();
+	Lab& get();
 
 	///Retuns the number of classes in the course container.
 	int size();
 
+	///Removes course at iterator location
+	void erase();
 protected:
-	list<Course> courses; ///< course container
-	list<Course>::iterator it; ///< course iterator
+	list<Lab> labs; ///< course container
+	list<Lab>::iterator it; ///< course iterator
 };
 
-bool compareCourseRating(const Course &first, const Course &second);
+bool compareLabRating(const Lab &first, const Lab &second);
+
 
 #endif
