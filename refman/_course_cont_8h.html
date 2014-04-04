@@ -66,78 +66,29 @@ $(document).ready(function(){initNavTree('_course_cont_8h.html','');});
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <div class="title">CourseCont.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_course_8h_source.html">Course.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="_exceptions_8h_source.html">Exceptions.h</a>&quot;</code><br/>
 <code>#include &lt;list&gt;</code><br/>
 </div>
 <p><a href="_course_cont_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html">CourseCont</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html">CourseCont&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_course.html" title="Course conceptual object - inherits from CourseBase. ">Course</a> Container - used for storing courses in a size agnostic manner.  <a href="class_course_cont.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a4e1c9b956888a3864875de48eb77c440"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_course_cont_8h.html#a4e1c9b956888a3864875de48eb77c440">compareCourseRating</a> (const <a class="el" href="class_course.html">Course</a> &amp;first, const <a class="el" href="class_course.html">Course</a> &amp;second)</td></tr>
-<tr class="memdesc:a4e1c9b956888a3864875de48eb77c440"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if first has a higher rating then second, false otherwise.  <a href="#a4e1c9b956888a3864875de48eb77c440">More...</a><br/></td></tr>
-<tr class="separator:a4e1c9b956888a3864875de48eb77c440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a4e1c9b956888a3864875de48eb77c440"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool compareCourseRating </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_course.html">Course</a> &amp;&#160;</td>
-          <td class="paramname"><em>first</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_course.html">Course</a> &amp;&#160;</td>
-          <td class="paramname"><em>second</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>returns true if first has a higher rating then second, false otherwise. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">first</td><td>the first course to compare </td></tr>
-    <tr><td class="paramname">second</td><td>the second course to compare </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00059">59</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                                   {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> first.<a class="code" href="class_course_base.html#a0bd315299263669cfd0a840f36d3e33c">getRating</a>() &gt; second.<a class="code" href="class_course_base.html#a0bd315299263669cfd0a840f36d3e33c">getRating</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_a0bd315299263669cfd0a840f36d3e33c"><div class="ttname"><a href="class_course_base.html#a0bd315299263669cfd0a840f36d3e33c">CourseBase::getRating</a></div><div class="ttdeci">unsigned int getRating() const </div><div class="ttdoc">returns the course rating </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00042">CourseBase.cc:42</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_course_cont_8h.html">CourseCont.h</a></li>
-    <li class="footer">Generated on Tue Apr 1 2014 11:35:13 for Class Scheduler by
+    <li class="footer">Generated on Fri Apr 4 2014 17:08:29 for Class Scheduler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -4,6 +4,7 @@ var class_course_base =
     [ "CourseBase", "class_course_base.html#a329127292a286944f922ca3fccda21a7", null ],
     [ "CourseBase", "class_course_base.html#a5fbd7ba11b2dae2db0d4c2103787d282", null ],
     [ "~CourseBase", "class_course_base.html#a367e6dd7736a69868b9ac25b48feee2d", null ],
+    [ "equal", "class_course_base.html#a6dac871b6e3eaa339e6a678672ef6417", null ],
     [ "getDays", "class_course_base.html#abbfc548f71bad301eed7631881a29cd0", null ],
     [ "getEndTime", "class_course_base.html#a33b0e80c7361989ed4891846f4805359", null ],
     [ "getId", "class_course_base.html#a7bce18476781640be8012b18e1d8b44b", null ],

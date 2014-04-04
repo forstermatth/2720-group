@@ -4,9 +4,10 @@ var hierarchy =
       [ "Course", "class_course.html", null ],
       [ "Lab", "class_lab.html", null ]
     ] ],
-    [ "CourseCont", "class_course_cont.html", [
-      [ "CourseSched", "class_course_sched.html", null ]
-    ] ],
+    [ "CourseCont< T >", "class_course_cont.html", null ],
+    [ "CourseCont< Course >", "class_course_cont.html", null ],
+    [ "CourseCont< Lab >", "class_course_cont.html", null ],
+    [ "CourseSched", "class_course_sched.html", null ],
     [ "exception", null, [
       [ "ScheduleException", "class_schedule_exception.html", [
         [ "BadTime", "class_bad_time.html", null ],

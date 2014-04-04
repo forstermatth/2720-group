@@ -6,7 +6,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "CourseBase.h", "_course_base_8h.html", [
       [ "CourseBase", "class_course_base.html", "class_course_base" ]
     ] ],
-    [ "CourseCont.h", "_course_cont_8h.html", "_course_cont_8h" ],
+    [ "CourseCont.h", "_course_cont_8h.html", [
+      [ "CourseCont", "class_course_cont.html", "class_course_cont" ]
+    ] ],
     [ "CourseSched.h", "_course_sched_8h.html", [
       [ "CourseSched", "class_course_sched.html", "class_course_sched" ]
     ] ],

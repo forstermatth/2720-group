@@ -22,5 +22,5 @@ var class_course_cont_fixture =
     [ "testReturnFirst", "class_course_cont_fixture.html#a5113781a3a258c390ccd39d4bb5d6714", null ],
     [ "testReturnLast", "class_course_cont_fixture.html#ab08c9803555d268c93bbd3efd4bc5ac2", null ],
     [ "testSort", "class_course_cont_fixture.html#ac12a643836739352f60f71b1628362a5", null ],
-    [ "cc", "class_course_cont_fixture.html#a33bcb8aef76dbbed4b5438790c4ecba6", null ]
+    [ "cc", "class_course_cont_fixture.html#ac770d93d632623b97d84975cb10f7f52", null ]
 ];

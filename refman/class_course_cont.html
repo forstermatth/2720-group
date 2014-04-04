@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Class Scheduler: CourseCont Class Reference</title>
+<title>Class Scheduler: CourseCont&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,10 +69,11 @@ $(document).ready(function(){initNavTree('class_course_cont.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_course_cont-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">CourseCont Class Reference</div>  </div>
+<div class="title">CourseCont&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -80,103 +81,124 @@ $(document).ready(function(){initNavTree('class_course_cont.html','');});
  <a href="class_course_cont.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for CourseCont:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_course_cont.png" usemap="#CourseCont_map" alt=""/>
-  <map id="CourseCont_map" name="CourseCont_map">
-<area href="class_course_sched.html" title="Course Schedule Container Holds a created schedule, checks for time conflicts. " alt="CourseSched" shape="rect" coords="0,56,89,80"/>
-</map>
- </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6d8db6f92df43e410b4f663a718580dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a6d8db6f92df43e410b4f663a718580dc">addCourse</a> (<a class="el" href="class_course.html">Course</a> _course)</td></tr>
-<tr class="memdesc:a6d8db6f92df43e410b4f663a718580dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a course to the container.  <a href="#a6d8db6f92df43e410b4f663a718580dc">More...</a><br/></td></tr>
-<tr class="separator:a6d8db6f92df43e410b4f663a718580dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab78c640947d6b579ca3a30cccaec729"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_course.html">Course</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#aab78c640947d6b579ca3a30cccaec729">begin</a> ()</td></tr>
-<tr class="memdesc:aab78c640947d6b579ca3a30cccaec729"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the iterator to the first element of the container and returns it a reference to that object.  <a href="#aab78c640947d6b579ca3a30cccaec729">More...</a><br/></td></tr>
-<tr class="separator:aab78c640947d6b579ca3a30cccaec729"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44dc0ec6f9cd3d0cf3f3444eef9ff59"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#ad44dc0ec6f9cd3d0cf3f3444eef9ff59">CourseCont</a> ()</td></tr>
-<tr class="memdesc:ad44dc0ec6f9cd3d0cf3f3444eef9ff59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor - Initializes iterator.  <a href="#ad44dc0ec6f9cd3d0cf3f3444eef9ff59">More...</a><br/></td></tr>
-<tr class="separator:ad44dc0ec6f9cd3d0cf3f3444eef9ff59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2768ffaa5cf59d465c3dc7a62f84ba83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_course.html">Course</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a2768ffaa5cf59d465c3dc7a62f84ba83">end</a> ()</td></tr>
-<tr class="memdesc:a2768ffaa5cf59d465c3dc7a62f84ba83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the iterator to the last element of the containter and returns it a reference to that object.  <a href="#a2768ffaa5cf59d465c3dc7a62f84ba83">More...</a><br/></td></tr>
-<tr class="separator:a2768ffaa5cf59d465c3dc7a62f84ba83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6860f2bb0466833632efce153b5fccf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_course.html">Course</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a6860f2bb0466833632efce153b5fccf9">first</a> ()</td></tr>
-<tr class="memdesc:a6860f2bb0466833632efce153b5fccf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the first object.  <a href="#a6860f2bb0466833632efce153b5fccf9">More...</a><br/></td></tr>
-<tr class="separator:a6860f2bb0466833632efce153b5fccf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b741cc90968196c3bb7a4366807f807"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_course.html">Course</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a8b741cc90968196c3bb7a4366807f807">getCourse</a> ()</td></tr>
-<tr class="memdesc:a8b741cc90968196c3bb7a4366807f807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a reference to a course based on the current position of the iterator.  <a href="#a8b741cc90968196c3bb7a4366807f807">More...</a><br/></td></tr>
-<tr class="separator:a8b741cc90968196c3bb7a4366807f807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaa22697d62160a8b6f62c9c7cfa781f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_course.html">Course</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#aeaa22697d62160a8b6f62c9c7cfa781f">last</a> ()</td></tr>
-<tr class="memdesc:aeaa22697d62160a8b6f62c9c7cfa781f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the last object.  <a href="#aeaa22697d62160a8b6f62c9c7cfa781f">More...</a><br/></td></tr>
-<tr class="separator:aeaa22697d62160a8b6f62c9c7cfa781f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39df275c181d21ce341c18ea035852cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a39df275c181d21ce341c18ea035852cc">next</a> ()</td></tr>
-<tr class="memdesc:a39df275c181d21ce341c18ea035852cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the iterator one forward. If last element, will move to the front.  <a href="#a39df275c181d21ce341c18ea035852cc">More...</a><br/></td></tr>
-<tr class="separator:a39df275c181d21ce341c18ea035852cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a499ea342758ceb4aac3333981c209cfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a499ea342758ceb4aac3333981c209cfd">prev</a> ()</td></tr>
-<tr class="memdesc:a499ea342758ceb4aac3333981c209cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the iterator one backward. If the first elemebt, wil move to the back.  <a href="#a499ea342758ceb4aac3333981c209cfd">More...</a><br/></td></tr>
-<tr class="separator:a499ea342758ceb4aac3333981c209cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76b47587fd4f0f6e51fee0643b24f791"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a76b47587fd4f0f6e51fee0643b24f791">size</a> ()</td></tr>
-<tr class="memdesc:a76b47587fd4f0f6e51fee0643b24f791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retuns the number of classes in the course container.  <a href="#a76b47587fd4f0f6e51fee0643b24f791">More...</a><br/></td></tr>
-<tr class="separator:a76b47587fd4f0f6e51fee0643b24f791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4431fcf586ebb48d6239f314f00e5ee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a4431fcf586ebb48d6239f314f00e5ee2">sort</a> ()</td></tr>
-<tr class="memdesc:a4431fcf586ebb48d6239f314f00e5ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the list from highest to lowest rating.  <a href="#a4431fcf586ebb48d6239f314f00e5ee2">More...</a><br/></td></tr>
-<tr class="separator:a4431fcf586ebb48d6239f314f00e5ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace2e01dc6f1883e55c38640691f1566"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#aace2e01dc6f1883e55c38640691f1566">add</a> (T _course)</td></tr>
+<tr class="memdesc:aace2e01dc6f1883e55c38640691f1566"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a course to the container.  <a href="#aace2e01dc6f1883e55c38640691f1566">More...</a><br/></td></tr>
+<tr class="separator:aace2e01dc6f1883e55c38640691f1566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6baa8715e6a012995f807a175f19b35b"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a6baa8715e6a012995f807a175f19b35b">begin</a> ()</td></tr>
+<tr class="memdesc:a6baa8715e6a012995f807a175f19b35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the iterator to the first element of the container and returns it a reference to that object.  <a href="#a6baa8715e6a012995f807a175f19b35b">More...</a><br/></td></tr>
+<tr class="separator:a6baa8715e6a012995f807a175f19b35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad5de903998c1a894e34e79ffcc7cfe7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#aad5de903998c1a894e34e79ffcc7cfe7">CourseCont</a> ()</td></tr>
+<tr class="memdesc:aad5de903998c1a894e34e79ffcc7cfe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor - Initializes iterator.  <a href="#aad5de903998c1a894e34e79ffcc7cfe7">More...</a><br/></td></tr>
+<tr class="separator:aad5de903998c1a894e34e79ffcc7cfe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80626d5cdf34bbc7ae48ca894438a8c0"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a80626d5cdf34bbc7ae48ca894438a8c0">end</a> ()</td></tr>
+<tr class="memdesc:a80626d5cdf34bbc7ae48ca894438a8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the iterator to the last element of the containter and returns it a reference to that object.  <a href="#a80626d5cdf34bbc7ae48ca894438a8c0">More...</a><br/></td></tr>
+<tr class="separator:a80626d5cdf34bbc7ae48ca894438a8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1792ee90a702e740aa74dd067cbd2b9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a1792ee90a702e740aa74dd067cbd2b9a">erase</a> ()</td></tr>
+<tr class="separator:a1792ee90a702e740aa74dd067cbd2b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b0908db769683c9d3e522ac0f6fa13"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a48b0908db769683c9d3e522ac0f6fa13">first</a> ()</td></tr>
+<tr class="memdesc:a48b0908db769683c9d3e522ac0f6fa13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the first object.  <a href="#a48b0908db769683c9d3e522ac0f6fa13">More...</a><br/></td></tr>
+<tr class="separator:a48b0908db769683c9d3e522ac0f6fa13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31dd3263b2a280110d5560eb5594f762"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a31dd3263b2a280110d5560eb5594f762">get</a> ()</td></tr>
+<tr class="memdesc:a31dd3263b2a280110d5560eb5594f762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a reference to a course based on the current position of the iterator.  <a href="#a31dd3263b2a280110d5560eb5594f762">More...</a><br/></td></tr>
+<tr class="separator:a31dd3263b2a280110d5560eb5594f762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af999bc02a67af48412ca755a69dfff8c"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#af999bc02a67af48412ca755a69dfff8c">last</a> ()</td></tr>
+<tr class="memdesc:af999bc02a67af48412ca755a69dfff8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the last object.  <a href="#af999bc02a67af48412ca755a69dfff8c">More...</a><br/></td></tr>
+<tr class="separator:af999bc02a67af48412ca755a69dfff8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a902871a02a045d9b1357936e8c85ac3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a902871a02a045d9b1357936e8c85ac3c">next</a> ()</td></tr>
+<tr class="memdesc:a902871a02a045d9b1357936e8c85ac3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the iterator one forward. If last element, will move to the front.  <a href="#a902871a02a045d9b1357936e8c85ac3c">More...</a><br/></td></tr>
+<tr class="separator:a902871a02a045d9b1357936e8c85ac3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3858994a25812b3309360f04187bc14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#af3858994a25812b3309360f04187bc14">prev</a> ()</td></tr>
+<tr class="memdesc:af3858994a25812b3309360f04187bc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the iterator one backward. If the first elemebt, wil move to the back.  <a href="#af3858994a25812b3309360f04187bc14">More...</a><br/></td></tr>
+<tr class="separator:af3858994a25812b3309360f04187bc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa47da1b572cf7a833385f799b59826d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#afa47da1b572cf7a833385f799b59826d">size</a> ()</td></tr>
+<tr class="memdesc:afa47da1b572cf7a833385f799b59826d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retuns the number of classes in the course container.  <a href="#afa47da1b572cf7a833385f799b59826d">More...</a><br/></td></tr>
+<tr class="separator:afa47da1b572cf7a833385f799b59826d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c635de3a1245e3c4ad10f387f810a33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a4c635de3a1245e3c4ad10f387f810a33">sort</a> ()</td></tr>
+<tr class="memdesc:a4c635de3a1245e3c4ad10f387f810a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the list from highest to lowest rating.  <a href="#a4c635de3a1245e3c4ad10f387f810a33">More...</a><br/></td></tr>
+<tr class="separator:a4c635de3a1245e3c4ad10f387f810a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a14130c99bc652d5b978158c87b04ba98"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="class_course.html">Course</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a></td></tr>
-<tr class="memdesc:a14130c99bc652d5b978158c87b04ba98"><td class="mdescLeft">&#160;</td><td class="mdescRight">course container  <a href="#a14130c99bc652d5b978158c87b04ba98">More...</a><br/></td></tr>
-<tr class="separator:a14130c99bc652d5b978158c87b04ba98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a428c9f30752b19ff602f1436bc6870"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="class_course.html">Course</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a></td></tr>
-<tr class="memdesc:a1a428c9f30752b19ff602f1436bc6870"><td class="mdescLeft">&#160;</td><td class="mdescRight">course iterator  <a href="#a1a428c9f30752b19ff602f1436bc6870">More...</a><br/></td></tr>
-<tr class="separator:a1a428c9f30752b19ff602f1436bc6870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a56e0602a4184f6b6c99832514f4b8fb0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a56e0602a4184f6b6c99832514f4b8fb0">compareRating</a> (const T &amp;<a class="el" href="class_course_cont.html#a48b0908db769683c9d3e522ac0f6fa13">first</a>, const T &amp;second)</td></tr>
+<tr class="separator:a56e0602a4184f6b6c99832514f4b8fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a69a63cd7817549de7c9748394b7adec0"><td class="memItemLeft" align="right" valign="top">std::list&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a></td></tr>
+<tr class="memdesc:a69a63cd7817549de7c9748394b7adec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">course container  <a href="#a69a63cd7817549de7c9748394b7adec0">More...</a><br/></td></tr>
+<tr class="separator:a69a63cd7817549de7c9748394b7adec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6bf0445c4af91edba771600f2eb0609"><td class="memItemLeft" align="right" valign="top">std::list&lt; T &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a></td></tr>
+<tr class="memdesc:ae6bf0445c4af91edba771600f2eb0609"><td class="mdescLeft">&#160;</td><td class="mdescRight">course iterator  <a href="#ae6bf0445c4af91edba771600f2eb0609">More...</a><br/></td></tr>
+<tr class="separator:ae6bf0445c4af91edba771600f2eb0609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_course.html" title="Course conceptual object - inherits from CourseBase. ">Course</a> Container - used for storing courses in a size agnostic manner. </p>
+<div class="textblock"><h3>template&lt;class T&gt;<br/>
+class CourseCont&lt; T &gt;</h3>
 
-<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00012">12</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<p><a class="el" href="class_course.html" title="Course conceptual object - inherits from CourseBase. ">Course</a> Container - used for storing courses in a size agnostic manner. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00014">14</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad44dc0ec6f9cd3d0cf3f3444eef9ff59"></a>
+<a class="anchor" id="aad5de903998c1a894e34e79ffcc7cfe7"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">CourseCont::CourseCont </td>
+          <td class="memname"><a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::<a class="el" href="class_course_cont.html">CourseCont</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Constructor - Initializes iterator. </p>
 
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00005">5</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                      {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> = <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.begin();</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a1a428c9f30752b19ff602f1436bc6870"><div class="ttname"><a href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">CourseCont::it</a></div><div class="ttdeci">list&lt; Course &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00053">CourseCont.h:53</a></div></div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00018">18</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> = <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.begin();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_ae6bf0445c4af91edba771600f2eb0609"><div class="ttname"><a href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">CourseCont::it</a></div><div class="ttdeci">std::list&lt; T &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00098">CourseCont.h:98</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6d8db6f92df43e410b4f663a718580dc"></a>
+<a class="anchor" id="aace2e01dc6f1883e55c38640691f1566"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CourseCont::addCourse </td>
+          <td class="memname">void <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_course.html">Course</a>&#160;</td>
+          <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>_course</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Adds a course to the container. </p>
@@ -187,289 +209,460 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00009">9</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                                        {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.push_back(_course);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00024">24</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                       {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.push_back(_course);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="aab78c640947d6b579ca3a30cccaec729"></a>
+<a class="anchor" id="a6baa8715e6a012995f807a175f19b35b"></a>
 <div class="memitem">
 <div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_course.html">Course</a> &amp; CourseCont::begin </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Moves the iterator to the first element of the container and returns it a reference to that object. </p>
-<p>Must be called after filling the container with objects, i.e. after parse. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00013">13</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                         {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> = <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.begin();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a1a428c9f30752b19ff602f1436bc6870"><div class="ttname"><a href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">CourseCont::it</a></div><div class="ttdeci">list&lt; Course &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00053">CourseCont.h:53</a></div></div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a2768ffaa5cf59d465c3dc7a62f84ba83"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_course.html">Course</a> &amp; CourseCont::end </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Moves the iterator to the last element of the containter and returns it a reference to that object. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00018">18</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                       {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> = <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.end();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    --<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a1a428c9f30752b19ff602f1436bc6870"><div class="ttname"><a href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">CourseCont::it</a></div><div class="ttdeci">list&lt; Course &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00053">CourseCont.h:53</a></div></div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a6860f2bb0466833632efce153b5fccf9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_course.html">Course</a> &amp; CourseCont::first </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a reference to the first object. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00024">24</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                         {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.begin();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a8b741cc90968196c3bb7a4366807f807"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_course.html">Course</a> &amp; CourseCont::getCourse </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Return a reference to a course based on the current position of the iterator. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00039">39</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                             {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.empty()){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="class_empty_container.html">EmptyContainer</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> == <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.end()) <span class="keywordflow">throw</span> <a class="code" href="class_uninitialized_iterator.html">UninitializedIterator</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="ttc" id="class_empty_container_html"><div class="ttname"><a href="class_empty_container.html">EmptyContainer</a></div><div class="ttdoc">Exception to throw if there is an empty container. </div><div class="ttdef"><b>Definition:</b> <a href="_exceptions_8h_source.html#l00013">Exceptions.h:13</a></div></div>
-<div class="ttc" id="class_uninitialized_iterator_html"><div class="ttname"><a href="class_uninitialized_iterator.html">UninitializedIterator</a></div><div class="ttdoc">Exception to throw if there is a bad time type passed. </div><div class="ttdef"><b>Definition:</b> <a href="_exceptions_8h_source.html#l00069">Exceptions.h:69</a></div></div>
-<div class="ttc" id="class_course_cont_html_a1a428c9f30752b19ff602f1436bc6870"><div class="ttname"><a href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">CourseCont::it</a></div><div class="ttdeci">list&lt; Course &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00053">CourseCont.h:53</a></div></div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="aeaa22697d62160a8b6f62c9c7cfa781f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_course.html">Course</a> &amp; CourseCont::last </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a reference to the last object. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00028">28</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> *(--<a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.end());</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a39df275c181d21ce341c18ea035852cc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CourseCont::next </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Move the iterator one forward. If last element, will move to the front. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00032">32</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                     {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ++<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> == <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.end()){</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> = <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.begin();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a1a428c9f30752b19ff602f1436bc6870"><div class="ttname"><a href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">CourseCont::it</a></div><div class="ttdeci">list&lt; Course &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00053">CourseCont.h:53</a></div></div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a499ea342758ceb4aac3333981c209cfd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CourseCont::prev </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Move the iterator one backward. If the first elemebt, wil move to the back. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00047">47</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                     {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> == <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.begin()){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a> = <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.end();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        --<a class="code" href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">it</a>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a1a428c9f30752b19ff602f1436bc6870"><div class="ttname"><a href="class_course_cont.html#a1a428c9f30752b19ff602f1436bc6870">CourseCont::it</a></div><div class="ttdeci">list&lt; Course &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00053">CourseCont.h:53</a></div></div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a76b47587fd4f0f6e51fee0643b24f791"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int CourseCont::size </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retuns the number of classes in the course container. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00063">63</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.size();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a4431fcf586ebb48d6239f314f00e5ee2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CourseCont::sort </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sorts the list from highest to lowest rating. </p>
-
-<p>Definition at line <a class="el" href="_course_cont_8cc_source.html#l00055">55</a> of file <a class="el" href="_course_cont_8cc_source.html">CourseCont.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                     {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">courses</a>.sort(<a class="code" href="_course_cont_8cc.html#a4e1c9b956888a3864875de48eb77c440">compareCourseRating</a>);  </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="ttc" id="class_course_cont_html_a14130c99bc652d5b978158c87b04ba98"><div class="ttname"><a href="class_course_cont.html#a14130c99bc652d5b978158c87b04ba98">CourseCont::courses</a></div><div class="ttdeci">list&lt; Course &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00052">CourseCont.h:52</a></div></div>
-<div class="ttc" id="_course_cont_8cc_html_a4e1c9b956888a3864875de48eb77c440"><div class="ttname"><a href="_course_cont_8cc.html#a4e1c9b956888a3864875de48eb77c440">compareCourseRating</a></div><div class="ttdeci">bool compareCourseRating(const Course &amp;first, const Course &amp;second)</div><div class="ttdoc">returns true if first has a higher rating then second, false otherwise. </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8cc_source.html#l00059">CourseCont.cc:59</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a14130c99bc652d5b978158c87b04ba98"></a>
-<div class="memitem">
-<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt;<a class="el" href="class_course.html">Course</a>&gt; CourseCont::courses</td>
+          <td class="memname">T &amp; <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Moves the iterator to the first element of the container and returns it a reference to that object. </p>
+<p>Must be called after filling the container with objects, i.e. after parse. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00042">42</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> = <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.begin();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_ae6bf0445c4af91edba771600f2eb0609"><div class="ttname"><a href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">CourseCont::it</a></div><div class="ttdeci">std::list&lt; T &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00098">CourseCont.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a56e0602a4184f6b6c99832514f4b8fb0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::compareRating </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>second</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00100">100</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                              {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_course_cont.html#a48b0908db769683c9d3e522ac0f6fa13">first</a>.getRating() &gt; second.getRating();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a48b0908db769683c9d3e522ac0f6fa13"><div class="ttname"><a href="class_course_cont.html#a48b0908db769683c9d3e522ac0f6fa13">CourseCont::first</a></div><div class="ttdeci">T &amp; first()</div><div class="ttdoc">Returns a reference to the first object. </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00029">CourseCont.h:29</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a80626d5cdf34bbc7ae48ca894438a8c0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Moves the iterator to the last element of the containter and returns it a reference to that object. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00048">48</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> = <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.end();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        --<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_ae6bf0445c4af91edba771600f2eb0609"><div class="ttname"><a href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">CourseCont::it</a></div><div class="ttdeci">std::list&lt; T &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00098">CourseCont.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a1792ee90a702e740aa74dd067cbd2b9a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::erase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00071">71</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> == <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.end()) <span class="keywordflow">throw</span> <a class="code" href="class_empty_container.html">EmptyContainer</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.erase(<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="ttc" id="class_empty_container_html"><div class="ttname"><a href="class_empty_container.html">EmptyContainer</a></div><div class="ttdoc">Exception to throw if there is an empty container. </div><div class="ttdef"><b>Definition:</b> <a href="_exceptions_8h_source.html#l00013">Exceptions.h:13</a></div></div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_ae6bf0445c4af91edba771600f2eb0609"><div class="ttname"><a href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">CourseCont::it</a></div><div class="ttdeci">std::list&lt; T &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00098">CourseCont.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a48b0908db769683c9d3e522ac0f6fa13"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::first </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the first object. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00029">29</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;              {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.begin();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a31dd3263b2a280110d5560eb5594f762"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return a reference to a course based on the current position of the iterator. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00083">83</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.empty()){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="class_empty_container.html">EmptyContainer</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> == <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.end()) <span class="keywordflow">throw</span> <a class="code" href="class_uninitialized_iterator.html">UninitializedIterator</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="ttc" id="class_empty_container_html"><div class="ttname"><a href="class_empty_container.html">EmptyContainer</a></div><div class="ttdoc">Exception to throw if there is an empty container. </div><div class="ttdef"><b>Definition:</b> <a href="_exceptions_8h_source.html#l00013">Exceptions.h:13</a></div></div>
+<div class="ttc" id="class_uninitialized_iterator_html"><div class="ttname"><a href="class_uninitialized_iterator.html">UninitializedIterator</a></div><div class="ttdoc">Exception to throw if there is a bad time type passed. </div><div class="ttdef"><b>Definition:</b> <a href="_exceptions_8h_source.html#l00069">Exceptions.h:69</a></div></div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_ae6bf0445c4af91edba771600f2eb0609"><div class="ttname"><a href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">CourseCont::it</a></div><div class="ttdeci">std::list&lt; T &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00098">CourseCont.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af999bc02a67af48412ca755a69dfff8c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the last object. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00034">34</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;             {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> *(--<a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.end());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a902871a02a045d9b1357936e8c85ac3c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move the iterator one forward. If last element, will move to the front. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00055">55</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;               {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        ++<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> == <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.end()){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> = <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.begin();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_ae6bf0445c4af91edba771600f2eb0609"><div class="ttname"><a href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">CourseCont::it</a></div><div class="ttdeci">std::list&lt; T &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00098">CourseCont.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="af3858994a25812b3309360f04187bc14"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::prev </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move the iterator one backward. If the first elemebt, wil move to the back. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00063">63</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;               {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> == <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.begin()){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a> = --<a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.end();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            --<a class="code" href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">it</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_ae6bf0445c4af91edba771600f2eb0609"><div class="ttname"><a href="class_course_cont.html#ae6bf0445c4af91edba771600f2eb0609">CourseCont::it</a></div><div class="ttdeci">std::list&lt; T &gt;::iterator it</div><div class="ttdoc">course iterator </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00098">CourseCont.h:98</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="afa47da1b572cf7a833385f799b59826d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retuns the number of classes in the course container. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00092">92</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;              {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.size();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }   </div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="a4c635de3a1245e3c4ad10f387f810a33"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::sort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the list from highest to lowest rating. </p>
+
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00077">77</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;               {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">courses</a>.sort(<a class="code" href="class_course_cont.html#a56e0602a4184f6b6c99832514f4b8fb0">compareRating</a>);    </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="ttc" id="class_course_cont_html_a69a63cd7817549de7c9748394b7adec0"><div class="ttname"><a href="class_course_cont.html#a69a63cd7817549de7c9748394b7adec0">CourseCont::courses</a></div><div class="ttdeci">std::list&lt; T &gt; courses</div><div class="ttdoc">course container </div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00097">CourseCont.h:97</a></div></div>
+<div class="ttc" id="class_course_cont_html_a56e0602a4184f6b6c99832514f4b8fb0"><div class="ttname"><a href="class_course_cont.html#a56e0602a4184f6b6c99832514f4b8fb0">CourseCont::compareRating</a></div><div class="ttdeci">static bool compareRating(const T &amp;first, const T &amp;second)</div><div class="ttdef"><b>Definition:</b> <a href="_course_cont_8h_source.html#l00100">CourseCont.h:100</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a69a63cd7817549de7c9748394b7adec0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;T&gt; <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::courses</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>course container </p>
 
-<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00052">52</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00097">97</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1a428c9f30752b19ff602f1436bc6870"></a>
+<a class="anchor" id="ae6bf0445c4af91edba771600f2eb0609"></a>
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt;<a class="el" href="class_course.html">Course</a>&gt;::iterator CourseCont::it</td>
+          <td class="memname">std::list&lt;T&gt;::iterator <a class="el" href="class_course_cont.html">CourseCont</a>&lt; T &gt;::it</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>course iterator </p>
 
-<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00053">53</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_cont_8h_source.html#l00098">98</a> of file <a class="el" href="_course_cont_8h_source.html">CourseCont.h</a>.</p>
 
 </div>
 </div>
@@ -483,7 +676,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_course_cont.html">CourseCont</a></li>
-    <li class="footer">Generated on Tue Apr 1 2014 11:35:14 for Class Scheduler by
+    <li class="footer">Generated on Fri Apr 4 2014 17:08:29 for Class Scheduler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

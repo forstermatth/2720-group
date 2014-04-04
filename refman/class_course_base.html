@@ -102,6 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5fbd7ba11b2dae2db0d4c2103787d282"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_base.html#a5fbd7ba11b2dae2db0d4c2103787d282">CourseBase</a> ()</td></tr>
 <tr class="memdesc:a5fbd7ba11b2dae2db0d4c2103787d282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor - does nothing.  <a href="#a5fbd7ba11b2dae2db0d4c2103787d282">More...</a><br/></td></tr>
 <tr class="separator:a5fbd7ba11b2dae2db0d4c2103787d282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dac871b6e3eaa339e6a678672ef6417"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_base.html#a6dac871b6e3eaa339e6a678672ef6417">equal</a> (<a class="el" href="class_course_base.html">CourseBase</a> &amp;crs)</td></tr>
+<tr class="memdesc:a6dac871b6e3eaa339e6a678672ef6417"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns true if the courses are the same, false otherwise  <a href="#a6dac871b6e3eaa339e6a678672ef6417">More...</a><br/></td></tr>
+<tr class="separator:a6dac871b6e3eaa339e6a678672ef6417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbfc548f71bad301eed7631881a29cd0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_base.html#abbfc548f71bad301eed7631881a29cd0">getDays</a> () const </td></tr>
 <tr class="memdesc:abbfc548f71bad301eed7631881a29cd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the course days  <a href="#abbfc548f71bad301eed7631881a29cd0">More...</a><br/></td></tr>
 <tr class="separator:abbfc548f71bad301eed7631881a29cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,7 +162,7 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_course_base.html" title="CourseBase object class for storing course and lab values. ">CourseBase</a> object class for storing course and lab values. </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00009">9</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00008">8</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8a83199bb6ba7feba00c2eb5898ade78"></a>
 <div class="memitem">
@@ -248,23 +251,23 @@ Protected Attributes</h2></td></tr>
 
 <p>Copy constuctor - ensures proper assignment. </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00024">24</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                         {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a> = _course.<a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a> =  _course.<a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a> =  _course.<a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a> =  _course.<a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a> =  _course.<a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a> = _course.<a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">rating</a> = _course.<a class="code" href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">rating</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="ttc" id="class_course_base_html_aeee08a69012bb0158074682049fe68d0"><div class="ttname"><a href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">CourseBase::courseLoc</a></div><div class="ttdeci">std::string courseLoc</div><div class="ttdoc">the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00072">CourseBase.h:72</a></div></div>
-<div class="ttc" id="class_course_base_html_a184cb4c5b9cb82d65829ad5eb86f0a21"><div class="ttname"><a href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">CourseBase::courseName</a></div><div class="ttdeci">std::string courseName</div><div class="ttdoc">the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00071">CourseBase.h:71</a></div></div>
-<div class="ttc" id="class_course_base_html_a33308b82c154154c92f229fa115d3d37"><div class="ttname"><a href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">CourseBase::courseId</a></div><div class="ttdeci">unsigned int courseId</div><div class="ttdoc">the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00073">CourseBase.h:73</a></div></div>
-<div class="ttc" id="class_course_base_html_a1caad079350810ce35ade3ebffbcedbd"><div class="ttname"><a href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">CourseBase::days</a></div><div class="ttdeci">std::string days</div><div class="ttdoc">the course days: MTWRF </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00070">CourseBase.h:70</a></div></div>
-<div class="ttc" id="class_course_base_html_ae1a96c769c1e9ce4905f0f7afb4d327d"><div class="ttname"><a href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">CourseBase::startTime</a></div><div class="ttdeci">unsigned int startTime</div><div class="ttdoc">the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00068">CourseBase.h:68</a></div></div>
-<div class="ttc" id="class_course_base_html_a4f389106db4b1eac5a79f5b1f135cefc"><div class="ttname"><a href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">CourseBase::rating</a></div><div class="ttdeci">unsigned int rating</div><div class="ttdoc">the course rating </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00074">CourseBase.h:74</a></div></div>
-<div class="ttc" id="class_course_base_html_a0d76157be4caa5eed5fc5458ab50716f"><div class="ttname"><a href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">CourseBase::endTime</a></div><div class="ttdeci">unsigned int endTime</div><div class="ttdoc">the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00069">CourseBase.h:69</a></div></div>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00023">23</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                         {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a> = _course.<a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a> =  _course.<a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a> =  _course.<a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a> =  _course.<a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a> =  _course.<a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a> = _course.<a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">rating</a> = _course.<a class="code" href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">rating</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="ttc" id="class_course_base_html_aeee08a69012bb0158074682049fe68d0"><div class="ttname"><a href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">CourseBase::courseLoc</a></div><div class="ttdeci">std::string courseLoc</div><div class="ttdoc">the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00075">CourseBase.h:75</a></div></div>
+<div class="ttc" id="class_course_base_html_a184cb4c5b9cb82d65829ad5eb86f0a21"><div class="ttname"><a href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">CourseBase::courseName</a></div><div class="ttdeci">std::string courseName</div><div class="ttdoc">the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00074">CourseBase.h:74</a></div></div>
+<div class="ttc" id="class_course_base_html_a33308b82c154154c92f229fa115d3d37"><div class="ttname"><a href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">CourseBase::courseId</a></div><div class="ttdeci">unsigned int courseId</div><div class="ttdoc">the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00076">CourseBase.h:76</a></div></div>
+<div class="ttc" id="class_course_base_html_a1caad079350810ce35ade3ebffbcedbd"><div class="ttname"><a href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">CourseBase::days</a></div><div class="ttdeci">std::string days</div><div class="ttdoc">the course days: MTWRF </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00073">CourseBase.h:73</a></div></div>
+<div class="ttc" id="class_course_base_html_ae1a96c769c1e9ce4905f0f7afb4d327d"><div class="ttname"><a href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">CourseBase::startTime</a></div><div class="ttdeci">unsigned int startTime</div><div class="ttdoc">the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00071">CourseBase.h:71</a></div></div>
+<div class="ttc" id="class_course_base_html_a4f389106db4b1eac5a79f5b1f135cefc"><div class="ttname"><a href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">CourseBase::rating</a></div><div class="ttdeci">unsigned int rating</div><div class="ttdoc">the course rating </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00077">CourseBase.h:77</a></div></div>
+<div class="ttc" id="class_course_base_html_a0d76157be4caa5eed5fc5458ab50716f"><div class="ttname"><a href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">CourseBase::endTime</a></div><div class="ttdeci">unsigned int endTime</div><div class="ttdoc">the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00072">CourseBase.h:72</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -291,8 +294,8 @@ Protected Attributes</h2></td></tr>
 
 <p>Constructor - does nothing. </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00038">38</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{};</div>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00037">37</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,12 +320,58 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00040">40</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{}</div>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00039">39</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6dac871b6e3eaa339e6a678672ef6417"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CourseBase::equal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_course_base.html">CourseBase</a> &amp;&#160;</td>
+          <td class="paramname"><em>crs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns true if the courses are the same, false otherwise </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">crs</td><td>the course to compare against </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_course_base_8cc_source.html#l00046">46</a> of file <a class="el" href="_course_base_8cc_source.html">CourseBase.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                     {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> (crs.<a class="code" href="class_course_base.html#a33b0e80c7361989ed4891846f4805359">getEndTime</a>() == <a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        &amp;&amp; crs.<a class="code" href="class_course_base.html#a2b8d193e69710e0373b11a00ab8d68e6">getStartTime</a>() == <a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        &amp;&amp; crs.<a class="code" href="class_course_base.html#abbfc548f71bad301eed7631881a29cd0">getDays</a>() == <a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        &amp;&amp; crs.<a class="code" href="class_course_base.html#a3203f26ff9217ac44e48b0a00352e3e8">getName</a>() == <a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        &amp;&amp; crs.<a class="code" href="class_course_base.html#a7bce18476781640be8012b18e1d8b44b">getId</a>() == <a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        &amp;&amp; crs.<a class="code" href="class_course_base.html#af81380f26522110c28428706258bb8fa">getLoc</a>() == <a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="class_course_base_html_abbfc548f71bad301eed7631881a29cd0"><div class="ttname"><a href="class_course_base.html#abbfc548f71bad301eed7631881a29cd0">CourseBase::getDays</a></div><div class="ttdeci">std::string getDays() const </div><div class="ttdoc">returns the course days </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00022">CourseBase.cc:22</a></div></div>
+<div class="ttc" id="class_course_base_html_a3203f26ff9217ac44e48b0a00352e3e8"><div class="ttname"><a href="class_course_base.html#a3203f26ff9217ac44e48b0a00352e3e8">CourseBase::getName</a></div><div class="ttdeci">std::string getName() const </div><div class="ttdoc">returns the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00026">CourseBase.cc:26</a></div></div>
+<div class="ttc" id="class_course_base_html_a7bce18476781640be8012b18e1d8b44b"><div class="ttname"><a href="class_course_base.html#a7bce18476781640be8012b18e1d8b44b">CourseBase::getId</a></div><div class="ttdeci">unsigned int getId() const </div><div class="ttdoc">returns the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00034">CourseBase.cc:34</a></div></div>
+<div class="ttc" id="class_course_base_html_aeee08a69012bb0158074682049fe68d0"><div class="ttname"><a href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">CourseBase::courseLoc</a></div><div class="ttdeci">std::string courseLoc</div><div class="ttdoc">the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00075">CourseBase.h:75</a></div></div>
+<div class="ttc" id="class_course_base_html_a184cb4c5b9cb82d65829ad5eb86f0a21"><div class="ttname"><a href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">CourseBase::courseName</a></div><div class="ttdeci">std::string courseName</div><div class="ttdoc">the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00074">CourseBase.h:74</a></div></div>
+<div class="ttc" id="class_course_base_html_a33308b82c154154c92f229fa115d3d37"><div class="ttname"><a href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">CourseBase::courseId</a></div><div class="ttdeci">unsigned int courseId</div><div class="ttdoc">the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00076">CourseBase.h:76</a></div></div>
+<div class="ttc" id="class_course_base_html_a1caad079350810ce35ade3ebffbcedbd"><div class="ttname"><a href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">CourseBase::days</a></div><div class="ttdeci">std::string days</div><div class="ttdoc">the course days: MTWRF </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00073">CourseBase.h:73</a></div></div>
+<div class="ttc" id="class_course_base_html_ae1a96c769c1e9ce4905f0f7afb4d327d"><div class="ttname"><a href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">CourseBase::startTime</a></div><div class="ttdeci">unsigned int startTime</div><div class="ttdoc">the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00071">CourseBase.h:71</a></div></div>
+<div class="ttc" id="class_course_base_html_a0d76157be4caa5eed5fc5458ab50716f"><div class="ttname"><a href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">CourseBase::endTime</a></div><div class="ttdeci">unsigned int endTime</div><div class="ttdoc">the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00072">CourseBase.h:72</a></div></div>
+<div class="ttc" id="class_course_base_html_af81380f26522110c28428706258bb8fa"><div class="ttname"><a href="class_course_base.html#af81380f26522110c28428706258bb8fa">CourseBase::getLoc</a></div><div class="ttdeci">std::string getLoc() const </div><div class="ttdoc">returns the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00030">CourseBase.cc:30</a></div></div>
+<div class="ttc" id="class_course_base_html_a2b8d193e69710e0373b11a00ab8d68e6"><div class="ttname"><a href="class_course_base.html#a2b8d193e69710e0373b11a00ab8d68e6">CourseBase::getStartTime</a></div><div class="ttdeci">unsigned int getStartTime() const </div><div class="ttdoc">returns the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00018">CourseBase.cc:18</a></div></div>
+<div class="ttc" id="class_course_base_html_a33b0e80c7361989ed4891846f4805359"><div class="ttname"><a href="class_course_base.html#a33b0e80c7361989ed4891846f4805359">CourseBase::getEndTime</a></div><div class="ttdeci">unsigned int getEndTime() const </div><div class="ttdoc">returns the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00014">CourseBase.cc:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="abbfc548f71bad301eed7631881a29cd0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -342,7 +391,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_a1caad079350810ce35ade3ebffbcedbd"><div class="ttname"><a href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">CourseBase::days</a></div><div class="ttdeci">std::string days</div><div class="ttdoc">the course days: MTWRF </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00070">CourseBase.h:70</a></div></div>
+<div class="ttc" id="class_course_base_html_a1caad079350810ce35ade3ebffbcedbd"><div class="ttname"><a href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">CourseBase::days</a></div><div class="ttdeci">std::string days</div><div class="ttdoc">the course days: MTWRF </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00073">CourseBase.h:73</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,7 +414,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                         {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_a0d76157be4caa5eed5fc5458ab50716f"><div class="ttname"><a href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">CourseBase::endTime</a></div><div class="ttdeci">unsigned int endTime</div><div class="ttdoc">the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00069">CourseBase.h:69</a></div></div>
+<div class="ttc" id="class_course_base_html_a0d76157be4caa5eed5fc5458ab50716f"><div class="ttname"><a href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">CourseBase::endTime</a></div><div class="ttdeci">unsigned int endTime</div><div class="ttdoc">the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00072">CourseBase.h:72</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -388,7 +437,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                    {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_a33308b82c154154c92f229fa115d3d37"><div class="ttname"><a href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">CourseBase::courseId</a></div><div class="ttdeci">unsigned int courseId</div><div class="ttdoc">the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00073">CourseBase.h:73</a></div></div>
+<div class="ttc" id="class_course_base_html_a33308b82c154154c92f229fa115d3d37"><div class="ttname"><a href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">CourseBase::courseId</a></div><div class="ttdeci">unsigned int courseId</div><div class="ttdoc">the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00076">CourseBase.h:76</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -411,7 +460,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                               {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_aeee08a69012bb0158074682049fe68d0"><div class="ttname"><a href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">CourseBase::courseLoc</a></div><div class="ttdeci">std::string courseLoc</div><div class="ttdoc">the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00072">CourseBase.h:72</a></div></div>
+<div class="ttc" id="class_course_base_html_aeee08a69012bb0158074682049fe68d0"><div class="ttname"><a href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">CourseBase::courseLoc</a></div><div class="ttdeci">std::string courseLoc</div><div class="ttdoc">the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00075">CourseBase.h:75</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -434,7 +483,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_a184cb4c5b9cb82d65829ad5eb86f0a21"><div class="ttname"><a href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">CourseBase::courseName</a></div><div class="ttdeci">std::string courseName</div><div class="ttdoc">the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00071">CourseBase.h:71</a></div></div>
+<div class="ttc" id="class_course_base_html_a184cb4c5b9cb82d65829ad5eb86f0a21"><div class="ttname"><a href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">CourseBase::courseName</a></div><div class="ttdeci">std::string courseName</div><div class="ttdoc">the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00074">CourseBase.h:74</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -457,7 +506,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                        {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">rating</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_a4f389106db4b1eac5a79f5b1f135cefc"><div class="ttname"><a href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">CourseBase::rating</a></div><div class="ttdeci">unsigned int rating</div><div class="ttdoc">the course rating </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00074">CourseBase.h:74</a></div></div>
+<div class="ttc" id="class_course_base_html_a4f389106db4b1eac5a79f5b1f135cefc"><div class="ttname"><a href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">CourseBase::rating</a></div><div class="ttdeci">unsigned int rating</div><div class="ttdoc">the course rating </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00077">CourseBase.h:77</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -480,7 +529,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                           {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_ae1a96c769c1e9ce4905f0f7afb4d327d"><div class="ttname"><a href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">CourseBase::startTime</a></div><div class="ttdeci">unsigned int startTime</div><div class="ttdoc">the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00068">CourseBase.h:68</a></div></div>
+<div class="ttc" id="class_course_base_html_ae1a96c769c1e9ce4905f0f7afb4d327d"><div class="ttname"><a href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">CourseBase::startTime</a></div><div class="ttdeci">unsigned int startTime</div><div class="ttdoc">the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00071">CourseBase.h:71</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -500,26 +549,26 @@ Protected Attributes</h2></td></tr>
 
 <p>Overloaded assignment operator - ensures proper assignment. </p>
 
-<p>Definition at line <a class="el" href="_course_base_8cc_source.html#l00046">46</a> of file <a class="el" href="_course_base_8cc_source.html">CourseBase.cc</a>.</p>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                                       {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a> = rhs.<a class="code" href="class_course_base.html#a2b8d193e69710e0373b11a00ab8d68e6">getStartTime</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a> = rhs.<a class="code" href="class_course_base.html#a33b0e80c7361989ed4891846f4805359">getEndTime</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a> = rhs.<a class="code" href="class_course_base.html#abbfc548f71bad301eed7631881a29cd0">getDays</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a> = rhs.<a class="code" href="class_course_base.html#a3203f26ff9217ac44e48b0a00352e3e8">getName</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a> = rhs.<a class="code" href="class_course_base.html#af81380f26522110c28428706258bb8fa">getLoc</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a> = rhs.<a class="code" href="class_course_base.html#a7bce18476781640be8012b18e1d8b44b">getId</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}<div class="ttc" id="class_course_base_html_abbfc548f71bad301eed7631881a29cd0"><div class="ttname"><a href="class_course_base.html#abbfc548f71bad301eed7631881a29cd0">CourseBase::getDays</a></div><div class="ttdeci">std::string getDays() const </div><div class="ttdoc">returns the course days </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00022">CourseBase.cc:22</a></div></div>
+<p>Definition at line <a class="el" href="_course_base_8cc_source.html#l00055">55</a> of file <a class="el" href="_course_base_8cc_source.html">CourseBase.cc</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                       {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">startTime</a> = rhs.<a class="code" href="class_course_base.html#a2b8d193e69710e0373b11a00ab8d68e6">getStartTime</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">endTime</a> = rhs.<a class="code" href="class_course_base.html#a33b0e80c7361989ed4891846f4805359">getEndTime</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">days</a> = rhs.<a class="code" href="class_course_base.html#abbfc548f71bad301eed7631881a29cd0">getDays</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">courseName</a> = rhs.<a class="code" href="class_course_base.html#a3203f26ff9217ac44e48b0a00352e3e8">getName</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">courseLoc</a> = rhs.<a class="code" href="class_course_base.html#af81380f26522110c28428706258bb8fa">getLoc</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    this-&gt;<a class="code" href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">courseId</a> = rhs.<a class="code" href="class_course_base.html#a7bce18476781640be8012b18e1d8b44b">getId</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}<div class="ttc" id="class_course_base_html_abbfc548f71bad301eed7631881a29cd0"><div class="ttname"><a href="class_course_base.html#abbfc548f71bad301eed7631881a29cd0">CourseBase::getDays</a></div><div class="ttdeci">std::string getDays() const </div><div class="ttdoc">returns the course days </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00022">CourseBase.cc:22</a></div></div>
 <div class="ttc" id="class_course_base_html_a3203f26ff9217ac44e48b0a00352e3e8"><div class="ttname"><a href="class_course_base.html#a3203f26ff9217ac44e48b0a00352e3e8">CourseBase::getName</a></div><div class="ttdeci">std::string getName() const </div><div class="ttdoc">returns the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00026">CourseBase.cc:26</a></div></div>
 <div class="ttc" id="class_course_base_html_a7bce18476781640be8012b18e1d8b44b"><div class="ttname"><a href="class_course_base.html#a7bce18476781640be8012b18e1d8b44b">CourseBase::getId</a></div><div class="ttdeci">unsigned int getId() const </div><div class="ttdoc">returns the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00034">CourseBase.cc:34</a></div></div>
-<div class="ttc" id="class_course_base_html_aeee08a69012bb0158074682049fe68d0"><div class="ttname"><a href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">CourseBase::courseLoc</a></div><div class="ttdeci">std::string courseLoc</div><div class="ttdoc">the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00072">CourseBase.h:72</a></div></div>
-<div class="ttc" id="class_course_base_html_a184cb4c5b9cb82d65829ad5eb86f0a21"><div class="ttname"><a href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">CourseBase::courseName</a></div><div class="ttdeci">std::string courseName</div><div class="ttdoc">the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00071">CourseBase.h:71</a></div></div>
-<div class="ttc" id="class_course_base_html_a33308b82c154154c92f229fa115d3d37"><div class="ttname"><a href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">CourseBase::courseId</a></div><div class="ttdeci">unsigned int courseId</div><div class="ttdoc">the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00073">CourseBase.h:73</a></div></div>
-<div class="ttc" id="class_course_base_html_a1caad079350810ce35ade3ebffbcedbd"><div class="ttname"><a href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">CourseBase::days</a></div><div class="ttdeci">std::string days</div><div class="ttdoc">the course days: MTWRF </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00070">CourseBase.h:70</a></div></div>
-<div class="ttc" id="class_course_base_html_ae1a96c769c1e9ce4905f0f7afb4d327d"><div class="ttname"><a href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">CourseBase::startTime</a></div><div class="ttdeci">unsigned int startTime</div><div class="ttdoc">the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00068">CourseBase.h:68</a></div></div>
-<div class="ttc" id="class_course_base_html_a0d76157be4caa5eed5fc5458ab50716f"><div class="ttname"><a href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">CourseBase::endTime</a></div><div class="ttdeci">unsigned int endTime</div><div class="ttdoc">the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00069">CourseBase.h:69</a></div></div>
+<div class="ttc" id="class_course_base_html_aeee08a69012bb0158074682049fe68d0"><div class="ttname"><a href="class_course_base.html#aeee08a69012bb0158074682049fe68d0">CourseBase::courseLoc</a></div><div class="ttdeci">std::string courseLoc</div><div class="ttdoc">the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00075">CourseBase.h:75</a></div></div>
+<div class="ttc" id="class_course_base_html_a184cb4c5b9cb82d65829ad5eb86f0a21"><div class="ttname"><a href="class_course_base.html#a184cb4c5b9cb82d65829ad5eb86f0a21">CourseBase::courseName</a></div><div class="ttdeci">std::string courseName</div><div class="ttdoc">the course name </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00074">CourseBase.h:74</a></div></div>
+<div class="ttc" id="class_course_base_html_a33308b82c154154c92f229fa115d3d37"><div class="ttname"><a href="class_course_base.html#a33308b82c154154c92f229fa115d3d37">CourseBase::courseId</a></div><div class="ttdeci">unsigned int courseId</div><div class="ttdoc">the course id </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00076">CourseBase.h:76</a></div></div>
+<div class="ttc" id="class_course_base_html_a1caad079350810ce35ade3ebffbcedbd"><div class="ttname"><a href="class_course_base.html#a1caad079350810ce35ade3ebffbcedbd">CourseBase::days</a></div><div class="ttdeci">std::string days</div><div class="ttdoc">the course days: MTWRF </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00073">CourseBase.h:73</a></div></div>
+<div class="ttc" id="class_course_base_html_ae1a96c769c1e9ce4905f0f7afb4d327d"><div class="ttname"><a href="class_course_base.html#ae1a96c769c1e9ce4905f0f7afb4d327d">CourseBase::startTime</a></div><div class="ttdeci">unsigned int startTime</div><div class="ttdoc">the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00071">CourseBase.h:71</a></div></div>
+<div class="ttc" id="class_course_base_html_a0d76157be4caa5eed5fc5458ab50716f"><div class="ttname"><a href="class_course_base.html#a0d76157be4caa5eed5fc5458ab50716f">CourseBase::endTime</a></div><div class="ttdeci">unsigned int endTime</div><div class="ttdoc">the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00072">CourseBase.h:72</a></div></div>
 <div class="ttc" id="class_course_base_html_af81380f26522110c28428706258bb8fa"><div class="ttname"><a href="class_course_base.html#af81380f26522110c28428706258bb8fa">CourseBase::getLoc</a></div><div class="ttdeci">std::string getLoc() const </div><div class="ttdoc">returns the course location </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00030">CourseBase.cc:30</a></div></div>
 <div class="ttc" id="class_course_base_html_a2b8d193e69710e0373b11a00ab8d68e6"><div class="ttname"><a href="class_course_base.html#a2b8d193e69710e0373b11a00ab8d68e6">CourseBase::getStartTime</a></div><div class="ttdeci">unsigned int getStartTime() const </div><div class="ttdoc">returns the course start time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00018">CourseBase.cc:18</a></div></div>
 <div class="ttc" id="class_course_base_html_a33b0e80c7361989ed4891846f4805359"><div class="ttname"><a href="class_course_base.html#a33b0e80c7361989ed4891846f4805359">CourseBase::getEndTime</a></div><div class="ttdeci">unsigned int getEndTime() const </div><div class="ttdoc">returns the course end time </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8cc_source.html#l00014">CourseBase.cc:14</a></div></div>
@@ -552,7 +601,7 @@ Protected Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                              {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">rating</a> = _rating;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
-<div class="ttc" id="class_course_base_html_a4f389106db4b1eac5a79f5b1f135cefc"><div class="ttname"><a href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">CourseBase::rating</a></div><div class="ttdeci">unsigned int rating</div><div class="ttdoc">the course rating </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00074">CourseBase.h:74</a></div></div>
+<div class="ttc" id="class_course_base_html_a4f389106db4b1eac5a79f5b1f135cefc"><div class="ttname"><a href="class_course_base.html#a4f389106db4b1eac5a79f5b1f135cefc">CourseBase::rating</a></div><div class="ttdeci">unsigned int rating</div><div class="ttdoc">the course rating </div><div class="ttdef"><b>Definition:</b> <a href="_course_base_8h_source.html#l00077">CourseBase.h:77</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -577,7 +626,7 @@ Protected Attributes</h2></td></tr>
 
 <p>the course id </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00073">73</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00076">76</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 
 </div>
 </div>
@@ -601,7 +650,7 @@ Protected Attributes</h2></td></tr>
 
 <p>the course location </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00072">72</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00075">75</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 
 </div>
 </div>
@@ -625,7 +674,7 @@ Protected Attributes</h2></td></tr>
 
 <p>the course name </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00071">71</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00074">74</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 
 </div>
 </div>
@@ -649,7 +698,7 @@ Protected Attributes</h2></td></tr>
 
 <p>the course days: MTWRF </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00070">70</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00073">73</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 
 </div>
 </div>
@@ -673,7 +722,7 @@ Protected Attributes</h2></td></tr>
 
 <p>the course end time </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00069">69</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00072">72</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 
 </div>
 </div>
@@ -697,7 +746,7 @@ Protected Attributes</h2></td></tr>
 
 <p>the course rating </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00074">74</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00077">77</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 
 </div>
 </div>
@@ -721,7 +770,7 @@ Protected Attributes</h2></td></tr>
 
 <p>the course start time </p>
 
-<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00068">68</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
+<p>Definition at line <a class="el" href="_course_base_8h_source.html#l00071">71</a> of file <a class="el" href="_course_base_8h_source.html">CourseBase.h</a>.</p>
 
 </div>
 </div>
@@ -735,7 +784,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_course_base.html">CourseBase</a></li>
-    <li class="footer">Generated on Tue Apr 1 2014 11:35:14 for Class Scheduler by
+    <li class="footer">Generated on Fri Apr 4 2014 17:08:29 for Class Scheduler by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
