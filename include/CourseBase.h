@@ -4,7 +4,6 @@
 #include <string>
 #include <list>
 
-
 /// CourseBase object class for storing course and lab values
 class CourseBase {
 public:

@@ -19,7 +19,7 @@ public:
 	CPPUNIT_TEST(testOverflow);
 	CPPUNIT_TEST_SUITE_END();
 private:
-	CourseCont* cc;
+	CourseCont<Course>* cc;
 public:
 	void setUp();
 	void tearDown();

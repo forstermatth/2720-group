@@ -10,7 +10,7 @@
 */
 class Scheduler{
 public:
-	CourseSched generateSchedule(CourseCont& courseList, Options &opts);
+	CourseSched generateSchedule(CourseCont<Course>& courseList, Options &opts);
 };
 
 #endif

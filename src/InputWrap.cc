@@ -101,8 +101,8 @@ Options InputWrap::setOptions(){
 
 }
 
-CourseCont InputWrap::setCourses(){
-	CourseCont cc;
+CourseCont<Course> InputWrap::setCourses(){
+	CourseCont<Course> cc;
 
 	//Temporary Storage
 	std::list<Lab> labs;

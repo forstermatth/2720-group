@@ -3,6 +3,7 @@
 #include "CourseCont.h"
 #include "Course.h"
 #include "Options.h"
+
 class Rater{
 
 /** \class Rater
@@ -10,7 +11,7 @@ class Rater{
 */
 private:
 	Options* opts; /// holds the user's options
-	CourseCont* cc; /// holds all courses
+	CourseCont<Course>* cc; /// holds all courses
 
 public:
 	/**
@@ -18,7 +19,7 @@ public:
 		@param _opts Specific options set by the user
 		@param _cc Course container that hold the entire set of courses that are to be rated
 	*/
-	Rater(Options* _opts, CourseCont* _cc);
+	Rater(Options* _opts, CourseCont<Course>* _cc);
 	/**
 		Looks at each course in the course container and calls processCourse() for each one.
 	*/

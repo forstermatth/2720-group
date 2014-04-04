@@ -42,7 +42,7 @@ void InputWrapFixture::testPopulateOptions(){
 
 void InputWrapFixture::testPopulateCourse(){
 	std::string str = "testfiles/testinput.xml";
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Course comp(925, 1030, "MWF", "course1", "AH250", 1920932);
 
 	input->parse(str);
@@ -58,7 +58,7 @@ void InputWrapFixture::testPopulateCourse(){
 
 void InputWrapFixture::testPopulateMultiCourses(){
 	std::string str = "testfiles/testinput.xml";
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Course comp1(925, 1030, "MWF", "course1", "AH250", 1920932);
 	Course comp2(1045, 1200, "MWF", "course2", "AH251", 43573094);
 	Course comp3(1300, 1415, "TR", "course3", "AH252", 3453434);
@@ -78,7 +78,7 @@ void InputWrapFixture::testPopulateMultiCourses(){
 
 void InputWrapFixture::testParseLab(){
 	std::string str = "testfiles/testinput.xml";
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Lab la;
 	Lab lcomp(1040, 1200, "MWF", "course1lab", "AH250", 1920933);
 
@@ -98,7 +98,7 @@ void InputWrapFixture::testParseLab(){
 
 void InputWrapFixture::testNumberCourses(){
 	std::string str = "testfiles/testinput.xml";
-	CourseCont cc;
+	CourseCont<Course> cc;
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 	CPPUNIT_ASSERT(cc.size() == 4);
@@ -106,7 +106,7 @@ void InputWrapFixture::testNumberCourses(){
 
 void InputWrapFixture::testNumberLabs(){
 	std::string str = "testfiles/testinput.xml";
-	CourseCont cc;
+	CourseCont<Course> cc;
 	input->parse(str);
 	CPPUNIT_ASSERT_NO_THROW(cc = input->setCourses());
 	
@@ -118,7 +118,7 @@ void InputWrapFixture::testNumberLabs(){
 
 void InputWrapFixture::testMultiLabs(){
 	std::string str = "testfiles/testinput.xml";
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Course parsed;
 	Lab lcomp1(925, 1030, "MWF", "course1lab", "AH250", 1920933);
 	Lab lcomp2(1040, 1300, "MWF", "course3lab1", "AH250", 1920931);

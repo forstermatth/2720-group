@@ -1,12 +1,14 @@
 #ifndef __COURSE_H
 #define __COURSE_H
 #include "CourseBase.h"
-#include "LabCont.h"
-#include <list>
+#include "CourseCont.h"
+#include "Lab.h"
+
 
 /**
 	\brief Course conceptual object - inherits from CourseBase
 */
+
 class Course : public CourseBase {
 public:
 
@@ -24,12 +26,11 @@ public:
 		CourseBase(_startTime, _endTime, _days, _courseName, _courseLoc, _courseId) {
 		}
 
-
 	/// Adds the specified amount of padding to start and end time.
 	/** \param _padding The amount of padding to add.*/
 	void addPadding(unsigned int _padding);
 
-	LabCont labs;
+	CourseCont<Lab> labs;
 
 private:
 	

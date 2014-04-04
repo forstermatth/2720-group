@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-CourseSched Scheduler::generateSchedule(CourseCont& courseList, Options &opts){
+CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options &opts){
 	CourseSched schedule;
 	courseList.sort();
 	courseList.begin();

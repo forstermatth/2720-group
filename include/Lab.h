@@ -2,7 +2,6 @@
 #define __LAB_H
 #include "CourseBase.h"
 
-
 /**
 	\brief Lab conceptual object - inherits from CourseBase
 */

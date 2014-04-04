@@ -3,41 +3,41 @@
 #include "Exceptions.h"
 #include <iostream>
 
-CourseCont::CourseCont(){
+template <class T> CourseCont<T>::CourseCont(){
 	it = courses.begin();
 }
 
-void CourseCont::add(Course _course){
+template <class T> void CourseCont<T>::add(T _course){
 	courses.push_back(_course);
 }
 
-Course& CourseCont::begin(){
+template <class T> T& CourseCont<T>::begin(){
 	it = courses.begin();
 	return *it;
 }
 
-Course& CourseCont::end(){
+template <class T> T& CourseCont<T>::end(){
 	it = courses.end();
 	--it;
 	return *it;
 }
 
-Course& CourseCont::first(){
+template <class T> T& CourseCont<T>::first(){
 	return *courses.begin();
 }
 
-Course& CourseCont::last(){
+template <class T> T& CourseCont<T>::last(){
 	return *(--courses.end());
 }
 
-void CourseCont::next(){
+template <class T> void CourseCont<T>::next(){
 	++it;
 	if(it == courses.end()){
 		it = courses.begin();
 	}
 }
 
-Course& CourseCont::get(){
+template <class T> T& CourseCont<T>::get(){
 	if(courses.empty()){
 		throw EmptyContainer();
 	}
@@ -45,7 +45,7 @@ Course& CourseCont::get(){
 	return *it;
 }
 
-void CourseCont::prev(){
+template <class T> void CourseCont<T>::prev(){
 	if(it == courses.begin()){
 		it = --courses.end();
 	}else{
@@ -53,19 +53,18 @@ void CourseCont::prev(){
 	}
 }
 
-void CourseCont::erase(){
+template <class T> void CourseCont<T>::erase(){
 	if(it == courses.end()) throw EmptyContainer();
 	courses.erase(it);
 }
 
-void CourseCont::sort(){
-	courses.sort(compareCourseRating);	
+template <class T> void CourseCont<T>::sort(){
+	courses.sort(compareRating<T>);	
 }
-bool compareCourseRating(const Course &first, const Course &second){
+template <class T> bool compareRating(const T &first, const T &second){
 	return first.getRating() > second.getRating();
 }
 
-
-int CourseCont::size(){
+template <class T> int CourseCont<T>::size(){
 	return courses.size();
 }	

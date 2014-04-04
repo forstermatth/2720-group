@@ -4,12 +4,11 @@
 #include <list>
 
 #include "CourseBase.h"
+#include "CourseCont.h"
 #include "Course.h"
 #include "Lab.h"
-
 #include "Exceptions.h"
-#include "CourseCont.h"
-#include "LabCont.h"
+
 
 using namespace std;
 
@@ -37,8 +36,8 @@ public:
 	*/
 	int compareDays(char, char);
 
-	CourseCont courses;
-	LabCont labs;
+	CourseCont<Course> courses;
+	CourseCont<Lab> labs;
 
 private:
 

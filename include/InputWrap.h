@@ -4,11 +4,10 @@
 #include <fstream>
 #include <vector>
 #include <string>
-#include <list>
-#include <iostream>
 #include "rapidxml/rapidxml.hpp"
 #include "Options.h"
 #include "CourseCont.h"
+#include "Course.h"
 #include "Lab.h"
 
 
@@ -25,7 +24,7 @@ public:
 		Options setOptions();
 
 		/// Populate course container with courses from xml file, returns populated object
-		CourseCont setCourses();
+		CourseCont<Course> setCourses();
 
 private:
 		std::vector<char> buffer; ///< the file buffer stored after parse

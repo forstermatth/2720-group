@@ -26,7 +26,7 @@ public:
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Options* opts;
-	CourseCont* cc;
+	CourseCont<Course>* cc;
 public:
 	void setUp();
 	void setRatingOnReqCourses();

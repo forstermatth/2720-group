@@ -3,7 +3,7 @@
 #include "Exceptions.h"
 #include <iostream>
 void RaterFixture::setUp(){
-	cc = new CourseCont();
+	cc = new CourseCont<Course>();
 }
 
 void RaterFixture::tearDown(){

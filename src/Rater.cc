@@ -1,7 +1,7 @@
 #include "Rater.h"
 #include <iostream>
 
-Rater::Rater(Options* _opts, CourseCont* _cc) : opts(_opts), cc(_cc){
+Rater::Rater(Options* _opts, CourseCont<Course>* _cc) : opts(_opts), cc(_cc){
 }
 
 void Rater::rateCourses(){

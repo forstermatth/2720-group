@@ -18,7 +18,7 @@ void SchedulerFixture::tearDown(){
 
 void SchedulerFixture::testAddCourses(){
 	list<unsigned int> requiredCouses;
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Options opts(2, requiredCouses, Times::None, 0, 0, 1);
 	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Course c2(1030, 1015, "TR", "name2", "loc 641", 453224);
@@ -35,7 +35,7 @@ void SchedulerFixture::testAddCourses(){
 
 void SchedulerFixture::testCourseConflict(){
 	list<unsigned int> requiredCouses;
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Options opts(2, requiredCouses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
 	Course c2(1015, 1045, "MW", "name", "loc 641", 453224);
@@ -55,7 +55,7 @@ void SchedulerFixture::testCourseConflict(){
 
 void SchedulerFixture::testNotEnoughCourses(){
 	list<unsigned int> requiredCouses;
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Options opts(5, requiredCouses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
 	Course c2(1015, 1045, "MW", "name", "loc 641", 453224);
@@ -75,7 +75,7 @@ void SchedulerFixture::testNotEnoughCourses(){
 
 void SchedulerFixture::testCoursesWithPadding(){
 	list<unsigned int> requiredCouses;
-	CourseCont cc;
+	CourseCont<Course> cc;
 	Options opts(5, requiredCouses, Times::None, 30, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
 	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);

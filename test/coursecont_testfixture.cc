@@ -4,7 +4,7 @@
 #include "Exceptions.h"
 
 void CourseContFixture::setUp(){
-	cc = new CourseCont();
+	cc = new CourseCont<Course>();
 }
 
 void CourseContFixture::tearDown(){
