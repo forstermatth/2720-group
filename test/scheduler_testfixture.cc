@@ -17,9 +17,9 @@ void SchedulerFixture::tearDown(){
 }
 
 void SchedulerFixture::testAddCourses(){
-	list<unsigned int> requiredCouses;
+	list<unsigned int> requiredCourses;
 	CourseCont<Course> cc;
-	Options opts(2, requiredCouses, Times::None, 0, 0, 1);
+	Options opts(2, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1015, "MW", "name", "loc 640", 9484739);
 	Course c2(1030, 1015, "TR", "name2", "loc 641", 453224);
 	c1.setRating(1);
@@ -34,9 +34,9 @@ void SchedulerFixture::testAddCourses(){
 }
 
 void SchedulerFixture::testCourseConflict(){
-	list<unsigned int> requiredCouses;
+	list<unsigned int> requiredCourses;
 	CourseCont<Course> cc;
-	Options opts(2, requiredCouses, Times::None, 0, 0, 1);
+	Options opts(2, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
 	Course c2(1015, 1045, "MW", "name", "loc 641", 453224);
 	Course c3(1030, 1015, "TR", "name", "loc 641", 462348);
@@ -54,9 +54,9 @@ void SchedulerFixture::testCourseConflict(){
 }
 
 void SchedulerFixture::testNotEnoughCourses(){
-	list<unsigned int> requiredCouses;
+	list<unsigned int> requiredCourses;
 	CourseCont<Course> cc;
-	Options opts(5, requiredCouses, Times::None, 0, 0, 1);
+	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
 	Course c2(1015, 1045, "MW", "name", "loc 641", 453224);
 	Course c3(1030, 1015, "TR", "name", "loc 641", 462348);
@@ -74,9 +74,9 @@ void SchedulerFixture::testNotEnoughCourses(){
 }
 
 void SchedulerFixture::testCoursesWithPadding(){
-	list<unsigned int> requiredCouses;
+	list<unsigned int> requiredCourses;
 	CourseCont<Course> cc;
-	Options opts(5, requiredCouses, Times::None, 30, 0, 1);
+	Options opts(5, requiredCourses, Times::None, 30, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
 	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
 	Course c3(1030, 1015, "TR", "name", "loc 641", 462348);
@@ -103,4 +103,20 @@ void SchedulerFixture::testAddLab(){
 	cc.add(c1);
 	CourseSched cs = sch->generateSchedule(cc, opts);
 	CPPUNIT_ASSERT(cs.labs.first().getId() == 13245);
+}
+
+void SchedulerFixture::testLabConflict(){
+	list<unsigned int> requiredCourses;
+	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
+	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
+	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
+	Lab l1(900, 1100, "MW", "lab", "loc 1", 13245);
+	CourseCont<Course> cc;
+	c1.setRating(10);
+	c2.setRating(9);
+	c2.labs.add(l1);
+	cc.add(c1);
+	cc.add(c2); 
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.courses.last().getId() == 9484739);
 }
