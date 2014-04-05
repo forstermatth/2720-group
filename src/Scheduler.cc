@@ -17,7 +17,19 @@ CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options 
 			Course add, comp;
 			add = comp = courseList.get(); 
 			if(add.labs.size() > 0){
-				schedule.addLab(add.labs.begin());
+				bool labAdded = false;
+				add.labs.begin();
+				while(!labAdded){
+					try{
+						schedule.addLab(add.labs.get());
+						labAdded = true;
+					}catch(const TimeConflict &expt){
+						add.labs.next();
+						if(add.labs.get().equal(add.labs.first())){
+							throw TimeConflict(); //can't add a lab, force to the next course
+						}
+					}
+				}
 			}
 			comp.addPadding(opts.getBreakPadding());
 			schedule.findConflict(&comp); //will throw and skip if conflict
