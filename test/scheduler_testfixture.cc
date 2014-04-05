@@ -102,5 +102,5 @@ void SchedulerFixture::testAddLab(){
 	c1.labs.add(l1);
 	cc.add(c1);
 	CourseSched cs = sch->generateSchedule(cc, opts);
-	CPPUNIT_ASSERT(cs.labs.get().getId() == 13245);
+	CPPUNIT_ASSERT(cs.labs.first().getId() == 13245);
 }

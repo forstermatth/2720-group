@@ -15,10 +15,13 @@ CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options 
 		reachEnd = courseList.get().equal(courseList.last());
 		try{
 			Course add, comp;
-			add = comp = courseList.get(); //.addPadding(opts.getBreakPadding());
+			add = comp = courseList.get(); 
 			comp.addPadding(opts.getBreakPadding());
 			schedule.findConflict(&comp); //will throw and skip if conflict
 			schedule.addCourse(add);
+			if(add.labs.size() > 0){
+				schedule.addLab(add.labs.begin());
+			}
 			courseList.next();
 			i++;
 		}catch(const TimeConflict &expt){
