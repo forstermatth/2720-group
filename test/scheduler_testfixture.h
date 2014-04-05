@@ -12,6 +12,7 @@ public:
 	CPPUNIT_TEST(testCourseConflict);
 	CPPUNIT_TEST(testNotEnoughCourses);
 	CPPUNIT_TEST(testCoursesWithPadding);
+	CPPUNIT_TEST(testAddLab);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Scheduler *sch;
@@ -22,6 +23,7 @@ public:
 	void testCourseConflict();
 	void testNotEnoughCourses();
 	void testCoursesWithPadding();
+	void testAddLab();
 };
 
 #endif

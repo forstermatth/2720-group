@@ -92,3 +92,15 @@ void SchedulerFixture::testCoursesWithPadding(){
 	CPPUNIT_ASSERT(cs.courses.get().getId() == c3.getId());
 	CPPUNIT_ASSERT(cs.courses.size() == 2);
 }
+
+void SchedulerFixture::testAddLab(){
+	Lab l1(900, 1100, "MW", "lab", "loc 1", 13245);
+	Course c1(1200, 1300, "MWF", "course", "loc 2", 13244);
+	CourseCont<Course> cc;
+	list<unsigned int> requiredCourses;
+	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
+	c1.labs.add(l1);
+	cc.add(c1);
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.labs.get().getId() == 13245);
+}
