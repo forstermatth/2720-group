@@ -9,7 +9,7 @@ install:
     - make
 script: 
     - ./tests
-    - valgrind --leak-check=yes ./tests
+    - valgrind --leak-check=full ./tests
 
 notifications:
     recipients:

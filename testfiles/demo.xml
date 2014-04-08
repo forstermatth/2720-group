@@ -1,0 +1,32 @@
+<Options>
+	<NumberOfClasses></NumberOfClasses>
+	<RequredCourses>
+		<id></id>
+	</RequiredCourses>
+	<TimePreferences></TimePreferences>
+	<BreakPadding></BreakPadding>
+	<BreakStart></BreakStart>
+	<BreakEnd></BreakEnd>
+</Options>
+
+<Courses>
+
+	<Course>
+		<id></id>
+		<Name></Name>
+		<StartTime></StartTime>
+		<EndTime></Endtime>
+		<Days></Days>
+		<Location></Location>
+
+		<Lab>
+			<id></id>
+			<Name></Name>
+			<StartTime></StartTime>
+			<EndTime></Endtime>
+			<Days></Days>
+			<Location></Location>
+		</Lab>
+	</Course>
+
+</Courses>
