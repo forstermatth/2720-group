@@ -170,3 +170,16 @@ void CourseSchedFixture::testLabCourseCollision(){
 	cs->addLab(l1);
 	cs->addCourse(c1);
 }
+
+void CourseSchedFixture::testDontAddlab(){
+	Course c1(900, 1100, "MW", "name", "loc 640", 1);
+	Course c2(1105, 1200, "MW", "name", "loc 641", 2);
+	Course c3(1300, 1400, "MW", "name", "loc 3", 3);
+	//Lab l1(900, 1100, "M", "lab 1", "loc 1", 13245);
+	Lab l2(1300, 1400, "M", "lab 2", "loc 1", 13246);
+	cs->addCourse(c1);
+	cs->addCourse(c2); 
+	cs->addCourse(c3);
+	//cs->addLab(l1);
+	cs->addLab(l2);
+}

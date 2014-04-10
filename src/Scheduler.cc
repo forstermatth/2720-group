@@ -13,34 +13,38 @@ CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options 
 
 	for(int i = 0; i < opts.getNumCourses() && !reachEnd;){
 		reachEnd = courseList.get().equal(courseList.last());
-		try{
-			Course add, comp;
-			add = comp = courseList.get(); 
-			if(add.labs.size() > 0){
-				bool labAdded = false;
-				add.labs.begin();
-				while(!labAdded){
-					try{
-						schedule.addLab(add.labs.get());
-						labAdded = true;
-					}catch(const TimeConflict &expt){
-						add.labs.next();
-						if(add.labs.get().equal(add.labs.first())){
-							throw TimeConflict(); //can't add a lab, force to the next course
-						}
+		Course add, comp;
+		bool labAdded = true;
+		add = comp = courseList.get(); 
+
+		if(add.labs.size() > 0){
+			labAdded = false;
+			add.labs.begin();
+			while(!labAdded){
+				try{
+					schedule.addLab(add.labs.get());
+					labAdded = true;
+				}catch(const TimeConflict &expt){
+					add.labs.next();
+					if(add.labs.get().equal(add.labs.first())){
+						break;
 					}
 				}
 			}
-			comp.addPadding(opts.getBreakPadding());
-			schedule.findConflict(&comp); //will throw and skip if conflict
-			schedule.addCourse(add);
-			courseList.next();
+		}
+
+		try{
+			if(labAdded){
+				comp.addPadding(opts.getBreakPadding());
+				schedule.findConflict(&comp); //will throw and skip if conflict
+				schedule.addCourse(add);
+			}
 			i++;
 		}catch(const TimeConflict &expt){
-			courseList.next();
 		}catch(const EmptyContainer &epct){
 			break;
 		}
+		courseList.next();
 	}
 	
 	return schedule;
