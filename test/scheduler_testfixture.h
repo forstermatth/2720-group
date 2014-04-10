@@ -16,6 +16,7 @@ public:
 	CPPUNIT_TEST(testLabConflict);
 	CPPUNIT_TEST(testAddSecondLab);
 	CPPUNIT_TEST(testDontAddLab);
+	CPPUNIT_TEST(testRemoveLab);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Scheduler *sch;
@@ -30,6 +31,7 @@ public:
 	void testLabConflict();
 	void testAddSecondLab();
 	void testDontAddLab();
+	void testRemoveLab();
 };
 
 #endif

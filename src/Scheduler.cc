@@ -41,6 +41,8 @@ CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options 
 			}
 			i++;
 		}catch(const TimeConflict &expt){
+			//do nothing, since we just want to skip adding the course to the
+			//scheduling container.
 		}catch(const EmptyContainer &epct){
 			break;
 		}
