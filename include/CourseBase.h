@@ -67,6 +67,11 @@ public:
 	/** \param crs the course to compare against */
 	bool equal(CourseBase& crs);
 
+	/// Adds the specified amount of padding to start and end time.
+	/** \param _padding The amount of padding to add.*/
+	void addPadding(unsigned int _padding);
+
+
 protected:
 	unsigned int startTime; ///< the course start time
 	unsigned int endTime; ///< the course end time

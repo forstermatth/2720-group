@@ -177,3 +177,25 @@ void SchedulerFixture::testRemoveLab(){
 	CourseSched cs = sch->generateSchedule(cc, opts);
 	CPPUNIT_ASSERT(cs.labs.size() == 0);
 }
+
+void SchedulerFixture::testLabsWithPadding(){
+	list<unsigned int> requiredCourses;
+	Options opts(5, requiredCourses, Times::None, 10, 0, 1);
+	Course c1(900, 1100, "MWF", "name", "loc 640", 1);
+	Course c2(1100, 1200, "TR", "name", "loc 641", 2);
+	Course c3(1300, 1400, "MWF", "name", "loc 3", 3);
+	Lab l1(1100, 1200, "MWF", "lab 1", "loc 1", 13245);
+	Lab l2(1200, 1355, "MWF", "lab 2", "loc 1", 13246);
+	CourseCont<Course> cc;
+	c1.setRating(10);
+	c2.setRating(8);
+	c3.setRating(90);
+	c2.labs.add(l1);
+	c2.labs.add(l2);
+	cc.add(c1);
+	cc.add(c2); 
+	cc.add(c3);
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.labs.size() == 0);
+	CPPUNIT_ASSERT(cs.courses.size() == 2);
+}

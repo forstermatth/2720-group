@@ -63,3 +63,8 @@ CourseBase& CourseBase::operator= (const CourseBase& rhs){
 
 	return *this;
 }
+
+void CourseBase::addPadding(unsigned int _padding){
+	startTime -= _padding;
+	endTime += _padding;
+}

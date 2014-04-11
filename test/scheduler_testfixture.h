@@ -17,6 +17,7 @@ public:
 	CPPUNIT_TEST(testAddSecondLab);
 	CPPUNIT_TEST(testDontAddLab);
 	CPPUNIT_TEST(testRemoveLab);
+	CPPUNIT_TEST(testLabsWithPadding);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Scheduler *sch;
@@ -32,6 +33,7 @@ public:
 	void testAddSecondLab();
 	void testDontAddLab();
 	void testRemoveLab();
+	void testLabsWithPadding();
 };
 
 #endif
