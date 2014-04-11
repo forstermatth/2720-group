@@ -93,8 +93,8 @@ void RaterFixture::setRatingForMultipleReqCourses(){
 	requiredCourses.push_back(894372);
 	requiredCourses.push_back(894373);
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
-	Course c1(900, 1015, "MW", "name", "loc 640", 894372);
-	Course c2(1300, 1430, "MW", "name", "loc 640", 894373);
+	Course c1(1030, 1300, "MW", "name", "loc 640", 894372);
+	Course c2(1200, 1430, "MW", "name", "loc 640", 894373);
 	Course c3(1300, 1515, "MW", "name", "loc 640", 894370);
 	cc->add(c1);
 	cc->add(c2);
@@ -125,7 +125,7 @@ void RaterFixture::setRatingOnReqLab(){
 	requiredCourses.push_back(894370);
 	opts = new Options(5, requiredCourses, Times::Am, 30, 1000, 1230);
 	Course c(1215, 1345, "MW", "name", "loc 640", 894370);
-	Lab l(915, 1000, "F", "courselab", "labloc", 894370);
+	Lab l(1130, 1300, "F", "courselab", "labloc", 894370);
 	c.labs.add(l);
 	cc->add(c);
 	Rater r(opts, cc);

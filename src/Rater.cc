@@ -36,7 +36,7 @@ void Rater::processCourse(Course& c){
 	}
 	for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
 		if (requiredCourses2.front() == c.getId()) {
-			rating = 30;
+			rating += 30;
 		}
 		requiredCourses2.pop_front();
 	}
@@ -63,7 +63,7 @@ void Rater::processCourse(Course& c){
 			requiredCourses2 = requiredCourses;
 			for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
 				if (requiredCourses2.front() == c.labs.get().getId()) {
-					rating = 30;
+					rating += 30;
 				}
 				requiredCourses2.pop_front();
 			}
