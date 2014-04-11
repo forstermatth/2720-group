@@ -26,10 +26,6 @@ public:
 		CourseBase(_startTime, _endTime, _days, _courseName, _courseLoc, _courseId) {
 		}
 
-	/// Adds the specified amount of padding to start and end time.
-	/** \param _padding The amount of padding to add.*/
-	void addPadding(unsigned int _padding);
-
 	CourseCont<Lab> labs;
 
 private:

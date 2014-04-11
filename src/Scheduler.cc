@@ -13,19 +13,47 @@ CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options 
 
 	for(int i = 0; i < opts.getNumCourses() && !reachEnd;){
 		reachEnd = courseList.get().equal(courseList.last());
+		Course add, comp;
+		bool labAdded = true;
+		add = comp = courseList.get(); 
+
+		if(add.labs.size() > 0){
+			labAdded = false;
+			add.labs.begin();
+			while(!labAdded){
+				try{
+					Lab temp = add.labs.get();
+					temp.addPadding(opts.getBreakPadding());
+					schedule.findConflict(&temp);
+					schedule.addLab(add.labs.get());
+					labAdded = true;
+				}catch(const TimeConflict &expt){
+					add.labs.next();
+					if(add.labs.get().equal(add.labs.first())){
+						break;
+					}
+				}
+			}
+		}
+
 		try{
-			Course add, comp;
-			add = comp = courseList.get(); //.addPadding(opts.getBreakPadding());
-			comp.addPadding(opts.getBreakPadding());
-			schedule.findConflict(&comp); //will throw and skip if conflict
-			schedule.addCourse(add);
-			courseList.next();
+			if(labAdded){
+				comp.addPadding(opts.getBreakPadding());
+				schedule.findConflict(&comp); //will throw and skip if conflict
+				schedule.addCourse(add);
+			}
 			i++;
 		}catch(const TimeConflict &expt){
-			courseList.next();
+			if(add.labs.size() > 0){
+				//since the course has a lab, and the course couldn't be added, we need to remove
+				//the last lab in the schedul container, since we can't add the class it belongs to.
+				schedule.labs.end();
+				schedule.labs.erase();
+			}
 		}catch(const EmptyContainer &epct){
 			break;
 		}
+		courseList.next();
 	}
 	
 	return schedule;

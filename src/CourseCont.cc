@@ -61,6 +61,7 @@ template <class T> void CourseCont<T>::erase(){
 template <class T> void CourseCont<T>::sort(){
 	courses.sort(compareRating<T>);	
 }
+
 template <class T> bool compareRating(const T &first, const T &second){
 	return first.getRating() > second.getRating();
 }

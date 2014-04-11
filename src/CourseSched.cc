@@ -63,7 +63,7 @@ void CourseSched::findConflict(CourseBase* newCourse){
 			}while (temp==1);
 			courses.next();
 			course_ = courses.get();
-		}while (!course_.equal(courses.last()));
+		}while (!course_.equal(courses.first()));
 	}
 	
 	if(labs.size() != 0){
@@ -112,7 +112,7 @@ void CourseSched::findConflict(CourseBase* newCourse){
 
 			labs.next();
 			lab_ = labs.get();
-		}while(!lab_.equal(labs.last()));
+		}while(!lab_.equal(labs.first()));
 	}
 	
 }
