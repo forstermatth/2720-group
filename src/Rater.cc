@@ -19,9 +19,11 @@ void Rater::rateCourses(){
 }
 
 void Rater::processCourse(Course& c){
+	///Set up temp variables
 	unsigned int rating = 0;
 	list<unsigned int> requiredCourses = opts->getRequiredCourses();
 	list<unsigned int> requiredCourses2 = requiredCourses;
+	///Calculate rating for the course
 	if (opts->getTimePreference() == Times::Am && c.getEndTime() < 1200){
 		rating += 5;
 	}
@@ -40,10 +42,13 @@ void Rater::processCourse(Course& c){
 		}
 		requiredCourses2.pop_front();
 	}
+	///Set course rating
 	c.setRating(rating);
+	///Check if course has labs.
 	if(c.labs.size() > 0){
 		Lab last = c.labs.last();
 		c.labs.begin();
+		///Calculate rating for each lab
 		do 
 		{
 			rating = 0;
@@ -59,7 +64,6 @@ void Rater::processCourse(Course& c){
 			if (opts->getBreakStart() >= c.labs.get().getEndTime() || opts->getBreakEnd() <= c.labs.get().getStartTime()){
 				rating += 5;
 			}
-			requiredCourses = opts->getRequiredCourses();
 			requiredCourses2 = requiredCourses;
 			for (std::list<unsigned int>::iterator it=requiredCourses.begin() ; it != requiredCourses.end(); ++it){
 				if (requiredCourses2.front() == c.labs.get().getId()) {
@@ -67,6 +71,7 @@ void Rater::processCourse(Course& c){
 				}
 				requiredCourses2.pop_front();
 			}
+			///Set lab rating			
 			c.labs.get().setRating(rating);
 			c.labs.next();
 		}
