@@ -10,7 +10,7 @@ public:
 	CPPUNIT_TEST_SUITE(OutputFixture);
 	CPPUNIT_TEST_SUITE_END();
 private:
-
+	Output* out;
 public:
 	void setUp();
 	void tearDown();

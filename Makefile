@@ -1,6 +1,7 @@
 CFLAGS = -I include -std=c++0x
 LIBDIR =
-LNFLAGS = -lcppunit -ldl
+LNFLAGS = -ldl
+TESTFLAGS = -lcppunit -ldl
 OBJECTS = CourseBase.o Course.o Lab.o CourseSched.o InputWrap.o main.o Options.o Output.o Rater.o Scheduler.o
 OBJECTLIST = $(addprefix bin/,${OBJECTS})
 VPATH = src test
@@ -15,7 +16,7 @@ $(shell mkdir -p bin)
 all: tests sched
 
 tests: $(TESTOBJECTS)
-	${GXX} -g -o $@ $^ $(LNFLAGS)
+	${GXX} -g -o $@ $^ $(TESTFLAGS)
 
 sched: $(OBJECTLIST)
 	${GXX} -g -o $@ $^ $(LNFLAGS) 
