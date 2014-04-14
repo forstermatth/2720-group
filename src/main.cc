@@ -5,6 +5,7 @@
 #include "CourseSched.h"
 #include "CourseCont.h"
 #include "Options.h"
+#include "Course.h"
 #include <iostream>
 #include <iomanip>
 
@@ -13,7 +14,7 @@ using namespace std;
 int main(){
   Output outp;
   InputWrap input;
-  CourseCont _courseCont;
+  CourseCont<Course> _courseCont;
   Options opt;
   input.parse("../testfiles/testinput.xml");
   opt = input.setOptions();
