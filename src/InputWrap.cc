@@ -84,7 +84,7 @@ Options InputWrap::setOptions(){
 		}else if(name == (std::string) "BreakEnd"){
 			breakend =  atoi(optnode->value());
 		}else{
-			throw UnknownNode();
+			throw UnknownNode(name);
 		}
 
 		optnode = optnode->next_sibling();
@@ -222,7 +222,7 @@ void InputWrap::setVars(std::string node, std::string value, std::string &_name,
 	}else if(node == "id"){
 		_id = atoi(value.c_str());
 	}else{
-		throw UnknownNode();
+		throw UnknownNode(node);
 	}
 
 }

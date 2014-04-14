@@ -1,10 +1,10 @@
 <Options>
-	<NumberOfClasses>4</NumberOfClasses>
-	<RequredCourses>
+	<NumberOfCourses>4</NumberOfCourses>
+	<RequiredCourses>
 		<id>30990</id>
 		<id>30998</id>
 	</RequiredCourses>
-	<TimePreferences>PM</TimePreferences>
+	<TimePreferences>Pm</TimePreferences>
 	<BreakPadding>60</BreakPadding>
 	<BreakStart>0</BreakStart>
 	<BreakEnd>0</BreakEnd>
