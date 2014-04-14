@@ -55,6 +55,6 @@ void Output::generate(Options opts, CourseSched sched){
 
 		sched.courses.next(); // move to next course
 		c = sched.courses.get(); // assign the course
-	}while(!c.equal(sched.courses.last())); 
+	}while(!c.equal(sched.courses.first())); 
 
 }
