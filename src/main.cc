@@ -13,12 +13,12 @@ using namespace std;
 int main(){
   Output outp;
   InputWrap input;
-  CourseCont _courseCont;
+  CourseCont<Course> _courseCont;
   Options opt;
   input.parse("../testfiles/testinput.xml");
   opt = input.setOptions();
   _courseCont = input.setCourses();
-  Rater _rater(opt, _courseCont);
+  Rater _rater(&opt, &_courseCont);
   _rater.rateCourses();
   CourseSched sched;
   Scheduler _scheduler;

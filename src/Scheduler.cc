@@ -21,6 +21,7 @@ CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options 
 		//check to see if we can add the lab for this course, if there is a lab.
 		if(add.labs.size() > 0){
 			labAdded = false;
+			add.labs.sort();
 			add.labs.begin();
 			while(!labAdded){
 				try{

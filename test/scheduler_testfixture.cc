@@ -199,3 +199,24 @@ void SchedulerFixture::testLabsWithPadding(){
 	CPPUNIT_ASSERT(cs.labs.size() == 0);
 	CPPUNIT_ASSERT(cs.courses.size() == 2);
 }
+
+void SchedulerFixture::testLabsWithRating(){
+	list<unsigned int> requiredCourses;
+	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
+	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
+	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
+	Lab l1(900, 1100, "F", "lab 1", "loc 1", 13245);
+	Lab l2(1300, 1400, "F", "lab 2", "loc 1", 13246);
+	CourseCont<Course> cc;
+	c1.setRating(10);
+	c2.setRating(9);
+	l1.setRating(9);
+	l2.setRating(10);
+	c2.labs.add(l1);
+	c2.labs.add(l2);
+	cc.add(c1);
+	cc.add(c2); 
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.courses.last().getId() == 453224);
+	CPPUNIT_ASSERT(cs.labs.last().getId() == 13246);
+}
