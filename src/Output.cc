@@ -50,7 +50,7 @@ void Output::generate(Options opts, CourseSched sched){
 
 			  c.labs.next(); // move to next lab (if exists)
 			  l = c.labs.get(); // assign the lab
-			}while(!l.equal(c.labs.end()));
+			}while(!l.equal(c.labs.first()));
 		}
 
 		sched.courses.next(); // move to next course
