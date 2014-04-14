@@ -1,14 +1,17 @@
 #ifndef __INPUTWRAP_H
 #define __INPUTWRAP_H
 
-#include <fstream>
-#include <vector>
-#include <string>
 #include "rapidxml/rapidxml.hpp"
+#include "Exceptions.h"
 #include "Options.h"
 #include "CourseCont.h"
 #include "Course.h"
 #include "Lab.h"
+#include <fstream>
+#include <vector>
+#include <string>
+#include <cstdlib>
+#include <iostream>
 
 
 /**

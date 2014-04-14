@@ -1,8 +1,4 @@
 #include "InputWrap.h"
-#include "Exceptions.h"
-#include <cstdlib>
-
-#include <iostream>
 
 void InputWrap::parse(std::string _input){
 	std::ifstream inputfile;

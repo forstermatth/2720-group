@@ -1,5 +1,4 @@
 #include "CourseBase.h"
-#include <string>
 using namespace std;
 
 CourseBase::CourseBase(unsigned int _startTime, unsigned int _endTime, string _days, string _courseName, string _courseLoc, unsigned int _courseId){

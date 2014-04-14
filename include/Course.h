@@ -3,6 +3,7 @@
 #include "CourseBase.h"
 #include "CourseCont.h"
 #include "Lab.h"
+#include "Exceptions.h"
 
 
 /**

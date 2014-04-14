@@ -1,9 +1,22 @@
-#include "Course.h"
-#include "CourseCont.h"
-#include "Options.h"
 #include "Scheduler.h"
 
-#include <iostream>
+void Scheduler::grab(std::string inputfile){
+	in.parse(inputfile);
+	ops = in.setOptions();
+	cont = in.setCourses();
+}
+
+void Scheduler::work(){
+	rate = new Rater(&ops, &cont);
+	rate->rateCourses();
+	sched = generateSchedule(cont, ops);
+	delete rate;
+}
+
+void Scheduler::print(){
+	out.generate(ops, sched);
+}
+
 
 CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options &opts){
 	CourseSched schedule;

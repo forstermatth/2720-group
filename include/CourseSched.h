@@ -1,15 +1,13 @@
 #ifndef __COURSESCHED_H
 #define __COURSESCHED_H
 
-#include <list>
-
 #include "CourseBase.h"
 #include "CourseCont.h"
 #include "Course.h"
 #include "Lab.h"
 #include "Exceptions.h"
-
-
+#include <string>
+#include <list>
 using namespace std;
 
 

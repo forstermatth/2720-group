@@ -1,5 +1,4 @@
 #include "Course.h"
-#include "Exceptions.h"
 
 Course& Course::operator= (const Course& _course){
 

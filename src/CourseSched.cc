@@ -1,9 +1,4 @@
 #include "CourseSched.h"
-#include "CourseBase.h"
-#include "Lab.h"
-#include <iostream>
-#include <string>
-#include <stdexcept>
 
 void CourseSched::addCourse(Course _course){
 	findConflict(&_course);

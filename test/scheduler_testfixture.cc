@@ -199,3 +199,4 @@ void SchedulerFixture::testLabsWithPadding(){
 	CPPUNIT_ASSERT(cs.labs.size() == 0);
 	CPPUNIT_ASSERT(cs.courses.size() == 2);
 }
+

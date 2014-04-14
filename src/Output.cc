@@ -1,11 +1,5 @@
 #include "Output.h"
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include "CourseSched.h"
-#include "Options.h"
-#include "Course.h"
-#include "Lab.h"
+
 using namespace std;
 
 void Output::generate(Options opts, CourseSched sched){
