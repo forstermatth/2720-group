@@ -2,6 +2,7 @@
 #define __EXCEPTIONS_H
 
 #include <exception>
+#include <iostream>
 #include <string>
 
 /// General Exception for the program -  all customs should inherit from this
@@ -53,14 +54,14 @@ public:
 /// Exception to throw if an unkown node is encountered while parsing
 class UnknownNode : public ScheduleException{
 public:
-	std::string name;
 
 	UnknownNode(std::string _name){
-		name = "Unknown Node: " + _name;
+		std::string name = "Unknown Node: " + _name;
+		std::cout << name;
 	}
 
 	virtual const char* what() const noexcept {
-		return name.c_str();
+		return "Unknown Node Found";
 	}
 };
 
