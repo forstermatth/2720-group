@@ -5,7 +5,7 @@ using namespace std;
 void Output::generate(Options opts, CourseSched sched){
   // Number of Options and and required classes
 	cout << endl << "Options: " << endl
-		 << "Number of classes:" << opts.getNumCourses() << endl
+		 << "Number of classes: " << opts.getNumCourses() << endl
 		 << "Required Courses: " << endl;
 	// Gets the required courses
 	 list<unsigned int> reqs = opts.getRequiredCourses();

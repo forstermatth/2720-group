@@ -1,0 +1,250 @@
+<Options>
+	<NumberOfCourses>5</NumberOfCourses>
+	<RequiredCourses>
+		<id>30990</id>
+		<id>30998</id>
+	</RequiredCourses>
+	<TimePreferences>None</TimePreferences>
+	<BreakPadding>60</BreakPadding>
+	<BreakStart>0</BreakStart>
+	<BreakEnd>1</BreakEnd>
+</Options>
+
+<Courses>
+<!-- Required Courses -->
+	<Course>
+		<id>30990</id>
+		<Name>Computer Arch.</Name>
+		<StartTime>900</StartTime>
+		<EndTime>950</EndTime>
+		<Days>MWF</Days>
+		<Location>B730</Location>
+	</Course>
+
+	<Course>
+		<id>30998</id>
+		<Name>Data Mining</Name>
+		<StartTime>1050</StartTime>
+		<EndTime>1205</EndTime>
+		<Days>TR</Days>
+		<Location>W866</Location>
+	</Course>
+
+<!-- Optional Courses -->
+	<Course>
+		<id>30863</id>
+		<Name>Micro</Name>
+		<StartTime>900</StartTime>
+		<EndTime>950</EndTime>
+		<Days>MWF</Days>
+		<Location>L1060</Location>
+
+		<Lab>
+			<id>30866</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1215</StartTime>
+			<EndTime>1305</EndTime>
+			<Days>T</Days>
+			<Location>W561</Location>
+		</Lab>
+		<Lab>
+			<id>30867</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1340</StartTime>
+			<EndTime>1430</EndTime>
+			<Days>T</Days>
+			<Location>W561</Location>
+		</Lab>
+	</Course>
+
+	<Course>
+		<id>30864</id>
+		<Name>Micro</Name>
+		<StartTime>1600</StartTime>
+		<EndTime>1715</EndTime>
+		<Days>MW</Days>
+		<Location>L1060</Location>
+
+		<Lab>
+			<id>30868</id>
+			<Name>Micro Lab</Name>
+			<StartTime>900</StartTime>
+			<EndTime>950</EndTime>
+			<Days>W</Days>
+			<Location>C756</Location>
+		</Lab>
+		<Lab>
+			<id>30869</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1000</StartTime>
+			<EndTime>1050</EndTime>
+			<Days>W</Days>
+			<Location>C756</Location>
+		</Lab>
+		<Lab>
+			<id>30870</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1100</StartTime>
+			<EndTime>1150</EndTime>
+			<Days>W</Days>
+			<Location>A580</Location>
+		</Lab>
+		<Lab>
+			<id>30871</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1200</StartTime>
+			<EndTime>1250</EndTime>
+			<Days>W</Days>
+			<Location>B660</Location>
+		</Lab>
+	</Course>
+
+	<Course>
+		<id>30865</id>
+		<Name>Micro</Name>
+		<StartTime>1340</StartTime>
+		<EndTime>1455</EndTime>
+		<Days>TR</Days>
+		<Location>L1060</Location>
+
+		<Lab>
+			<id>30868</id>
+			<Name>Micro Lab</Name>
+			<StartTime>900</StartTime>
+			<EndTime>950</EndTime>
+			<Days>W</Days>
+			<Location>C756</Location>
+		</Lab>
+		<Lab>
+			<id>30869</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1000</StartTime>
+			<EndTime>1050</EndTime>
+			<Days>W</Days>
+			<Location>C756</Location>
+		</Lab>
+		<Lab>
+			<id>30870</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1100</StartTime>
+			<EndTime>1150</EndTime>
+			<Days>W</Days>
+			<Location>A580</Location>
+		</Lab>
+		<Lab>
+			<id>30871</id>
+			<Name>Micro Lab</Name>
+			<StartTime>1200</StartTime>
+			<EndTime>1250</EndTime>
+			<Days>W</Days>
+			<Location>B660</Location>
+		</Lab>
+	</Course>
+
+	<Course>
+		<id>30872</id>
+		<Name>Macro</Name>
+		<StartTime>1100</StartTime>
+		<EndTime>1150</EndTime>
+		<Days>MWF</Days>
+		<Location>L1060</Location>
+
+		<Lab>
+			<id>30874</id>
+			<Name>Macro Lab</Name>
+			<StartTime>925</StartTime>
+			<EndTime>1015</EndTime>
+			<Days>T</Days>
+			<Location>TH204</Location>
+		</Lab>
+		<Lab>
+			<id>30875</id>
+			<Name>Macro Lab</Name>
+			<StartTime>1050</StartTime>
+			<EndTime>1140</EndTime>
+			<Days>T</Days>
+			<Location>TH204</Location>
+		</Lab>
+	</Course>
+
+	<Course>
+		<id>30873</id>
+		<Name>Macro</Name>
+		<StartTime>1300</StartTime>
+		<EndTime>1350</EndTime>
+		<Days>MWF</Days>
+		<Location>E690</Location>
+
+		<Lab>
+			<id>30876</id>
+			<Name>Macro Lab</Name>
+			<StartTime>925</StartTime>
+			<EndTime>1015</EndTime>
+			<Days>R</Days>
+			<Location>TH204</Location>
+		</Lab>
+		<Lab>
+			<id>30877</id>
+			<Name>Macro Lab</Name>
+			<StartTime>1050</StartTime>
+			<EndTime>1140</EndTime>
+			<Days>R</Days>
+			<Location>TH204</Location>
+		</Lab>
+	</Course>
+
+	<Course>
+		<id>30819</id>
+		<Name>Human Geo</Name>
+		<StartTime>1400</StartTime>
+		<EndTime>1450</EndTime>
+		<Days>MWF</Days>
+		<Location>E690</Location>
+	</Course>
+
+	<Course>
+		<id>30820</id>
+		<Name>World Geo</Name>
+		<StartTime>1505</StartTime>
+		<EndTime>1620</EndTime>
+		<Days>TR</Days>
+		<Location>B660</Location>
+	</Course>
+
+	<Course>
+		<id>30342</id>
+		<Name>Philosophy</Name>
+		<StartTime>900</StartTime>
+		<EndTime>950</EndTime>
+		<Days>MWF</Days>
+		<Location>W561</Location>
+	</Course>
+
+	<Course>
+		<id>30343</id>
+		<Name>Philosophy</Name>
+		<StartTime>1000</StartTime>
+		<EndTime>1050</EndTime>
+		<Days>MWF</Days>
+		<Location>W561</Location>
+	</Course>
+
+	<Course>
+		<id>30344</id>
+		<Name>Philosophy</Name>
+		<StartTime>1050</StartTime>
+		<EndTime>1205</EndTime>
+		<Days>TR</Days>
+		<Location>AH176</Location>
+	</Course>
+
+	<Course>
+		<id>31534</id>
+		<Name>Philosophy</Name>
+		<StartTime>1400</StartTime>
+		<EndTime>1450</EndTime>
+		<Days>MWF</Days>
+		<Location>B650</Location>
+	</Course>
+
+</Courses>
