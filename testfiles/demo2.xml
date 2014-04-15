@@ -4,10 +4,10 @@
 		<id>30990</id>
 		<id>30998</id>
 	</RequiredCourses>
-	<TimePreferences>Pm</TimePreferences>
+	<TimePreferences>Am</TimePreferences>
 	<BreakPadding>0</BreakPadding>
-	<BreakStart>0</BreakStart>
-	<BreakEnd>1</BreakEnd>
+	<BreakStart>1200</BreakStart>
+	<BreakEnd>1300</BreakEnd>
 </Options>
 
 <Courses>

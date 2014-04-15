@@ -23,7 +23,7 @@ Times const Options::getTimePreference(){
 }
 
 unsigned int const Options::getBreakPadding(){
-	return breakPadding / 2;
+	return breakPadding;
 }
 
 unsigned int const Options::getBreakStart(){

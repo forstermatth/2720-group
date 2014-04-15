@@ -37,7 +37,7 @@ void OptionsFixture::testTimePreference(){
 
 void OptionsFixture::testBreakPadding(){
 	//test to make sure that the correct amount of padding for breaks is returned.
-	CPPUNIT_ASSERT(15 == opts->getBreakPadding());
+	CPPUNIT_ASSERT(30 == opts->getBreakPadding());
 }
 
 void OptionsFixture::testBreakStart(){

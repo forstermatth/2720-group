@@ -64,6 +64,6 @@ CourseBase& CourseBase::operator= (const CourseBase& rhs){
 }
 
 void CourseBase::addPadding(unsigned int _padding){
-	startTime -= _padding;
-	endTime += _padding;
+	startTime = (((startTime/100 - _padding/60) - ((int((startTime%100) - (_padding%60))<0)?1:0))*100) + (((int(startTime%100 - _padding%60)<0)?60:0) + int(startTime%100 - _padding%60));
+	endTime = (((endTime/100 + _padding/60) + (endTime%100 + _padding%60)/60)*100) +(endTime%100 + _padding%60)%60;
 }
