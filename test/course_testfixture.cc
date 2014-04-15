@@ -2,7 +2,7 @@
 #include "course_testfixture.h"
 #include "Exceptions.h"
 #include "Lab.h"
-
+#include <iostream>
 void CourseFixture::setUp(){
 	c = new Course(1115, 1500, "TR", "course", "location", 894372);
 }
