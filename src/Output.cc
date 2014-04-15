@@ -37,7 +37,7 @@ void Output::generate(Options opts, CourseSched sched){
 	if(sched.labs.size() > 0){
 		Lab l = sched.labs.begin();
 		do{
-		  cout << setw(13) << l.getId() 		<< " " 
+		  cout << setw(10) << l.getId() 		<< " " 
 			 		<< setw(17) << l.getName() 	<< " " 
 					<< setw(6) << l.getLoc() 		<< " " 
 			 		<< setfill('0') << setw(4) << l.getStartTime() << "-" << setfill('0') << setw(4) << l.getEndTime() << " " 
