@@ -221,3 +221,23 @@ void SchedulerFixture::testLabsWithRating(){
 	CPPUNIT_ASSERT(cs.labs.last().getId() == 13246);
 }
 
+void SchedulerFixture::testDontScheduleDuplicateCourse(){
+	list<unsigned int> requiredCourses;
+	CourseCont<Course> cc;
+	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
+	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
+	Course c2(1105, 1200, "TR", "name", "loc 641", 453224);
+	Lab l1(900, 1100, "F", "lab 1", "loc 1", 13245);
+	Lab l2(1300, 1400, "F", "lab 2", "loc 1", 13246);
+	c1.labs.add(l1);
+	c2.labs.add(l2);
+	c1.setRating(10);
+	c2.setRating(9);
+	cc.add(c1);
+	cc.add(c2);
+	CourseSched cs = sch->generateSchedule(cc, opts);
+	CPPUNIT_ASSERT(cs.courses.size() == 1);
+	CPPUNIT_ASSERT(cs.courses.first().getId() == 9484739);
+	CPPUNIT_ASSERT(cs.labs.size() == 1);
+	CPPUNIT_ASSERT(cs.labs.first().getId() == 13245);
+}

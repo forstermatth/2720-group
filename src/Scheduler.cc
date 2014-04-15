@@ -71,6 +71,13 @@ CourseSched Scheduler::generateSchedule(CourseCont<Course>& courseList, Options 
 			}
 		}catch(const EmptyContainer &epct){
 			break;
+		}catch(const DuplicateCourse &expt){
+			if(add.labs.size() > 0){
+				//since the course has a lab, and the course couldn't be added, we need to remove
+				//the last lab in the schedul container, since we can't add the class it belongs to.
+				schedule.labs.end();
+				schedule.labs.erase();
+			}
 		}
 		courseList.next();
 	}
