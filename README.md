@@ -7,11 +7,12 @@ __Team Durian__
 Members: Matt Forster, Justin Werre, Josh Enns, Huy Nguyen
 
 Build Instructions
-  1. To compile the project, use makein the root directory.
-  2. The schedtarget builds the production code, while the teststarget builds the testing
+  1. If on a UofL lab computer (need the use of `/opt/centos/devtoolset-1.1/root/usr/bin/g++`), do a `git checkout uoflmachine` before using make.
+  2. To compile the project, use `make` in the root directory.
+  2. The `sched` target builds the production code, while the `tests` target builds the testing
 code.
-  3. To run the tests, execute tests.
-  4. To start the program, execute sched.
+  3. To run the tests, execute `tests`.
+  4. To start the program, execute `sched`.
   
 
 The program takes in a .xml filename as input, and can include relative or absolute paths. We have included a test input file, located at testfiles/demo.xml.
