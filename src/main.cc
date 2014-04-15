@@ -1,3 +1,15 @@
+#include "Output.h"
+#include "InputWrap.h"
+#include "Rater.h"
+#include "Scheduler.h"
+#include "CourseSched.h"
+#include "CourseCont.h"
+#include "Options.h"
+#include "Course.h"
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 #include "Scheduler.h"
 #include <iostream>
@@ -16,3 +28,4 @@ int main(){
 	_scheduler.print();
 	
 }
+

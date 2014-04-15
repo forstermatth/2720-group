@@ -15,6 +15,7 @@ notifications:
     recipients:
         - forster.matth@gmail.com
         - werrejustin@gmail.com
+	- huy.nguyen@uleth.ca
     email:
         on_success: change
         on_failure: always
