@@ -2,7 +2,7 @@
 #include "course_testfixture.h"
 #include "Exceptions.h"
 #include "Lab.h"
-
+#include <iostream>
 void CourseFixture::setUp(){
 	c = new Course(1115, 1500, "TR", "course", "location", 894372);
 }
@@ -127,5 +127,11 @@ void CourseFixture::testAddPadding(){
 	c0.addPadding(15);
 	CPPUNIT_ASSERT(c0.getStartTime() == 930);
 	CPPUNIT_ASSERT(c0.getEndTime() == 1230);
+}
 
+void CourseFixture::testAddPaddingRounds(){
+	Course c0(900, 950, "MWF", "courseName", "courseloc", 1);
+	c0.addPadding(10);
+	CPPUNIT_ASSERT(c0.getStartTime() == 850);
+	CPPUNIT_ASSERT(c0.getEndTime() == 1000);
 }
