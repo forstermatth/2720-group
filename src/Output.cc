@@ -16,7 +16,7 @@ void Output::generate(Options opts, CourseSched sched){
 	 }
 	 // Display current time preferences and breaks
 	 cout << "Time Preference: " << opts.getTimePreference() << endl
-	 	  << "Time Between Classes: " << opts.getBreakPadding()*2 << endl
+	 	  << "Time Between Classes: " << opts.getBreakPadding() << endl
 	 	  << "Specific Break Start: " << opts.getBreakStart() << endl
 	 	  << "Specific Break End: "	  << opts.getBreakEnd() << endl;
 	 // Outputs the suggested schedule generated
