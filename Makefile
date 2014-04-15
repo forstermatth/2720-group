@@ -9,7 +9,7 @@ VPATH = src test
 TESTOBJECTS = $(filter-out bin/main.o,$(OBJECTLIST))
 TESTOBJECTS += bin/tests.o bin/lab_testfixture.o bin/course_testfixture.o bin/coursecont_testfixture.o bin/coursesched_testfixture.o bin/inputwrap_testfixture.o bin/options_testfixture.o bin/output_testfixture.o bin/rater_testfixture.o bin/scheduler_testfixture.o
 
-GXX = g++
+GXX = /opt/centos/devtoolset-1.1/root/usr/bin/g++
 
 $(shell mkdir -p bin)
 
