@@ -19,6 +19,7 @@ public:
 	CPPUNIT_TEST(testRemoveLab);
 	CPPUNIT_TEST(testLabsWithPadding);
 	CPPUNIT_TEST(testLabsWithRating);
+	CPPUNIT_TEST(testDontScheduleDuplicateCourse);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	Scheduler *sch;
@@ -36,6 +37,7 @@ public:
 	void testRemoveLab();
 	void testLabsWithPadding();
 	void testLabsWithRating();
+	void testDontScheduleDuplicateCourse();
 };
 
 #endif
