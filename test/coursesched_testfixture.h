@@ -25,6 +25,7 @@ public:
 	CPPUNIT_TEST_EXCEPTION(testCousreLabCollision, TimeConflict);
 	CPPUNIT_TEST_EXCEPTION(testLabCourseCollision, TimeConflict);
 	CPPUNIT_TEST_EXCEPTION(testDontAddlab, TimeConflict);
+	CPPUNIT_TEST_EXCEPTION(testDuplicateCourse, DuplicateCourse);
 	CPPUNIT_TEST_SUITE_END();
 private:
 	CourseSched* cs;
@@ -49,6 +50,7 @@ public:
 	void testCousreLabCollision();
 	void testLabCourseCollision();
 	void testDontAddlab();
+	void testDuplicateCourse();
 };
 
 #endif

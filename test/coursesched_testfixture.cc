@@ -159,27 +159,32 @@ void CourseSchedFixture::testLabCollision(){
 
 void CourseSchedFixture::testCousreLabCollision(){
 	Lab l1(900, 1015, "MW", "name", "loc", 1234);
-	Course c1(900, 1015, "MW", "name", "loc", 1235);
+	Course c1(900, 1015, "MW", "name2", "loc", 1235);
 	cs->addCourse(c1);
 	cs->addLab(l1);
 }
 
 void CourseSchedFixture::testLabCourseCollision(){
 	Lab l1(900, 1015, "MW", "name", "loc", 1234);
-	Course c1(900, 1015, "MW", "name", "loc", 1235);
+	Course c1(900, 1015, "MW", "name2", "loc", 1235);
 	cs->addLab(l1);
 	cs->addCourse(c1);
 }
 
 void CourseSchedFixture::testDontAddlab(){
 	Course c1(900, 1100, "MW", "name", "loc 640", 1);
-	Course c2(1105, 1200, "MW", "name", "loc 641", 2);
-	Course c3(1300, 1400, "MW", "name", "loc 3", 3);
-	//Lab l1(900, 1100, "M", "lab 1", "loc 1", 13245);
+	Course c2(1105, 1200, "MW", "name2", "loc 641", 2);
+	Course c3(1300, 1400, "MW", "name3", "loc 3", 3);
 	Lab l2(1300, 1400, "M", "lab 2", "loc 1", 13246);
 	cs->addCourse(c1);
 	cs->addCourse(c2); 
 	cs->addCourse(c3);
-	//cs->addLab(l1);
 	cs->addLab(l2);
+}
+
+void CourseSchedFixture::testDuplicateCourse(){
+	Course c1(900, 1100, "MW", "name", "loc 640", 1);
+	Course c2(1105, 1200, "MW", "name", "loc 641", 2);
+	cs->addCourse(c1);
+	cs->addCourse(c2); 
 }

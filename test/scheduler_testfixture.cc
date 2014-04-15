@@ -39,8 +39,8 @@ void SchedulerFixture::testCourseConflict(){
 	CourseCont<Course> cc;
 	Options opts(2, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
-	Course c2(1015, 1045, "MW", "name", "loc 641", 453224);
-	Course c3(1030, 1015, "TR", "name", "loc 641", 462348);
+	Course c2(1015, 1045, "MW", "name2", "loc 641", 453224);
+	Course c3(1030, 1015, "TR", "name3", "loc 641", 462348);
 	c1.setRating(10);
 	c2.setRating(9);
 	c3.setRating(8);
@@ -59,8 +59,8 @@ void SchedulerFixture::testNotEnoughCourses(){
 	CourseCont<Course> cc;
 	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
-	Course c2(1015, 1045, "MW", "name", "loc 641", 453224);
-	Course c3(1030, 1015, "TR", "name", "loc 641", 462348);
+	Course c2(1015, 1045, "MW", "name2", "loc 641", 453224);
+	Course c3(1030, 1015, "TR", "name3", "loc 641", 462348);
 	c1.setRating(10);
 	c2.setRating(9);
 	c3.setRating(8);
@@ -79,8 +79,8 @@ void SchedulerFixture::testCoursesWithPadding(){
 	CourseCont<Course> cc;
 	Options opts(5, requiredCourses, Times::None, 30, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
-	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
-	Course c3(1030, 1015, "TR", "name", "loc 641", 462348);
+	Course c2(1105, 1200, "MW", "name2", "loc 641", 453224);
+	Course c3(1030, 1015, "TR", "name3", "loc 641", 462348);
 	c1.setRating(10);
 	c2.setRating(9);
 	c3.setRating(8);
@@ -110,7 +110,7 @@ void SchedulerFixture::testLabConflict(){
 	list<unsigned int> requiredCourses;
 	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
-	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
+	Course c2(1105, 1200, "MW", "name2", "loc 641", 453224);
 	Lab l1(900, 1100, "MW", "lab", "loc 1", 13245);
 	CourseCont<Course> cc;
 	c1.setRating(10);
@@ -126,7 +126,7 @@ void SchedulerFixture::testAddSecondLab(){
 	list<unsigned int> requiredCourses;
 	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
-	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
+	Course c2(1105, 1200, "MW", "name2", "loc 641", 453224);
 	Lab l1(900, 1100, "M", "lab 1", "loc 1", 13245);
 	Lab l2(1300, 1400, "M", "lab 2", "loc 1", 13246);
 	CourseCont<Course> cc;
@@ -145,8 +145,8 @@ void SchedulerFixture::testDontAddLab(){
 	list<unsigned int> requiredCourses;
 	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MWF", "name", "loc 640", 1);
-	Course c2(1105, 1200, "MWF", "name", "loc 641", 2);
-	Course c3(1300, 1400, "MWF", "name", "loc 3", 3);
+	Course c2(1105, 1200, "MWF", "name2", "loc 641", 2);
+	Course c3(1300, 1400, "MWF", "name3", "loc 3", 3);
 	Lab l1(900, 1100, "MWF", "lab 1", "loc 1", 13245);
 	Lab l2(1300, 1400, "MWF", "lab 2", "loc 1", 13246);
 	CourseCont<Course> cc;
@@ -166,7 +166,7 @@ void SchedulerFixture::testRemoveLab(){
 	list<unsigned int> requiredCourses;
 	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MWF", "name", "loc 132", 1);
-	Course c2(900, 1100, "MWF", "name", "loc 321", 2);
+	Course c2(900, 1100, "MWF", "name2", "loc 321", 2);
 	Lab l1(1200, 1400, "M", "lab", "132456", 3);
 	CourseCont<Course> cc;
 	c1.setRating(20);
@@ -182,8 +182,8 @@ void SchedulerFixture::testLabsWithPadding(){
 	list<unsigned int> requiredCourses;
 	Options opts(5, requiredCourses, Times::None, 10, 0, 1);
 	Course c1(900, 1100, "MWF", "name", "loc 640", 1);
-	Course c2(1100, 1200, "TR", "name", "loc 641", 2);
-	Course c3(1300, 1400, "MWF", "name", "loc 3", 3);
+	Course c2(1100, 1200, "TR", "name2", "loc 641", 2);
+	Course c3(1300, 1400, "MWF", "name3", "loc 3", 3);
 	Lab l1(1100, 1200, "MWF", "lab 1", "loc 1", 13245);
 	Lab l2(1200, 1355, "MWF", "lab 2", "loc 1", 13246);
 	CourseCont<Course> cc;
@@ -204,7 +204,7 @@ void SchedulerFixture::testLabsWithRating(){
 	list<unsigned int> requiredCourses;
 	Options opts(5, requiredCourses, Times::None, 0, 0, 1);
 	Course c1(900, 1100, "MW", "name", "loc 640", 9484739);
-	Course c2(1105, 1200, "MW", "name", "loc 641", 453224);
+	Course c2(1105, 1200, "MW", "name2", "loc 641", 453224);
 	Lab l1(900, 1100, "F", "lab 1", "loc 1", 13245);
 	Lab l2(1300, 1400, "F", "lab 2", "loc 1", 13246);
 	CourseCont<Course> cc;

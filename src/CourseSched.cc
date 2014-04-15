@@ -16,6 +16,11 @@ void CourseSched::findConflict(CourseBase* newCourse){
 	if(courses.size() != 0){
 		Course course_ = courses.begin();
 		do {
+			//test for duplicate course first.
+			if(newCourse->getName() == course_.getName()){
+				throw DuplicateCourse();
+			}
+
 			int i = 0; //counter for new course
 			int j = 0; //counter for existing course
 			//load days of the existing course into days local variable

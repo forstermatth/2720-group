@@ -27,6 +27,15 @@ public:
 	}
 };
 
+/// Exception to throw if there is a duplicate Course
+class DuplicateCourse : public ScheduleException{
+public:
+	virtual const char* what() const noexcept {
+		return "Course already exists.";
+	}
+};
+
+
 /// Exception to throw if there is a file problem
 class FileExcept : public ScheduleException{
 public:
