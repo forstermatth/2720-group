@@ -33,7 +33,7 @@
 <!-- Optional Courses -->
 	<Course>
 		<id>30863</id>
-		<Name>Micro A</Name>
+		<Name>Micro</Name>
 		<StartTime>900</StartTime>
 		<EndTime>950</EndTime>
 		<Days>MWF</Days>
@@ -41,7 +41,7 @@
 
 		<Lab>
 			<id>30866</id>
-			<Name>Micro Lab A</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1215</StartTime>
 			<EndTime>1305</EndTime>
 			<Days>T</Days>
@@ -49,7 +49,7 @@
 		</Lab>
 		<Lab>
 			<id>30867</id>
-			<Name>Micro Lab A</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1340</StartTime>
 			<EndTime>1430</EndTime>
 			<Days>T</Days>
@@ -59,7 +59,7 @@
 
 	<Course>
 		<id>30864</id>
-		<Name>Micro B</Name>
+		<Name>Micro</Name>
 		<StartTime>1600</StartTime>
 		<EndTime>1715</EndTime>
 		<Days>MW</Days>
@@ -67,7 +67,7 @@
 
 		<Lab>
 			<id>30868</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>900</StartTime>
 			<EndTime>950</EndTime>
 			<Days>W</Days>
@@ -75,7 +75,7 @@
 		</Lab>
 		<Lab>
 			<id>30869</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1000</StartTime>
 			<EndTime>1050</EndTime>
 			<Days>W</Days>
@@ -83,7 +83,7 @@
 		</Lab>
 		<Lab>
 			<id>30870</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1100</StartTime>
 			<EndTime>1150</EndTime>
 			<Days>W</Days>
@@ -91,7 +91,7 @@
 		</Lab>
 		<Lab>
 			<id>30871</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1200</StartTime>
 			<EndTime>1250</EndTime>
 			<Days>W</Days>
@@ -101,7 +101,7 @@
 
 	<Course>
 		<id>30865</id>
-		<Name>Micro C</Name>
+		<Name>Micro</Name>
 		<StartTime>1340</StartTime>
 		<EndTime>1455</EndTime>
 		<Days>TR</Days>
@@ -109,7 +109,7 @@
 
 		<Lab>
 			<id>30868</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>900</StartTime>
 			<EndTime>950</EndTime>
 			<Days>W</Days>
@@ -117,7 +117,7 @@
 		</Lab>
 		<Lab>
 			<id>30869</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1000</StartTime>
 			<EndTime>1050</EndTime>
 			<Days>W</Days>
@@ -125,7 +125,7 @@
 		</Lab>
 		<Lab>
 			<id>30870</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1100</StartTime>
 			<EndTime>1150</EndTime>
 			<Days>W</Days>
@@ -133,7 +133,7 @@
 		</Lab>
 		<Lab>
 			<id>30871</id>
-			<Name>Micro Lab B/C</Name>
+			<Name>Micro Lab</Name>
 			<StartTime>1200</StartTime>
 			<EndTime>1250</EndTime>
 			<Days>W</Days>
@@ -143,7 +143,7 @@
 
 	<Course>
 		<id>30872</id>
-		<Name>Macro A</Name>
+		<Name>Macro</Name>
 		<StartTime>1100</StartTime>
 		<EndTime>1150</EndTime>
 		<Days>MWF</Days>
@@ -151,7 +151,7 @@
 
 		<Lab>
 			<id>30874</id>
-			<Name>Macro Lab A</Name>
+			<Name>Macro Lab</Name>
 			<StartTime>925</StartTime>
 			<EndTime>1015</EndTime>
 			<Days>T</Days>
@@ -159,7 +159,7 @@
 		</Lab>
 		<Lab>
 			<id>30875</id>
-			<Name>Macro Lab A</Name>
+			<Name>Macro Lab</Name>
 			<StartTime>1050</StartTime>
 			<EndTime>1140</EndTime>
 			<Days>T</Days>
@@ -169,7 +169,7 @@
 
 	<Course>
 		<id>30873</id>
-		<Name>Macro B</Name>
+		<Name>Macro</Name>
 		<StartTime>1300</StartTime>
 		<EndTime>1350</EndTime>
 		<Days>MWF</Days>
@@ -177,7 +177,7 @@
 
 		<Lab>
 			<id>30876</id>
-			<Name>Macro Lab B</Name>
+			<Name>Macro Lab</Name>
 			<StartTime>925</StartTime>
 			<EndTime>1015</EndTime>
 			<Days>R</Days>
@@ -185,7 +185,7 @@
 		</Lab>
 		<Lab>
 			<id>30877</id>
-			<Name>Macro Lab B</Name>
+			<Name>Macro Lab</Name>
 			<StartTime>1050</StartTime>
 			<EndTime>1140</EndTime>
 			<Days>R</Days>
