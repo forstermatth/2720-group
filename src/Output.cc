@@ -26,21 +26,20 @@ void Output::generate(Options opts, CourseSched sched){
 	do{
 	  // Displays the Course
 	  cout << setw(10) << c.getId() 		<< " " 
- 			<< setw(20) << c.getName() 	<< " " 
+ 			<< setw(17) << c.getName() 	<< " " 
  			<< setw(6) << c.getLoc() 		<< " " 
  			<< setfill('0') << setw(4) << c.getStartTime() << "-" << setfill('0') << setw(4) <<  c.getEndTime() << " " 
- 			<< setfill(' ') << setw(4) << c.getDays() << endl;
+ 			<< setfill(' ') << setw(3) << c.getDays() << endl;
 	  
 	  // if there are labs connected to the course, then they are displayed after
 		if(c.labs.size() > 0){
-			cout << setw(15) << "Labs: " << endl;
 			Lab l = c.labs.begin();
 			do{
-			  cout << setw(15) << l.getId() 		<< " " 
- 			 		<< setw(20) << l.getName() 	<< " " 
+			  cout << setw(13) << l.getId() 		<< " " 
+ 			 		<< setw(17) << l.getName() 	<< " " 
  					<< setw(6) << l.getLoc() 		<< " " 
  			 		<< setfill('0') << setw(4) << l.getStartTime() << "-" << setfill('0') << setw(4) << l.getEndTime() << " " 
- 			 		<< setfill(' ') << setw(4) << l.getDays() << endl;
+ 			 		<< setfill(' ') << setw(3) << l.getDays() << endl;
 
 			  c.labs.next(); // move to next lab (if exists)
 			  l = c.labs.get(); // assign the lab
